@@ -149,12 +149,13 @@ nav h1 {
   display: flex;
   flex-direction: column;
   grid-area: about;
+  margin-top: 2rem;
 }
 
 .aboutTitle {
   font-size: 1.2rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
   text-transform: uppercase;
 }
 
@@ -350,10 +351,6 @@ footer {
   color: rgba(255, 255, 255, 0.781);
 }
 
-.middleLine {
-
-}
-
 @media (min-width: 1050px) {
   .heroSection {
     background-size: cover;
@@ -371,6 +368,7 @@ footer {
     width: 100%;
     margin-left: 0rem;
     grid-area: about;
+    margin-top: 0;
   }
 
   .aboutP {
