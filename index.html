@@ -46,44 +46,47 @@
 
       <section class="homeAbout">
         <div class="line2"></div>
-        <p class="aboutTitle">About</p>
-        <p class="aboutP">Hi, Welcome to my website. My name is Justin Gravely. For the greater portion of my life I
+        <p class="aboutTitle"><span style = "color: red;">A</span>bout & <span style = "color: skyblue;">S</span>tory</p>
+        <p class="aboutP"><span style = "color: red;">H</span>i, Welcome to my website. My name is Justin Gravely. This site is where I will blog my progress in every important aspect of my life and it also houses my work
+          portfolio.
+
+          I code Javascript and have some decent html/css skills. I'm goofy and got my sense of humor from Tim & Eric (dry/shock/overTheTop?). I like arpg's, mmorpgs, hero shooters, and mobas. I have another big interest but that's spoilers for the story belo<span style = "color: red;">w</span>.
+
+          <br><br>
+          
+          <span style = "color: skyblue;">F</span>or the greater portion of my life I
           have been an obese to morbidly obese NEET (an acronym meaning, 'Not in Education, Employment, or Training')
           with little social skill, world experience, moderate to severe depression, and crippling social anxiety
           coupled with panic disorder related to cardiovascular health concerns. I've only ever held down a single job
           and it was part time. I'm 25.<br><br>
 
-          "Wow! What an introduction!", I know it's harsh and it's not pretty but I'd like to lay it all out so you get
-          a real portrait of who I'm and where I'm coming from. <br><br>
+          Most of my youth up till about 3 or so years ago have been spent trying to find meaning and fullfillment in video games. Online roleplaying games like World of Warcraft to be exact, sometimes competitive games like League of Legends.<br><br>
 
-          Most of my youth to current years have been spent trying to find meaning and fullfillment in video games. Even
-          in the more recent years after an important event that changed my life I still found myself making excuses
-          like, "I'm spending so much time looking for a good video game to play or things to do in this game because I
-          just really really need to have something great lined up for my downtime after studying!".
-          <br><br>
-          This site is where I will blog my progress in every important aspect of my life and it also houses my work
-          portfolio.
-          <br><br>
-          So where do I get my hope from coming from that life and now being 25 with nothing to show? How am I not
-          depressed? How did I beat panic disorder? How did I lose the weight? How do I push through any leftover
-          anxiety that tries to hold me back?
+          Now I'm no longer considered obese, just overweight, and working on it. <br>
+          Now I'm studying every day to be the best coder I can be without crippling indecisiveness.<br>
+          Now I'm no longer depressed.<br>
+          Now I'm no longer socially anxious with ok social skills that still need some work<br>
+          Now I no longer full on panic for longer than 2-3 minutes and the episodes are very rare.<br>
+
+          <br>
+          So how in the world did this happen? How did I go from a dumpsterfire to someone with hope and faith and peace and confidence and all that good stuff?
           Well, I'll tell you. As you can see above, in the hero banner including my logo, name, and title, it says,
           "Justin Gravely, Javascript Dev & Designer", but really it should read, "Justin Gravely, Child of God,
           Javascript Dev & Designer". <br><br>
 
           Ever since I opened myself up to the possibility of God existing after wanting to understand the faith,
-          happiness and kindness these so-called Christians had on an otherwise dark forum on the internet my mental
-          state slowly but surely started turning around for the better. Yes, it was the most important moment of my
-          life when I put my faith in Jesus, but looking back I can see God began helping me when I just WANTED to
-          believe in Him at all but couldn't yet. <br><br>God's teachings and instruction on how to live coupled with
-          the faith, love, and hope he freely gives is the ONLY pillar I stand on. He gets all the credit for my life,
-          wherever it ends up going, whatever I achieve, whomever I help, without him the I that I am in these times
-          wouldn't exist.
+          happiness and kindness these so-called Christians had on an otherwise dark forum on the internet, my mental
+          state slowly but surely started turning around for the better. While it was the most important moment of my
+          life when I put my faith in Jesus, looking back I can see that God began helping me when I just WANTED to
+          believe in Him at all but couldn't convince myself to or even understand how yet. <br><br>God's teachings through Jesus, His instructions on how to live coupled with
+          the faith, love, and hope he freely gives is the ONLY pillar I stand on. He gets all the credit for my life.
+          Wherever it ends up going, whatever I achieve, whomever I help, without him the I that I am in these times
+          wouldn't exis<span style = "color: skyblue;">t</span>.
         </p>
         <div class="line1"></div>
       </section>
 
-      <section class="sections">
+      <section class="sections" id="sections">
         <div class="mainPortfolio sectionPart">
           <h1>Portfolio</h1>
           <div class="greyed"></div>
@@ -132,6 +135,37 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      var sectionPart = document.querySelectorAll(".sectionPart");
+      var greyed = document.querySelectorAll(".greyed")
+      var mobileMediaQuery = window.matchMedia("(max-width: 375px)");
+
+      function mediaQueryFunction(x) {
+        if (x.matches) {
+          for (let e in sectionPart) {
+            sectionPart[e].addEventListener("mouseover", function () {
+              greyed[e].style.width = "250px";
+            });
+            sectionPart[e].addEventListener("mouseout", function () {
+            greyed[e].style.width = "0px";
+        });
+          }
+        }
+      }
+      mediaQueryFunction(mobileMediaQuery)
+      mobileMediaQuery.addListener(mediaQueryFunction);
+
+      for (let e = 0; e < sectionPart.length; e++) {
+        sectionPart[e].addEventListener("mouseover", function () {
+            greyed[e].style.width = "350px";
+        });
+        sectionPart[e].addEventListener("mouseout", function () {
+            greyed[e].style.width = "0px";
+        });
+      }
+
+    </script>
 
 
   </header>

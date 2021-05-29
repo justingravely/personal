@@ -201,11 +201,6 @@ nav h1 {
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.63);
 }
 
-.sectionPart:hover .greyed{
-  display: block;
-  width: 350px;
-}
-
 .mainPortfolio {
   background-image: url("https://images.unsplash.com/photo-1569702948069-343ed9bf6fe2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
   background-size: cover;
@@ -251,23 +246,13 @@ nav h1 {
 
 .greyed {
   z-index: 0;
-  display: none;
   position: absolute;
   margin: auto;
   background-color: rgba(128, 128, 128, 0.479);
   width: 0px;
   height: 6rem;
-  animation: greyedMove;
-  animation-duration: 0.44s;
-}
-
-@keyframes greyedMove {
-  0% {
-    width: 0px;
-  } 100% {
-    width: 350px
-  }
-}
+  transition: 0.5s;
+} 
 
 /* newsletter */
 .newsLetter {
@@ -310,6 +295,7 @@ input[type=submit] {
   background-color: #04AA6D;
   color: white;
   border: none;
+  cursor: pointer;
 }
 
 input[type=submit]:hover {
@@ -391,9 +377,19 @@ footer {
   .sectionPart {
     width: 250px;
   }
-  .sectionPart:hover .greyed{
-    width: 3250px;
+
+  .mainPortfolio {
+    background-position-y: 150px;
   }
+
+  .mainBlog {
+    background-position-y: 150px;
+  }
+
+  .mainContact {
+    background-position-x: -100px;
+  }
+
   .sectionWrapper {
     padding: 0rem;
   }
