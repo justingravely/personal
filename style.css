@@ -15,6 +15,7 @@ nav {
   top: 0;
   width: 100%;
   background-color: black;
+  z-index: 3;
 }
 
 .icons {
@@ -56,8 +57,9 @@ nav {
   margin-top: 4rem;
   height: 27rem;
   background-image: url("https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  background-size: 700px;
   background-position-x: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
 }
 
@@ -101,6 +103,9 @@ nav {
 
 /* main */
 .sectionWrapper {
+  grid-template-areas: 
+    "about sections"
+    "about newsletter";
   display: flex;
   flex-direction: column;
   background-color: rgb(59, 59, 59);
@@ -117,28 +122,25 @@ nav {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   padding-top: 0.33rem;
-  text-align: center;
   width: 80%;
-  height: 24rem;
-  overflow-y: scroll;
   padding-left: 0.7rem;
 } 
 
 .homeAbout {
   display: flex;
   flex-direction: column;
-  height: 30rem;
+  grid-area: about;
 }
 
 .aboutTitle {
+  font-size: 1.2rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  text-decoration: underline;
 }
 
 .line1 {
-  width: 80%;
+  width: 85%;
   border-bottom: 1px solid rgba(128, 128, 128, 0.548);
   border-left: 1px solid rgba(128, 128, 128, 0.548);
   border-right: 1px solid rgba(128, 128, 128, 0.548);
@@ -148,7 +150,7 @@ nav {
 }
 
 .line2 {
-  width: 80%;
+  width: 85%;
   border-top: 1px solid rgba(128, 128, 128, 0.548);
   border-left: 1px solid rgba(128, 128, 128, 0.548);
   border-right: 1px solid rgba(128, 128, 128, 0.548);
@@ -161,9 +163,12 @@ nav {
 .sections {
   display: flex;
   flex-direction: column;
-  height: 25rem;
   width: 100%;
-  margin-bottom: 3rem;
+  margin: auto;
+  margin-right: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  grid-area: sections;
 }
 
 .sectionPart {
@@ -171,6 +176,8 @@ nav {
   width: 350px;
   height: 6rem;
   cursor: pointer;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.63);
 }
 
@@ -213,23 +220,17 @@ nav {
   border: 1px solid yellow;
 }
 
-.sectionsTitle {
-  text-decoration: underline;
-  font-size: 1.2rem;
-  margin-top: 1.3rem;
-}
-
 .sectionPart h1 {
   text-align: center;
   margin: auto;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.596);
   font-size: 1.7rem;
   color: white;
-  z-index: 3;
+  z-index: 1;
 }
 
 .greyed {
-  z-index: 2;
+  z-index: 0;
   display: none;
   position: absolute;
   margin: auto;
@@ -248,6 +249,44 @@ nav {
   }
 }
 
+/* newsletter */
+.newsLetter {
+  width: 90%;
+  margin: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(128, 128, 128, 0.548);
+  padding: 1rem;
+  grid-area: newsletter;
+}
+
+.container h1 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.container {
+  padding: 0.2rem;
+}
+
+input[type=text], input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+} 
 
 /* footer */
 footer {
@@ -281,14 +320,37 @@ footer {
   margin-top: 1rem;
   margin-left: 0.33rem;
   margin-right: 0.33rem;
-  text-decoration: underline;
 }
 
-@media (min-width: 699px) {
+@media (min-width: 1050px) {
   .heroSection {
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
     display: flex;
+  }
+
+  .sectionWrapper {
+    display: grid;
+  }
+
+  .homeAbout {
+    width: 100%;
+    margin-left: 0rem;
+    grid-area: about;
+  }
+
+  .aboutP {
+    width: 80%;
+    padding-left: 0.7rem;
+  } 
+
+  .sections {
+    grid-area: sections;
+  }
+
+  .newsLetter {
+    grid-area: newsletter;
+    width: 63%;
   }
 }
