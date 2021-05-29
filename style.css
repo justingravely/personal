@@ -123,8 +123,8 @@ nav h1 {
 /* main */
 .sectionWrapper {
   grid-template-areas: 
-    "about sections"
-    "about newsletter";
+    "about about sections"
+    "about about newsletter";
   display: flex;
   flex-direction: column;
   background-color: rgb(59, 59, 59);
@@ -141,7 +141,7 @@ nav h1 {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   padding-top: 0.33rem;
-  width: 80%;
+  width: 90%;
   padding-left: 0.7rem;
 } 
 
@@ -159,7 +159,7 @@ nav h1 {
 }
 
 .line1 {
-  width: 85%;
+  width: 90%;
   border-bottom: 1px solid rgba(128, 128, 128, 0.548);
   border-left: 1px solid rgba(128, 128, 128, 0.548);
   border-right: 1px solid rgba(128, 128, 128, 0.548);
@@ -169,7 +169,7 @@ nav h1 {
 }
 
 .line2 {
-  width: 85%;
+  width: 90%;
   border-top: 1px solid rgba(128, 128, 128, 0.548);
   border-left: 1px solid rgba(128, 128, 128, 0.548);
   border-right: 1px solid rgba(128, 128, 128, 0.548);
@@ -272,8 +272,10 @@ nav h1 {
 .newsLetter {
   width: 90%;
   margin: 2rem;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1rem;
   padding: 1rem;
   grid-area: newsletter;
   display: flex;
@@ -343,8 +345,13 @@ footer {
 .footWrapTwo p {
   font-size: 0.8rem;
   margin-top: 1rem;
-  margin-left: 0.33rem;
-  margin-right: 0.33rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: rgba(255, 255, 255, 0.781);
+}
+
+.middleLine {
+
 }
 
 @media (min-width: 1050px) {
@@ -378,6 +385,19 @@ footer {
   .newsLetter {
     grid-area: newsletter;
     width: 63%;
+  }
+}
+
+/* fixes sections when very small/mobile */
+@media (max-width: 375px) {
+  .sectionPart {
+    width: 250px;
+  }
+  .sectionPart:hover .greyed{
+    width: 3250px;
+  }
+  .sectionWrapper {
+    padding: 0rem;
   }
 }
 
