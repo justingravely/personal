@@ -89,10 +89,6 @@ nav h1 {
 
 .heroInner {
   text-transform: uppercase;
-  /* background-color: rgba(0, 0, 0, 0.171);
-  padding: 0.33rem;
-  padding-top: 0.11rem;
-  border-radius: 5px; */
 }
 
 .logo {
@@ -122,62 +118,74 @@ nav h1 {
 
 /* main */
 .sectionWrapper {
-  grid-template-areas: 
-    "about about sections"
-    "about about newsletter";
   display: flex;
   flex-direction: column;
   background-color: rgb(59, 59, 59);
   color: rgba(255, 255, 255, 0.767);
 }
 
- /* Hide scrollbar for Chrome, Safari and Opera */
- .aboutP::-webkit-scrollbar {
+/* showcaseGame */
+.showcaseGame {
+  width: 80%;
+  height: 20rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: black;
+}
+
+  .showcaseOne {
+    display: flex;
+    width: 100%;
+    height: 19.9em;
+  }
+
+    .showcaseOneMid {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      height: 4rem;
+    }
+    .showcaseOneMid h1 {
+      font-size: 1.3rem;
+    }
+    .showcaseOneMid button {
+      margin-top: 1rem;
+      margin: auto;
+    }
+
+.rpcBody {
+  z-index: 0;
+  margin-top: -19.9rem;
+  display: flex;
+  width: 100%;
+  height: 19.9rem;
+  background-color: green;
+}
+  .curtains {
+    transition: 1s;
+    background-color: red;
+    width: 50%;
+    height: 100%;
+  }
+    .curtainOne {
+      margin-left: 0;
+      border-right: 1px solid black;
+    }
+    .curtainTwo {
+      margin-right: 0;
+      border-left: 1px solid black;
+    }
+#rpcButtons {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.aboutP {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  padding-top: 0.33rem;
-  width: 90%;
-  padding-left: 0.7rem;
-} 
-
-.homeAbout {
-  display: flex;
-  flex-direction: column;
-  grid-area: about;
-  margin-top: 2rem;
+#resetButton {
+  /* filler */
+  opacity: 1;
 }
 
-.aboutTitle {
-  font-size: 1.2rem;
-  margin-top: .5rem;
-  margin-bottom: .5rem;
-  text-transform: uppercase;
-}
 
-.line1 {
-  width: 90%;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.548);
-  border-left: 1px solid rgba(128, 128, 128, 0.548);
-  border-right: 1px solid rgba(128, 128, 128, 0.548);
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  height: 1rem;
-}
-
-.line2 {
-  width: 90%;
-  border-top: 1px solid rgba(128, 128, 128, 0.548);
-  border-left: 1px solid rgba(128, 128, 128, 0.548);
-  border-right: 1px solid rgba(128, 128, 128, 0.548);
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  height: 1rem;
-}
 
 /* sections */
 .sections {
@@ -188,7 +196,6 @@ nav h1 {
   margin-right: 2rem;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  grid-area: sections;
 }
 
 .sectionPart {
@@ -236,8 +243,11 @@ nav h1 {
 }
 
 .sectionPart h1 {
+  position: absolute;
   text-align: center;
-  margin: auto;
+  width: 8rem;
+  margin-left: 6.6rem;
+  margin-top: 2rem;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.596);
   font-size: 1.7rem;
   color: white;
@@ -246,10 +256,10 @@ nav h1 {
 
 .greyed {
   z-index: 0;
-  position: absolute;
   margin: auto;
+  margin-left: 0;
   background-color: rgba(128, 128, 128, 0.479);
-  width: 0px;
+  width: 0%;
   height: 6rem;
   transition: 0.5s;
 } 
@@ -263,7 +273,6 @@ nav h1 {
   margin-right: auto;
   margin-bottom: 1rem;
   padding: 1rem;
-  grid-area: newsletter;
   display: flex;
 }
 
@@ -345,30 +354,21 @@ footer {
     display: flex;
   }
 
-  .sectionWrapper {
-    display: grid;
+  .sectionWrapper {d
     padding: 2rem;
   }
 
-  .homeAbout {
-    width: 100%;
-    margin-left: 0rem;
-    grid-area: about;
-    margin-top: 0;
-  }
-
-  .aboutP {
-    width: 80%;
-    padding-left: 0.7rem;
-  } 
-
   .sections {
-    grid-area: sections;
+    /* placeholder */
+    display: block;
   }
 
   .newsLetter {
-    grid-area: newsletter;
     width: 63%;
+  }
+
+  .showcaseGame {
+    width: 50%;
   }
 }
 
@@ -379,7 +379,7 @@ footer {
   }
 
   .mainPortfolio {
-    background-position-y: 150px;
+    background-position-y: 135px;
   }
 
   .mainBlog {
@@ -392,6 +392,10 @@ footer {
 
   .sectionWrapper {
     padding: 0rem;
+  }
+
+  .sectionPart h1 {
+    margin-left: 3.4rem;
   }
 }
 
