@@ -66,7 +66,9 @@
               <button id="scissors"><i class="fas fa-hand-scissors"></i></button>
             </div>
             <div id="rpcReset">
-              <button id="rpcResetButton"><p>RESET</p></button>
+              <button id="rpcResetButton">
+                <p>RESET</p>
+              </button>
             </div>
           </div>
         </div>
@@ -189,7 +191,7 @@
       var rpcReset = document.getElementById("rpcReset");
       var rpcResetButton = document.getElementById("rpcResetButton");
 
-      var rpcClassList = ["fa-hand-rock", "fa-hand-paper", "fa-hand-scissors"];
+      var rpcClassList = ["fa-hand-rock", "fa-hand-paper", "fa-hand-scissors", "fa-question"];
 
       // selection caller
       var rpcSelection = [rock, paper, scissors];
@@ -200,6 +202,26 @@
       }
 
       function rpcStart(input) {
+        const enemyCdisco = setInterval(function () {
+          let eCDmem = null;
+          for (let i = 0; i < rpcClassList.length; i++) {
+            if (enemyC.classList.contains(rpcClassList[i])) {
+              enemyC.classList.remove(rpcClassList[i]);
+              enemyC.classList.add(rpcClassList[Math.floor(Math.random() * 3)])
+            }
+          }
+          // RQETH80YHGGGGGGGGJHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+          // for (let i = 0; i < rpcClassList.length; i++) {
+          //   if (enemyC.classList.contains(rpcClassList[i])) {
+          //     eCDmem = rpcClassList[i];
+          //   }
+          // }
+        }, 100)
+
+        function stopEnemyCDisco() {
+          clearInterval(enemyCdisco);
+        }
+
         resetButton.style.pointerEvents = "none";
         resetButton.style.opacity = "0.5";
         playerC.style.animationPlayState = "running"
@@ -210,30 +232,32 @@
         switch (input) {
           case rock:
             pChoice = 0;
+            playerC.classList.remove("fa-question")
+            playerC.classList.add("fa-hand-rock")
             break;
           case paper:
             pChoice = 1;
+            playerC.classList.remove("fa-question")
+            playerC.classList.add("fa-hand-paper")
             break;
           case scissors:
             pChoice = 2;
+            playerC.classList.remove("fa-question")
+            playerC.classList.add("fa-hand-scissors")
             break;
         }
+
         setTimeout(function () {
+          stopEnemyCDisco();
           if (pChoice == 0) {
-            playerC.classList.remove("fa-question")
-            playerC.classList.add("fa-hand-rock")
             if (cChoice == 0) rpcText = "draw";
             if (cChoice == 1) rpcText = "lose";
             if (cChoice == 2) rpcText = "win";
           } else if (pChoice == 1) {
-            playerC.classList.remove("fa-question")
-            playerC.classList.add("fa-hand-paper")
             if (cChoice == 0) rpcText = "win";
             if (cChoice == 1) rpcText = "draw";
             if (cChoice == 2) rpcText = "lose";
           } else if (pChoice == 2) {
-            playerC.classList.remove("fa-question")
-            playerC.classList.add("fa-hand-scissors")
             if (cChoice == 0) rpcText = "lose";
             if (cChoice == 1) rpcText = "win";
             if (cChoice == 2) rpcText = "draw";
@@ -261,7 +285,6 @@
           rpcReset.style.display = "flex";
 
         }, 2500)
-
 
         console.log("pChoice is " + pChoice);
         console.log("cChoice is " + cChoice);
