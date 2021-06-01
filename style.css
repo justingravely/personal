@@ -186,6 +186,23 @@ nav {
     display: flex;
   }
 
+  #rpcReset {
+    display: none;
+    width: 15rem;
+  }
+
+  #rpcResetButton {
+    margin: auto;
+    width: 3rem;
+    height: 3rem;
+    background-color: black;
+    color: white;
+  }
+
+  #rpcResetButton p {
+    margin-left: -0.3rem;
+  }
+
   .rpcButtons button {
     margin: auto;
     width: 3rem;
@@ -223,6 +240,7 @@ nav {
   }
 
   #playerCharacter {
+    margin: auto;
     margin-left: 1rem;
     animation: player;
     animation-duration: 1s;
@@ -233,6 +251,7 @@ nav {
   }
 
   #enemyCharacter {
+    margin: auto;
     margin-right: 1rem;
     animation: player2;
     animation-duration: 1s;
@@ -244,38 +263,20 @@ nav {
 
   @keyframes player {
     0% {
-      margin-top: 2rem;
-      margin-left: 1rem;
-    } 25% {
-      margin-top: 2rem;
-      margin-left: 3.5rem;
+      margin-left: 2%;
     } 50% {
-      margin-top: 5rem;
-      margin-left: 7rem;
-    } 75% {
-      margin-top: 2rem;
-      margin-left: 3.5rem;
+      margin-left: 28%;
     } 100% {
-      margin-top: 2rem;
-      margin-left: 1rem;
+      margin-left: 2%;
     }
   }
   @keyframes player2 {
     0% {
-      margin-top: 2rem;
-      margin-right: 1rem;
-    } 25% {
-      margin-top: 2rem;
-      margin-right: 3.5rem;
+      margin-right: 2%;
     } 50% {
-      margin-top: 5rem;
-      margin-right: 7rem;
-    } 75% {
-      margin-top: 2rem;
-      margin-right: 3.5rem;
+      margin-right: 28%;
     } 100% {
-      margin-top: 2rem;
-      margin-right: 1rem;
+      margin-right: 2%;
     }
   }
 
