@@ -222,6 +222,14 @@
           clearInterval(enemyCdisco);
         }
 
+        function removeCClasses(){
+          for (let i = 0; i < rpcClassList.length; i++) {
+            if (enemyC.classList.contains(rpcClassList[i])) {
+              enemyC.classList.remove(rpcClassList[i]);
+            }
+          }
+        }
+
         resetButton.style.pointerEvents = "none";
         resetButton.style.opacity = "0.5";
         playerC.style.animationPlayState = "running"
@@ -263,16 +271,16 @@
             if (cChoice == 2) rpcText = "draw";
           }
 
+          // removes all classes from enemy computer (icons)
+          removeCClasses();
+          
           if (cChoice == 0) {
-            enemyC.classList.remove("fa-question");
             enemyC.classList.add("fa-hand-rock");
           }
           if (cChoice == 1) {
-            enemyC.classList.remove("fa-question");
             enemyC.classList.add("fa-hand-paper");
           }
           if (cChoice == 2) {
-            enemyC.classList.remove("fa-question");
             enemyC.classList.add("fa-hand-scissors");
           }
 
