@@ -202,6 +202,10 @@
       }
 
       function rpcStart(input) {
+        for (let i = 0; i < rpcSelection.length; i++) {
+          rpcSelection[i].style.opacity = "0.5";
+          rpcSelection[i].style.pointerEvents = "none"
+        }
         const enemyCdisco = setInterval(function () {
           let eCDmem = null;
           for (let i = 0; i < rpcClassList.length; i++) {
@@ -210,12 +214,6 @@
               enemyC.classList.add(rpcClassList[Math.floor(Math.random() * 3)])
             }
           }
-          // RQETH80YHGGGGGGGGJHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
-          // for (let i = 0; i < rpcClassList.length; i++) {
-          //   if (enemyC.classList.contains(rpcClassList[i])) {
-          //     eCDmem = rpcClassList[i];
-          //   }
-          // }
         }, 100)
 
         function stopEnemyCDisco() {
@@ -273,7 +271,7 @@
 
           // removes all classes from enemy computer (icons)
           removeCClasses();
-          
+
           if (cChoice == 0) {
             enemyC.classList.add("fa-hand-rock");
           }
@@ -311,6 +309,10 @@
           instruct.innerHTML = "Rock Paper Scissors";
           resetButton.style.pointerEvents = "all";
           resetButton.style.opacity = "1";
+          for (let i = 0; i < rpcSelection.length; i++) {
+          rpcSelection[i].style.opacity = "1";
+          rpcSelection[i].style.pointerEvents = "all"
+        }
         }, 480)
         for (let i = 0; i < rpcClassList.length; i++) {
           if (playerC.classList.contains(rpcClassList[i])) {
