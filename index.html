@@ -44,37 +44,78 @@
     <!-- section wrapper -->
     <div class="sectionWrapper">
 
-      <section class="showcaseGame">
-        <div class="showcaseOne">
-          <div class="showcaseOneMid">
-            <h1 id="showcaseTitle">Skill Showcase Game</h1>
-            <button id="gameStart">Start</button>
-          </div>
-        </div>
-        <div class="rpcBody">
-          <div class="curtainOne curtains"></div>
-          <div class="curtainTwo curtains"></div>
-          <div id="rpcInner">
-            <div class="rpcGameBox">
-              <i id="playerCharacter" class="fas fa-question"></i>
-              <i id="enemyCharacter" class="fas fa-question"></i>
-            </div>
-            <p id="instructions">Rock Paper Scissors</p>
-            <div id="rpcButtons" class="rpcButtons">
-              <button id="rock"><i class="fas fa-hand-rock"></i></button>
-              <button id="paper"><i class="fas fa-hand-paper"></i></button>
-              <button id="scissors"><i class="fas fa-hand-scissors"></i></button>
-            </div>
-            <div id="rpcReset">
-              <button id="rpcResetButton">
-                <p>RESET</p>
-              </button>
+      <section class="showcaseWrapper">
+
+        <h1 id="gameTitle">Rock Paper Scissors</h1>
+
+        <div class="showcaseGame">
+          <div id="rpcBody" class="rpcBody">
+            <div id="rpcInner">
+              <div class="rpcGameBox">
+                <i id="playerCharacter" class="fas fa-question"></i>
+                <i id="enemyCharacter" class="fas fa-question"></i>
+              </div>
+              <p id="instructions">Pick One</p>
+              <div id="rpcButtons" class="rpcButtons">
+                <button id="rock"><i class="fas fa-hand-rock"></i></button>
+                <button id="paper"><i class="fas fa-hand-paper"></i></button>
+                <button id="scissors"><i class="fas fa-hand-scissors"></i></button>
+              </div>
+              <div id="rpcReset">
+                <button id="rpcResetButton">
+                  <p>RESET</p>
+                </button>
+              </div>
             </div>
           </div>
+          <div id="seasawBody">
+            <div id="ssUpper">
+              <div class="ssScore">
+                <p id="scoreLeft">0</p>
+                <p id="scoreRight">0</p>
+              </div>
+              <div class="ssObject">
+                <div id="ss"></div>
+                <div id="ssStand"></div>
+              </div>
+            </div>
+            <div id="ssLower">
+              <div class="leftButtons">
+                <button id="ssLeftAdd">Add</button>
+                <button id="ssLeftRemove">Remove</button>
+              </div>
+              <div class="rightButtons">
+                <button id="ssRightAdd">Add</button>
+                <button id="ssRightRemove">Remove</button>
+              </div>
+              <div class="byButtons">
+                <p>Count by:
+                <p>
+                  <button id="byOnes">Ones</button>
+                  <button id="byFives">Fives</button>
+              </div>
+            </div>
+          </div>
+          <div id="pixelBody">
+
+          </div>
         </div>
+
+        <div id="gameSelection">
+          <button class="gameButtons" id="rpcButton">
+            <i class="fas fa-hand-rock"></i>
+          </button>
+          <button class="gameButtons" id="seasawButton">
+            <i class="fas fa-balance-scale"></i>
+          </button>
+          <button class="gameButtons" id="pixelButton">
+            <i class="fas fa-paint-brush"></i>
+          </button>
+        </div>
+
       </section>
 
-      <button id="resetButton">RESET</button>
+
 
       <section class="sections" id="sections">
         <div class="mainPortfolio sectionPart">
@@ -128,59 +169,139 @@
 
     <script>
 
-      // GAMESTART
-      var gameStart = document.getElementById("gameStart");
-      var showcaseOne = document.getElementsByClassName("showcaseOne")[0];
-      var showcaseTitle = document.getElementById("showcaseTitle");
-      var curtains = document.getElementsByClassName("curtains");
+      // Main Controls
       var rpcInner = document.getElementById("rpcInner");
-      // function
-      gameStart.addEventListener("click", function () {
-        resetButton.style.pointerEvents = "none";
-        gameStart.style.opacity = "0";
-        gameStart.style.pointerEvents = "none";
-        showcaseTitle.style.opacity = "0";
-        showcaseTitle.style.pointerEvents = "none";
-        showcaseOne.style.opacity = "0";
-        showcaseOne.style.pointerEvents = "none";
-        for (let i = 0; i < curtains.length; i++) {
-          curtains[i].style.width = "0%";
+      var seasawBody = document.getElementById("seasawBody");
+      var gameTitle = document.getElementById("gameTitle");
+
+      var rpcBody = document.getElementById("rpcBody");
+      var seasawBody = document.getElementById("seasawBody");
+      var pixelBody = document.getElementById("pixelBody");
+
+      var rpcButton = document.getElementById("rpcButton");
+      var seasawButton = document.getElementById("seasawButton");
+      var pixelButton = document.getElementById("pixelButton");
+      var buttonArr = [rpcButton, seasawButton, pixelButton]
+
+      rpcButton.style.opacity = "0.5";
+      rpcButton.style.pointerEvents = "none";
+
+      for (let i = 0; i < buttonArr.length; i++) {
+        buttonArr[i].addEventListener("click", function () {
+          buttonFunction(buttonArr[i]);
+        })
+      }
+
+      function buttonFunction(b) {
+        for (let i = 0; i < buttonArr.length; i++) {
+          if (b != buttonArr[i]) {
+            buttonArr[i].style.opacity = "1";
+            buttonArr[i].style.pointerEvents = "all";
+          }
         }
-        setTimeout(function () {
-          // basically the same or less amount of code as looping it seen above
-          curtains[0].style.display = "none";
-          curtains[1].style.display = "none";
-          // 
-          rpcInner.style.display = "flex";
-          resetButton.style.pointerEvents = "all";
-        }, 1000)
+        b.style.opacity = "0.5";
+        b.style.pointerEvents = "none";
+        switch (b) {
+          case rpcButton:
+            gameTitle.innerHTML = "Rock Paper Scissors"
+            rpcBody.style.display = "flex";
+            seasawBody.style.display = "none";
+            pixelBody.style.display = "none";
+            break;
+          case seasawButton:
+            gameTitle.innerHTML = "Sea-Saw Balance"
+            rpcBody.style.display = "none";
+            seasawBody.style.display = "flex";
+            pixelBody.style.display = "none";
+            break;
+          case pixelButton:
+            gameTitle.innerHTML = "Pixel Art Editor";
+            rpcBody.style.display = "none";
+            seasawBody.style.display = "none";
+            pixelBody.style.display = "flex";
+            break;
+        }
+      }
+
+      // SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME 
+
+      var scoreLeft = document.getElementById("scoreLeft");
+      var scoreRight = document.getElementById("scoreRight");
+      var ss = document.getElementById("ss");
+      var ssLeftAdd = document.getElementById("ssLeftAdd");
+      var ssLeftRem = document.getElementById("ssLeftRemove");
+      var ssRightAdd = document.getElementById("ssRightAdd");
+      var ssRightRem = document.getElementById("ssRightRemove");
+      var ssList = [ssLeftAdd, ssLeftRem, ssRightAdd, ssRightRem];
+      var leftNum = 0;
+      var rightNum = 0;
+
+      // ones or fives
+      var byOnes = document.getElementById("byOnes");
+      var byFives = document.getElementById("byFives");
+      var byType = 1;
+
+      byOnes.style.opacity = "0.5";
+      byOnes.style.pointerEvents = "none";
+      byOnes.addEventListener("click", function () {
+        byDigitsFunction(byOnes);
+      })
+      byFives.addEventListener("click", function () {
+        byDigitsFunction(byFives);
       })
 
+      function byDigitsFunction(by){
+        leftNum = 0;
+        rightNum = 0;
+        seasawFunction();
+        if (by != byOnes) {
+          byOnes.style.opacity = "1";
+          byOnes.style.pointerEvents = "all";
+          byFives.style.opacity = "0.5";
+          byFives.style.pointerEvents = "none";
+          byType = 5;
+        } else {
+          byOnes.style.opacity = "0.5";
+          byOnes.style.pointerEvents = "none";
+          byFives.style.opacity = "1";
+          byFives.style.pointerEvents = "all";
+          byType = 1;
+        }
+      }
 
-      // RESETBUTTON
-      var resetButton = document.getElementById("resetButton");
-      // function
-      resetButton.addEventListener("click", function () {
-        curtains[0].style.display = "block";
-        curtains[1].style.display = "block";
-        rpcInner.style.display = "none";
-        setTimeout(function () {
-          for (let i = 0; i < curtains.length; i++) {
-            curtains[i].style.width = "50%";
-          }
-        }, 50)
-        setTimeout(function () {
-          gameStart.style.opacity = "1";
-          gameStart.style.pointerEvents = "all";
-          showcaseTitle.style.opacity = "1";
-          showcaseTitle.style.pointerEvents = "all";
-          showcaseOne.style.opacity = "1";
-          showcaseOne.style.pointerEvents = "all";
-        }, 1000)
-        resetButton.style.pointerEvents = "none";
-      });
+      // add listeners
+      for (let i = 0; i < ssList.length; i++) {
+        ssList[i].addEventListener("click", function () {
+          seasawFunction(ssList[i]);
+        })
+      }
 
-      // ROCK PAPER SCISSORS GAME
+      // game itself
+      function seasawFunction(click) {
+        console.log(click);
+        switch (click) {
+          case ssLeftAdd:
+            if (leftNum < 15) leftNum += byType;
+            break;
+          case ssLeftRem:
+            if (leftNum != 0) leftNum -= byType;
+            break;
+          case ssRightAdd:
+            if (rightNum < 15) rightNum += byType;
+            break;
+          case ssRightRem:
+            if (rightNum != 0) rightNum -= byType;
+            break;
+        }
+        ss.style.transform = "rotate(" + ((0 - leftNum) + (0 + rightNum)) + "deg)";
+
+        scoreLeft.innerHTML = leftNum.toString();
+        scoreRight.innerHTML = rightNum.toString();
+      }
+
+
+
+      // ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME
       var rock = document.getElementById("rock");
       var paper = document.getElementById("paper");
       var scissors = document.getElementById("scissors");
@@ -220,7 +341,7 @@
           clearInterval(enemyCdisco);
         }
 
-        function removeCClasses(){
+        function removeCClasses() {
           for (let i = 0; i < rpcClassList.length; i++) {
             if (enemyC.classList.contains(rpcClassList[i])) {
               enemyC.classList.remove(rpcClassList[i]);
@@ -228,8 +349,6 @@
           }
         }
 
-        resetButton.style.pointerEvents = "none";
-        resetButton.style.opacity = "0.5";
         playerC.style.animationPlayState = "running"
         enemyC.style.animationPlayState = "running"
         var cChoice = Math.floor(Math.random() * 3);
@@ -256,17 +375,17 @@
         setTimeout(function () {
           stopEnemyCDisco();
           if (pChoice == 0) {
-            if (cChoice == 0) rpcText = "draw";
-            if (cChoice == 1) rpcText = "lose";
-            if (cChoice == 2) rpcText = "win";
+            if (cChoice == 0) rpcText = "It's a draw.";
+            if (cChoice == 1) rpcText = "You Lose!";
+            if (cChoice == 2) rpcText = "You Win!";
           } else if (pChoice == 1) {
-            if (cChoice == 0) rpcText = "win";
+            if (cChoice == 0) rpcText = "You Win!";
             if (cChoice == 1) rpcText = "draw";
-            if (cChoice == 2) rpcText = "lose";
+            if (cChoice == 2) rpcText = "You Lose!";
           } else if (pChoice == 2) {
-            if (cChoice == 0) rpcText = "lose";
-            if (cChoice == 1) rpcText = "win";
-            if (cChoice == 2) rpcText = "draw";
+            if (cChoice == 0) rpcText = "You Lose!";
+            if (cChoice == 1) rpcText = "You Win!";
+            if (cChoice == 2) rpcText = "It's a draw.";
           }
 
           // removes all classes from enemy computer (icons)
@@ -306,13 +425,11 @@
           enemyC.style.animationPlayState = "paused";
           rpcButtons.style.display = "flex";
           rpcReset.style.display = "none";
-          instruct.innerHTML = "Rock Paper Scissors";
-          resetButton.style.pointerEvents = "all";
-          resetButton.style.opacity = "1";
+          instruct.innerHTML = "Pick One";
           for (let i = 0; i < rpcSelection.length; i++) {
-          rpcSelection[i].style.opacity = "1";
-          rpcSelection[i].style.pointerEvents = "all"
-        }
+            rpcSelection[i].style.opacity = "1";
+            rpcSelection[i].style.pointerEvents = "all"
+          }
         }, 480)
         for (let i = 0; i < rpcClassList.length; i++) {
           if (playerC.classList.contains(rpcClassList[i])) {

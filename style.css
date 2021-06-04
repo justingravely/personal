@@ -121,60 +121,129 @@ nav {
   color: rgba(255, 255, 255, 0.767);
 }
 
+.showcaseWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#gameTitle {
+  font-size: 1.5rem;
+  margin: 1rem auto 0.5rem auto;
+}
+
+#gameSelection {
+  margin-top: 0;
+  display: flex;
+}
+
+.gameButtons {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem 0.2rem auto 0.2rem;
+  cursor: pointer;
+}
+
+.gameButtons i {
+  font-size: 2rem;
+}
+
 /* showcaseGame */
 .showcaseGame {
   width: 20rem;
   height: 20rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
   background-color: black;
 }
-  .showcaseOne {
-    display: flex;
-    width: 100%;
-    height: 19.9em;
-  }
-    .showcaseOneMid {
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      margin: auto;
-      height: 4rem;
-    }
-    .showcaseOneMid h1 {
-      font-size: 1.3rem;
-    }
-    .showcaseOneMid button {
-      margin-top: 1rem;
-      margin: auto;
-    }
 
+/* seasaw */
+#seasawBody {
+  display: none;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-color: black;
+}
+
+#ssUpper {
+  height: 50%;
+  width: 100%;
+  border: 1px solid white;
+}
+
+.ssScore {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: -2.3rem;
+}
+
+#ssLower {
+  height: 50%;
+  width: 100%;
+  border: 1px solid white;
+  display: grid;
+  grid-template-areas: "top top"
+  "bottom bottom";
+}
+
+.leftButtons, .rightButtons {
+  grid-area: top top;
+}
+
+.byButtons {
+  display: flex;
+  flex-direction: column;
+  margin: -1rem auto auto auto;
+  grid-area: bottom;
+}
+
+.byButtons p {
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+#ssLower button {
+  width: 4rem;
+}
+
+.ssObject {
+  margin-top: 5.9rem;
+}
+
+#ss {
+  height: 1rem;
+  width: 15rem;
+  background-color: white;
+  border: 1px solid black;
+  margin: auto;
+}
+
+#ssStand {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* pixel */
+#seasawBody {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: orange;
+}
+
+/* rpc */
 .rpcBody {
   z-index: 0;
-  margin-top: -19.9rem;
   display: flex;
   width: 100%;
-  height: 19.9rem;
+  height: 100%;
   background-color: green;
 }
-  .curtains {
-    transition: 1s;
-    background-color: red;
-    width: 50%;
-    height: 100%;
-  }
-    .curtainOne {
-      margin-left: 0;
-      border-right: 1px solid black;
-    }
-    .curtainTwo {
-      margin-right: 0;
-      border-left: 1px solid black;
-    }
   #rpcInner {
     width: 100%;
     height: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
     border: 1px solid red;
   }
@@ -277,12 +346,6 @@ nav {
       margin-right: 2%;
     }
   }
-
-
-#resetButton {
-  /* filler */
-  opacity: 1;
-}
 
 
 
