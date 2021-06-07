@@ -97,7 +97,111 @@
             </div>
           </div>
           <div id="pixelBody">
-
+            <div class="pixelLeftWrap">
+              <div id="pixelUiTop">
+                <div class="backForwardsWrap">
+                  <button id="backwards"><i class="fas fa-reply"></i></button>
+                  <button id="forwards"><i class="fas fa-share"></i></button>
+                </div>
+                <button id="pixelReset"><i class="fas fa-redo"></i></button>
+              </div>
+              <div class="pixelArea">
+                <!-- 8 -->
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <!-- 8 -->
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <!-- 8 -->
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <!-- 8 -->
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <!-- 8 -->
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <!-- 8 -->
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <!-- 8 -->
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <!-- 8 -->
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+              </div>
+              <div id="gridChoice">
+                <div class="gridChoiceInnerWrap">
+                  <p class="gridChoiceInner" id="gridChoiceP">Show Line Grid</p>
+                  <input class="gridChoiceInner" id="gridChoiceCheck" type="checkbox" checked>
+                </div>
+              </div>
+            </div>
+            <div class="pixelRightWrap">
+              <div class="pixelUiRight">
+                <p id="currentColorTitle">Current</p>
+                <div id="currentColor"></div>
+                <div id="colorSelection">
+                  <div class="pixelColors" id="black"></div>
+                  <div class="pixelColors" id="white"></div>
+                  <div class="pixelColors" id="blue"></div>
+                  <div class="pixelColors" id="green"></div>
+                  <div class="pixelColors" id="yellow"></div>
+                  <div class="pixelColors" id="orange"></div>
+                  <div class="pixelColors" id="red"></div>
+                  <div class="pixelColors" id="purple"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -222,6 +326,166 @@
             break;
         }
       }
+      // PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR
+
+      var currentColor = document.getElementById("currentColor");
+      var black = document.getElementById("black");
+      var white = document.getElementById("white");
+      var blue = document.getElementById("blue");
+      var green = document.getElementById("green");
+      var yellow = document.getElementById("yellow");
+      var orange = document.getElementById("orange");
+      var red = document.getElementById("red");
+      var purple = document.getElementById("purple");
+      var colorList = [black, white, blue, green, yellow, orange, red, purple];
+      var colorChoice = "black";
+
+      for (let i = 0; i < colorList.length; i++) {
+        colorList[i].addEventListener("click", function () {
+          colorPickerFunction(colorList[i]);
+        })
+      }
+
+      function colorPickerFunction(color) {
+        switch (color) {
+          case black:
+            currentColor.style.backgroundColor = "black";
+            colorChoice = "black";
+            break;
+          case white:
+            currentColor.style.backgroundColor = "white";
+            colorChoice = "white";
+            break;
+          case blue:
+            currentColor.style.backgroundColor = "blue";
+            colorChoice = "blue";
+            break;
+          case green:
+            currentColor.style.backgroundColor = "green";
+            colorChoice = "green";
+            break;
+          case yellow:
+            currentColor.style.backgroundColor = "yellow";
+            colorChoice = "yellow";
+            break;
+          case orange:
+            currentColor.style.backgroundColor = "orange";
+            colorChoice = "orange";
+            break;
+          case red:
+            currentColor.style.backgroundColor = "red";
+            colorChoice = "red";
+            break;
+          case purple:
+            currentColor.style.backgroundColor = "purple";
+            colorChoice = "purple";
+            break;
+        }
+        console.log(colorChoice);
+      }
+
+      // 'painting' and reset
+      var pixels = document.getElementsByClassName("pixel");
+      var pixelReset = document.getElementById("pixelReset");
+      pixelReset.addEventListener("click", function () {
+        pixelResetFunction()
+      })
+
+      // adding id's to every pixel
+      var newArr = [];
+      for (let i = 0; i < pixels.length; i++) {
+        pixels[i].id = "pixel " + i;
+        pixels[i].style.backgroundColor = "white";
+        newArr.push(pixels[i]);
+      }
+      console.log(newArr[0].id);
+      console.log(pixels[0].id);
+
+      function pixelResetFunction() {
+        for (let i = 0; i < pixels.length; i++) {
+          pixels[i].style.backgroundColor = "white";
+        }
+        memory = [];
+        mP = 0;
+        // console.log(mP, memory);
+      }
+      // memory bank 
+      var memory = [];
+      var mP = 0;
+      var backwards = document.getElementById("backwards");
+      var forwards = document.getElementById("forwards");
+
+      for (let i = 0; i < pixels.length; i++) {
+        pixels[i].addEventListener("click", function () {
+          if (mP > 0) {
+            while (mP > 0) {
+              mP--;
+              memory[mP] = [pixels[i].id, pixels[i].style.backgroundColor, colorChoice];
+            }
+          } else {
+          memory.unshift([pixels[i].id, pixels[i].style.backgroundColor, colorChoice]);
+          }
+          pixelColorFunction(pixels[i]);
+          console.log(mP, memory)
+        })
+      }
+
+      function pixelColorFunction(pixelC) {
+        pixelC.style.backgroundColor = colorChoice;
+      }
+
+
+      backwards.addEventListener("click", function () {
+        backwardsFunction()
+      })
+      function backwardsFunction() {
+        for (let i = 0; i < pixels.length; i++) {
+          if (memory[mP][0] == pixels[i].id) {
+            pixels[i].style.backgroundColor = memory[mP][1];
+            mP++;
+            if (memory[mP] != memory[mP - 1] || memory[mP] != memory[mP + 1] ) {
+              break;
+            }
+          }
+        }
+      }
+
+      // --------------------------------------------------
+
+      forwards.addEventListener("click", function () {
+        forwardsFunction()
+      })
+      function forwardsFunction() {
+        if (mP > 0) {
+              mP--;
+            }
+        for (let i = 0; i < pixels.length; i++) {
+          if (memory[mP][0] == pixels[i].id) {
+            pixels[i].style.backgroundColor = memory[mP][2];
+          }
+        }
+      }
+
+
+      // line grid button
+      var gridCheckButton = document.getElementById("gridChoiceCheck")
+      gridCheckButton.addEventListener("click", function () {
+        gridCheckFunction();
+      })
+
+      function gridCheckFunction() {
+        if (gridCheckButton.checked) {
+          for (let i = 0; i < pixels.length; i++) {
+            pixels[i].style.border = "1px solid black";
+          }
+        } else {
+          for (let i = 0; i < pixels.length; i++) {
+            pixels[i].style.border = "none";
+          }
+        }
+      }
+
+
 
       // SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME 
 
@@ -250,7 +514,7 @@
         byDigitsFunction(byFives);
       })
 
-      function byDigitsFunction(by){
+      function byDigitsFunction(by) {
         leftNum = 0;
         rightNum = 0;
         seasawFunction();
