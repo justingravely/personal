@@ -426,7 +426,15 @@
           memory.unshift([pixels[i].id, pixels[i].style.backgroundColor, colorChoice]);
           }
           pixelColorFunction(pixels[i]);
-          console.log(mP, memory)
+
+          // scary stuff i learned off the internet to filter array of arrays
+          let temp = memory.map(JSON.stringify);
+          console.log(temp);
+          let uniqueTemp = new Set(temp);
+          console.log(uniqueTemp);
+          memory = Array.from(uniqueTemp, JSON.parse);
+
+          console.log(mP, memory);
         })
       }
 
@@ -439,13 +447,13 @@
         backwardsFunction()
       })
       function backwardsFunction() {
+        forwards.style.opacity = "1";
+        forwards.style.pointerEvents = "all";
         for (let i = 0; i < pixels.length; i++) {
           if (memory[mP][0] == pixels[i].id) {
             pixels[i].style.backgroundColor = memory[mP][1];
             mP++;
-            if (memory[mP] != memory[mP - 1] || memory[mP] != memory[mP + 1] ) {
               break;
-            }
           }
         }
       }

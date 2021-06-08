@@ -276,6 +276,10 @@ nav {
   #pixelReset {
     margin-right: 0;
   }
+  #forwards {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 
 .pixelRightWrap {
   height: 100%;
