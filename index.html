@@ -46,7 +46,7 @@
 
       <section class="showcaseWrapper">
 
-        <h1 id="gameTitle">Rock Paper Scissors</h1>
+        <h1 id="gameTitle">Pixel Art Editor</h1>
 
         <div class="showcaseGame">
           <div id="rpcBody" class="rpcBody">
@@ -103,7 +103,11 @@
                   <button id="backwards"><i class="fas fa-reply"></i></button>
                   <button id="forwards"><i class="fas fa-share"></i></button>
                 </div>
-                <button id="pixelReset"><i class="fas fa-redo"></i></button>
+                <button class="pixelReset" id="pixelReset"><i class="fas fa-redo"></i></button>
+                <div class="pixelReset" id="pixelResetConfirm">
+                  <button id="pixelResetConfirmYes">Yes</button>
+                  <button id="pixelResetConfirmNo">No</button>
+                </div>
               </div>
               <div class="pixelArea">
                 <!-- 8 -->
@@ -188,8 +192,14 @@
             </div>
             <div class="pixelRightWrap">
               <div class="pixelUiRight">
-                <p id="currentColorTitle">Current</p>
-                <div id="currentColor"></div>
+                <div class="currentColorWrapper">
+                  <p id="currentColorTitle">Current</p>
+                  <div id="currentVisual">
+                    <i class="colorChanger fas fa-caret-left" id="colorLeft"></i>
+                    <div id="currentColor"></div>
+                    <i class="colorChanger fas fa-caret-right" id="colorRight"></i>
+                  </div>
+                </div>
                 <div id="colorSelection">
                   <div class="pixelColors" id="black"></div>
                   <div class="pixelColors" id="white"></div>
@@ -201,19 +211,20 @@
                   <div class="pixelColors" id="purple"></div>
                 </div>
               </div>
+              <div id="prevCustoms"></div>
             </div>
           </div>
         </div>
 
         <div id="gameSelection">
+          <button class="gameButtons" id="pixelButton">
+            <i class="fas fa-paint-brush"></i>
+          </button>
           <button class="gameButtons" id="rpcButton">
             <i class="fas fa-hand-rock"></i>
           </button>
           <button class="gameButtons" id="seasawButton">
             <i class="fas fa-balance-scale"></i>
-          </button>
-          <button class="gameButtons" id="pixelButton">
-            <i class="fas fa-paint-brush"></i>
           </button>
         </div>
 
@@ -287,8 +298,8 @@
       var pixelButton = document.getElementById("pixelButton");
       var buttonArr = [rpcButton, seasawButton, pixelButton]
 
-      rpcButton.style.opacity = "0.5";
-      rpcButton.style.pointerEvents = "none";
+      pixelButton.style.opacity = "0.5";
+      pixelButton.style.pointerEvents = "none";
 
       for (let i = 0; i < buttonArr.length; i++) {
         buttonArr[i].addEventListener("click", function () {
@@ -339,6 +350,45 @@
       var purple = document.getElementById("purple");
       var colorList = [black, white, blue, green, yellow, orange, red, purple];
       var colorChoice = "black";
+      var colorLeft = document.getElementById("colorLeft");
+      var colorRight = document.getElementById("colorRight");
+      var colorCode = document.getElementById("colorCode");
+
+      colorLeft.addEventListener("click", function () { colorSwapFunction("left") });
+      colorRight.addEventListener("click", function () { colorSwapFunction("right") });
+
+      function colorSwapFunction(dir) {
+        if (dir == "left") {
+          for (let i = 0; i < colorList.length; i++) {
+            if (colorList[i].id == colorChoice) {
+              console.log(colorChoice, i);
+              if (i == 0) {
+                i = (colorList.length);
+              }
+              currentColor.style.backgroundColor = colorList[i - 1].id;
+              colorChoice = colorList[i - 1].id;
+            }
+          }
+        }
+        if (dir == "right") {
+          if (colorChoice == purple.id) {
+            currentColor.style.backgroundColor = colorList[0].id;
+            colorChoice = black.id;
+          } else {
+            for (let i = 0; i < colorList.length; i++) {
+              if (colorList[i].id == colorChoice) {
+                console.log(colorChoice, i);
+                if (i == colorList.length) {
+                  i = 0;
+                }
+                currentColor.style.backgroundColor = colorList[i + 1].id;
+                colorChoice = colorList[i + 1].id;
+                break;
+              }
+            }
+          }
+        }
+      }
 
       for (let i = 0; i < colorList.length; i++) {
         colorList[i].addEventListener("click", function () {
@@ -387,29 +437,47 @@
       // 'painting' and reset
       var pixels = document.getElementsByClassName("pixel");
       var pixelReset = document.getElementById("pixelReset");
+      var pixelResetConfirm = document.getElementById("pixelResetConfirm");
+      var pixelResetConfirmYes = document.getElementById("pixelResetConfirmYes");
+      var pixelResetConfirmNo = document.getElementById("pixelResetConfirmNo");
       pixelReset.addEventListener("click", function () {
-        pixelResetFunction()
-      })
+        pixelResetConfirmFunction()
+      });
+
+      pixelResetConfirmYes.addEventListener("click", function () {
+        pixelResetFunction(true);
+      });
+
+      pixelResetConfirmNo.addEventListener("click", function () {
+        pixelResetFunction(false);
+      });
+
+      function pixelResetConfirmFunction() {
+        pixelResetConfirm.style.display = "flex";
+        pixelReset.style.display = "none";
+      }
 
       // adding id's to every pixel
-      var newArr = [];
       for (let i = 0; i < pixels.length; i++) {
         pixels[i].id = "pixel " + i;
         pixels[i].style.backgroundColor = "white";
-        newArr.push(pixels[i]);
       }
-      console.log(newArr[0].id);
       console.log(pixels[0].id);
 
-      function pixelResetFunction() {
-        for (let i = 0; i < pixels.length; i++) {
-          pixels[i].style.backgroundColor = "white";
+      function pixelResetFunction(bool) {
+        if (bool == true) {
+          for (let i = 0; i < pixels.length; i++) {
+            pixels[i].style.backgroundColor = "white";
+          }
+          memory = [];
+          mP = 0;
         }
-        memory = [];
-        mP = 0;
-        // console.log(mP, memory);
+        pixelResetConfirm.style.display = "none";
+        pixelReset.style.display = "block";
       }
+
       // memory bank 
+      var hasStarted = false;
       var memory = [];
       var mP = 0;
       var backwards = document.getElementById("backwards");
@@ -423,13 +491,12 @@
               memory[mP] = [pixels[i].id, pixels[i].style.backgroundColor, colorChoice];
             }
           } else {
-          memory.unshift([pixels[i].id, pixels[i].style.backgroundColor, colorChoice]);
+            memory.unshift([pixels[i].id, pixels[i].style.backgroundColor, colorChoice]);
           }
           pixelColorFunction(pixels[i]);
 
           // scary stuff i learned off the internet to filter array of arrays
           let temp = memory.map(JSON.stringify);
-          console.log(temp);
           let uniqueTemp = new Set(temp);
           console.log(uniqueTemp);
           memory = Array.from(uniqueTemp, JSON.parse);
@@ -453,8 +520,11 @@
           if (memory[mP][0] == pixels[i].id) {
             pixels[i].style.backgroundColor = memory[mP][1];
             mP++;
-              break;
+            break;
           }
+        }
+        if (memory[mP][0] == memory[mP + 1][0] && memory[mP][2] == memory[mP + 1][2]) {
+          backwardsFunction()
         }
       }
 
@@ -465,12 +535,15 @@
       })
       function forwardsFunction() {
         if (mP > 0) {
-              mP--;
-            }
+          mP--;
+        }
         for (let i = 0; i < pixels.length; i++) {
           if (memory[mP][0] == pixels[i].id) {
             pixels[i].style.backgroundColor = memory[mP][2];
           }
+        }
+        if (memory[mP][0] == memory[mP - 1][0] && memory[mP][2] == memory[mP - 1][2]) {
+          forwardsFunction()
         }
       }
 

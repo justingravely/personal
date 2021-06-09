@@ -237,7 +237,7 @@ nav {
 
 /* pixel art editor */
 #pixelBody {
-  display: none;
+  display: flex;
   background-color: white;
   width: 100%;
   height: 100%;
@@ -273,8 +273,14 @@ nav {
   .backForwardsWrap {
     margin-left: 0rem;
   }
-  #pixelReset {
+  #pixelReset, .pixelReset {
     margin-right: 0;
+  }
+  #pixelResetConfirm {
+    display: none;
+  }
+  #pixelResetConfirmNo {
+    margin-left: 0.35rem;
   }
   #forwards {
     opacity: 0.5;
@@ -313,14 +319,37 @@ nav {
   flex-direction: column;
 }
 
+.colorChanger {
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+}
+
+.colorChanger:hover {
+  color: rgb(65, 65, 65);
+}
+
+#colorLeft {
+  margin-right: 0.11rem;
+}
+
+#colorRight {
+  margin-left: 0.1rem;
+}
+
+#currentVisual {
+  display: flex;
+}
+
 #currentColorTitle {
   color: black;
-  margin-bottom: -0.5rem;
+  margin-bottom: 0.4rem;
+  text-align: center;
 }
 
 #currentColor {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background-color: black;
   border-radius: 50%;
   border: 1px solid rgb(59, 59, 59);
@@ -345,13 +374,13 @@ nav {
   cursor: pointer;
 }
 /* colors compressed */
-#black{background-color:black}#white{background-color:white}#blue{background-color:blue}#green{background-color:green}#yellow{background-color:yellow}#orange{background-color:orange}#red{background-color: red}#purple{background-color:purple}
+#black{background-color:rgb(0, 0, 0)}#white{background-color:rgb(255, 255, 255)}#blue{background-color:rgb(0, 0, 255)}#green{background-color:rgb(0, 128, 0)}#yellow{background-color:rgb(255, 255, 0)}#orange{background-color:rgb(255, 166, 0)}#red{background-color: rgb(255, 0, 0)}#purple{background-color:rgb(128, 0, 128)}
 
 
 /* rpc */
 .rpcBody {
   z-index: 0;
-  display: flex;
+  display: none;
   width: 100%;
   height: 100%;
   background-color: green;
