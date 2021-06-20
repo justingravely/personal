@@ -286,10 +286,22 @@ nav {
     opacity: 0.5;
     pointer-events: none;
   }
+  #canvasSize {
+    height: 1.6rem;
+  }
+    #canvasSize #xByX {
+      height: 100%;
+      width: 3.5rem;
+      font-size: 1rem;
+    }
 
 .pixelRightWrap {
   height: 100%;
   width: 30%;
+}
+
+#animateButton {
+  margin: 0.77rem;
 }
 
 .pixelArea {
@@ -299,6 +311,7 @@ nav {
   margin-left: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
   cursor: crosshair;
 }
 
@@ -306,6 +319,8 @@ nav {
   border: 1px solid black;
   width: 1.73rem;
   height: 1.73rem;
+  /* width: 1.26rem;
+  height: 1.26rem; */
   margin: auto;
   padding: auto;
   background-color: white;

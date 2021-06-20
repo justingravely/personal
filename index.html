@@ -103,6 +103,9 @@
                   <button id="backwards"><i class="fas fa-reply"></i></button>
                   <button id="forwards"><i class="fas fa-share"></i></button>
                 </div>
+                <div id="canvasSize">
+                  <button id="xByX">8x8</button>
+                </div>
                 <button class="pixelReset" id="pixelReset"><i class="fas fa-redo"></i></button>
                 <div class="pixelReset" id="pixelResetConfirm">
                   <button id="pixelResetConfirmYes">Yes</button>
@@ -110,6 +113,7 @@
                 </div>
               </div>
               <div class="pixelArea">
+                <!-- 64 -->
                 <!-- 8 -->
                 <div class="pixel"></div>
                 <div class="pixel"></div>
@@ -182,6 +186,73 @@
                 <div class="pixel"></div>
                 <div class="pixel"></div>
                 <div class="pixel"></div>
+                <!-- 64 -->
+                <!-- 8 -->
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <!-- 8 -->
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <!-- 8 -->
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <!-- 8 -->
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <!-- 8 -->
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <!-- 8 -->
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <!-- 8 -->
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <div class="pixel x11" style="display: none"></div>
+                <!-- 1 (removed 7) -->
+                <div class="pixel x11" style="display: none"></div>
+
               </div>
               <div id="gridChoice">
                 <div class="gridChoiceInnerWrap">
@@ -211,7 +282,7 @@
                   <div class="pixelColors" id="purple"></div>
                 </div>
               </div>
-              <div id="prevCustoms"></div>
+              <button id="animateButton">Animation</button>
             </div>
           </div>
         </div>
@@ -440,6 +511,7 @@
       var pixelResetConfirm = document.getElementById("pixelResetConfirm");
       var pixelResetConfirmYes = document.getElementById("pixelResetConfirmYes");
       var pixelResetConfirmNo = document.getElementById("pixelResetConfirmNo");
+      var canvasSize = document.getElementById("canvasSize");
       pixelReset.addEventListener("click", function () {
         pixelResetConfirmFunction()
       });
@@ -455,6 +527,7 @@
       function pixelResetConfirmFunction() {
         pixelResetConfirm.style.display = "flex";
         pixelReset.style.display = "none";
+        canvasSize.style.display = "none";
       }
 
       // adding id's to every pixel
@@ -474,6 +547,7 @@
         }
         pixelResetConfirm.style.display = "none";
         pixelReset.style.display = "block";
+        canvasSize.style.display = "block";
       }
 
       // memory bank 
@@ -566,6 +640,133 @@
         }
       }
 
+      // 8x8 or 11x11
+      var xByX = document.getElementById("xByX");
+      var currentXBy = "8x8";
+      var x11 = document.getElementsByClassName("x11");
+      var pixelArea = document.getElementsByClassName("pixelArea")[0];
+
+      xByX.addEventListener("click", function() {
+        xByFunction();
+      })
+
+      function xByFunction() {
+        for (let i = 0; i < x11.length; i++) {
+          if (xByX.innerHTML == "8x8") {
+            x11[i].style.display = "block";
+          }
+          if (xByX.innerHTML == "11x11") {
+            x11[i].style.display = "none";
+          }
+        }
+        if (xByX.innerHTML == "8x8") {
+          for (let i = 0; i < pixels.length; i++) {
+            pixels[i].style.width = "1.26rem";
+            pixels[i].style.height = "1.26rem";
+          }
+          xByX.innerHTML = "11x11"
+          pixelArea.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+        } else {
+          for (let i = 0; i < pixels.length; i++) {
+            pixels[i].style.width = "1.73rem";
+            pixels[i].style.height = "1.73rem";
+          }
+          xByX.innerHTML = "8x8"
+          pixelArea.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+        }
+      }
+
+      // animation
+      var animateButton = document.getElementById("animateButton");
+      var step = 0;
+
+      animateButton.addEventListener("click", function() {
+        pixelResetFunction(true);
+        console.log(step);
+        step = 0;
+        if (xByX.innerHTML == "8x8") xByFunction();
+        var timer = setInterval(timerFunc, 250);
+        
+      })
+
+      function timerFunc() {
+          switch(step) {
+            case 0:
+            pixels[113].style.backgroundColor = "red";
+            pixels[116].style.backgroundColor = "red";
+            step++;
+            break;
+            case 1:
+            pixels[102].style.backgroundColor = "red";
+            pixels[105].style.backgroundColor = "red";
+            pixels[112].style.backgroundColor = "red";
+            pixels[114].style.backgroundColor = "red";
+            pixels[115].style.backgroundColor = "red";
+            pixels[117].style.backgroundColor = "red";
+            step++;
+            break;
+            case 2:
+            pixels[91].style.backgroundColor = "red";
+            pixels[94].style.backgroundColor = "red";
+            pixels[101].style.backgroundColor = "red";
+            pixels[103].style.backgroundColor = "red";
+            pixels[104].style.backgroundColor = "red";
+            pixels[106].style.backgroundColor = "red";
+            step++;
+            break;
+            case 3:
+            pixels[80].style.backgroundColor = "red";
+            pixels[83].style.backgroundColor = "red";
+            pixels[90].style.backgroundColor = "red";
+            pixels[92].style.backgroundColor = "red";
+            pixels[93].style.backgroundColor = "red";
+            pixels[95].style.backgroundColor = "red";
+            step++;
+            break;
+            case 4:
+            pixels[69].style.backgroundColor = "red";
+            pixels[72].style.backgroundColor = "red";
+            pixels[79].style.backgroundColor = "red";
+            pixels[81].style.backgroundColor = "red";
+            pixels[82].style.backgroundColor = "red";
+            pixels[84].style.backgroundColor = "red";
+            pixels[112].style.backgroundColor = "white";
+            pixels[117].style.backgroundColor = "white";
+            step++;
+            break;
+            case 5:
+            pixels[69 - 11].style.backgroundColor = "red";
+            pixels[72 - 11].style.backgroundColor = "red";
+            pixels[79 - 11].style.backgroundColor = "red";
+            pixels[81 - 11].style.backgroundColor = "red";
+            pixels[82 - 11].style.backgroundColor = "red";
+            pixels[84 - 11].style.backgroundColor = "red";
+            pixels[112 - 11].style.backgroundColor = "white";
+            pixels[117 - 11].style.backgroundColor = "white";
+            pixels[113].style.backgroundColor = "white";
+            pixels[116].style.backgroundColor = "white";
+            step++;
+            break;
+            case 6:
+            pixels[69 - 22].style.backgroundColor = "red";
+            pixels[72 - 22].style.backgroundColor = "red";
+            pixels[79 - 22].style.backgroundColor = "red";
+            pixels[81 - 22].style.backgroundColor = "red";
+            pixels[82 - 22].style.backgroundColor = "red";
+            pixels[84 - 22].style.backgroundColor = "red";
+            pixels[112 - 22].style.backgroundColor = "white";
+            pixels[117 - 22].style.backgroundColor = "white";
+            pixels[114].style.backgroundColor = "white";
+            pixels[115].style.backgroundColor = "white";
+            pixels[105].style.backgroundColor = "white";
+            pixels[102].style.backgroundColor = "white";
+            step++;
+            break;
+          }
+          if (step == 12) {
+            clearInterval(timer);
+          }
+        }
 
 
       // SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME 
