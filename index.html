@@ -48,246 +48,254 @@
 
         <h1 id="gameTitle">Pixel Art Editor</h1>
 
-        <div class="showcaseGame">
-          <div id="rpcBody" class="rpcBody">
-            <div id="rpcInner">
-              <div class="rpcGameBox">
-                <i id="playerCharacter" class="fas fa-question"></i>
-                <i id="enemyCharacter" class="fas fa-question"></i>
-              </div>
-              <p id="instructions">Pick One</p>
-              <div id="rpcButtons" class="rpcButtons">
-                <button id="rock"><i class="fas fa-hand-rock"></i></button>
-                <button id="paper"><i class="fas fa-hand-paper"></i></button>
-                <button id="scissors"><i class="fas fa-hand-scissors"></i></button>
-              </div>
-              <div id="rpcReset">
-                <button id="rpcResetButton">
-                  <p>RESET</p>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div id="seasawBody">
-            <div id="ssUpper">
-              <div class="ssScore">
-                <p id="scoreLeft">0</p>
-                <p id="scoreRight">0</p>
-              </div>
-              <div class="ssObject">
-                <div id="ss"></div>
-                <div id="ssStand"></div>
-              </div>
-            </div>
-            <div id="ssLower">
-              <div class="leftButtons">
-                <button id="ssLeftAdd">Add</button>
-                <button id="ssLeftRemove">Remove</button>
-              </div>
-              <div class="rightButtons">
-                <button id="ssRightAdd">Add</button>
-                <button id="ssRightRemove">Remove</button>
-              </div>
-              <div class="byButtons">
-                <p>Count by:
-                <p>
-                  <button id="byOnes">Ones</button>
-                  <button id="byFives">Fives</button>
-              </div>
-            </div>
-          </div>
-          <div id="pixelBody">
-            <div class="pixelLeftWrap">
-              <div id="pixelUiTop">
-                <div class="backForwardsWrap">
-                  <button id="backwards"><i class="fas fa-reply"></i></button>
-                  <button id="forwards"><i class="fas fa-share"></i></button>
+        <div class="gameScreenWrap">
+          <div class="showcaseGame">
+            <div id="rpcBody" class="rpcBody">
+              <div id="rpcInner">
+                <div class="rpcGameBox">
+                  <i id="playerCharacter" class="fas fa-question"></i>
+                  <i id="enemyCharacter" class="fas fa-question"></i>
                 </div>
-                <div id="canvasSize">
-                  <button id="xByX">8x8</button>
+                <p id="instructions">Pick One</p>
+                <div id="rpcButtons" class="rpcButtons">
+                  <button id="rock"><i class="fas fa-hand-rock"></i></button>
+                  <button id="paper"><i class="fas fa-hand-paper"></i></button>
+                  <button id="scissors"><i class="fas fa-hand-scissors"></i></button>
                 </div>
-                <button class="pixelReset" id="pixelReset"><i class="fas fa-redo"></i></button>
-                <div class="pixelReset" id="pixelResetConfirm">
-                  <button id="pixelResetConfirmYes">Yes</button>
-                  <button id="pixelResetConfirmNo">No</button>
-                </div>
-              </div>
-              <div class="pixelArea">
-                <!-- 64 -->
-                <!-- 8 -->
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <!-- 8 -->
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <!-- 8 -->
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <!-- 8 -->
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <!-- 8 -->
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <!-- 8 -->
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <!-- 8 -->
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <!-- 8 -->
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <!-- 64 -->
-                <!-- 8 -->
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <!-- 8 -->
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <!-- 8 -->
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <!-- 8 -->
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <!-- 8 -->
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <!-- 8 -->
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <!-- 8 -->
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <div class="pixel x11" style="display: none"></div>
-                <!-- 1 (removed 7) -->
-                <div class="pixel x11" style="display: none"></div>
-
-              </div>
-              <div id="gridChoice">
-                <div class="gridChoiceInnerWrap">
-                  <p class="gridChoiceInner" id="gridChoiceP">Show Line Grid</p>
-                  <input class="gridChoiceInner" id="gridChoiceCheck" type="checkbox" checked>
+                <div id="rpcReset">
+                  <button id="rpcResetButton">
+                    <p>RESET</p>
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="pixelRightWrap">
-              <div class="pixelUiRight">
-                <div class="currentColorWrapper">
-                  <p id="currentColorTitle">Current</p>
-                  <div id="currentVisual">
-                    <i class="colorChanger fas fa-caret-left" id="colorLeft"></i>
-                    <div id="currentColor"></div>
-                    <i class="colorChanger fas fa-caret-right" id="colorRight"></i>
+            <div id="seasawBody">
+              <div id="ssUpper">
+                <div class="ssScore">
+                  <p id="scoreLeft">0</p>
+                  <p id="scoreRight">0</p>
+                </div>
+                <div class="ssObject">
+                  <div id="ss"></div>
+                  <div id="ssStand"></div>
+                </div>
+              </div>
+              <div id="ssLower">
+                <div class="leftButtons">
+                  <button id="ssLeftAdd">Add</button>
+                  <button id="ssLeftRemove">Remove</button>
+                </div>
+                <div class="rightButtons">
+                  <button id="ssRightAdd">Add</button>
+                  <button id="ssRightRemove">Remove</button>
+                </div>
+                <div class="byButtons">
+                  <p>Count by:
+                  <p>
+                    <button id="byOnes">Ones</button>
+                    <button id="byFives">Fives</button>
+                </div>
+              </div>
+            </div>
+            <div id="pixelBody">
+              <div class="pixelLeftWrap">
+                <div id="pixelUiTop">
+                  <div class="backForwardsWrap">
+                    <button id="backwards"><i class="fas fa-reply"></i></button>
+                    <button id="forwards"><i class="fas fa-share"></i></button>
+                  </div>
+                  <div id="canvasSize">
+                    <button id="xByX">8x8</button>
+                  </div>
+                  <button class="pixelReset" id="pixelReset"><i class="fas fa-redo"></i></button>
+                  <div class="pixelReset" id="pixelResetConfirm">
+                    <button id="pixelResetConfirmYes">Yes</button>
+                    <button id="pixelResetConfirmNo">No</button>
                   </div>
                 </div>
-                <div id="colorSelection">
-                  <div class="pixelColors" id="black"></div>
-                  <div class="pixelColors" id="white"></div>
-                  <div class="pixelColors" id="blue"></div>
-                  <div class="pixelColors" id="green"></div>
-                  <div class="pixelColors" id="yellow"></div>
-                  <div class="pixelColors" id="orange"></div>
-                  <div class="pixelColors" id="red"></div>
-                  <div class="pixelColors" id="purple"></div>
+                <div class="pixelArea">
+                  <!-- 64 -->
+                  <!-- 8 -->
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <!-- 8 -->
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <!-- 8 -->
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <!-- 8 -->
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <!-- 8 -->
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <!-- 8 -->
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <!-- 8 -->
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <!-- 8 -->
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <div class="pixel"></div>
+                  <!-- 64 -->
+                  <!-- 8 -->
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <!-- 8 -->
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <!-- 8 -->
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <!-- 8 -->
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <!-- 8 -->
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <!-- 8 -->
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <!-- 8 -->
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <div class="pixel x11" style="display: none"></div>
+                  <!-- 1 (removed 7) -->
+                  <div class="pixel x11" style="display: none"></div>
+
+                </div>
+                <div id="gridChoice">
+                  <div class="gridChoiceInnerWrap">
+                    <p class="gridChoiceInner" id="gridChoiceP">Show Line Grid</p>
+                    <input class="gridChoiceInner" id="gridChoiceCheck" type="checkbox" checked>
+                  </div>
                 </div>
               </div>
-              <button id="animateButton">Animation</button>
+              <div class="pixelRightWrap">
+                <div class="pixelUiRight">
+                  <div class="currentColorWrapper">
+                    <p id="currentColorTitle">Current</p>
+                    <div id="currentVisual">
+                      <i class="colorChanger fas fa-caret-left" id="colorLeft"></i>
+                      <div id="currentColor"></div>
+                      <i class="colorChanger fas fa-caret-right" id="colorRight"></i>
+                    </div>
+                  </div>
+                  <div class="colorBrightness">
+                    <div class="brightnessClass" id="darkerColor"></div>
+                    <div class="brightnessClass" id="brighterColor"></div>
+                  </div>
+                  <div id="colorSelection">
+                    <div class="pixelColors" id="black"></div>
+                    <div class="pixelColors" id="white"></div>
+                    <div class="pixelColors" id="blue"></div>
+                    <div class="pixelColors" id="green"></div>
+                    <div class="pixelColors" id="yellow"></div>
+                    <div class="pixelColors" id="orange"></div>
+                    <div class="pixelColors" id="red"></div>
+                    <div class="pixelColors" id="purple"></div>
+                  </div>
+                </div>
+                <button id="animateButton">Animation</button>
+              </div>
             </div>
           </div>
         </div>
 
         <div id="gameSelection">
+          <h2>Game Selection</h2>
+          <div class="gameSelectionButtons">
           <button class="gameButtons" id="pixelButton">
             <i class="fas fa-paint-brush"></i>
           </button>
@@ -298,23 +306,26 @@
             <i class="fas fa-balance-scale"></i>
           </button>
         </div>
+        </div>
 
       </section>
 
 
 
       <section class="sections" id="sections">
-        <div class="mainPortfolio sectionPart">
-          <h1>Portfolio</h1>
-          <div class="greyed"></div>
-        </div>
-        <div class="mainBlog sectionPart">
-          <h1>Blog</h1>
-          <div class="greyed"></div>
-        </div>
-        <div class="mainContact sectionPart">
-          <h1>Contact</h1>
-          <div class="greyed"></div>
+        <div class="sectionsInnerWrapper">
+          <div class="mainPortfolio sectionPart">
+            <h1>Portfolio</h1>
+            <div class="greyed"></div>
+          </div>
+          <div class="mainBlog sectionPart">
+            <h1>Blog</h1>
+            <div class="greyed"></div>
+          </div>
+          <div class="mainContact sectionPart">
+            <h1>Contact</h1>
+            <div class="greyed"></div>
+          </div>
         </div>
       </section>
 
@@ -425,6 +436,11 @@
       var colorRight = document.getElementById("colorRight");
       var colorCode = document.getElementById("colorCode");
 
+      var darkerColor = document.getElementById("darkerColor");
+      var brighterColor = document.getElementById("brighterColor");
+      darkerColor.style.backgroundColor = "rgb(43, 43, 43)";
+      brighterColor.style.backgroundColor = "rgb(117, 117, 117)";
+
       colorLeft.addEventListener("click", function () { colorSwapFunction("left") });
       colorRight.addEventListener("click", function () { colorSwapFunction("right") });
 
@@ -472,37 +488,72 @@
           case black:
             currentColor.style.backgroundColor = "black";
             colorChoice = "black";
+            darkerColor.style.backgroundColor = "rgb(43, 43, 43)";
+            brighterColor.style.backgroundColor = "rgb(117, 117, 117)";
             break;
           case white:
             currentColor.style.backgroundColor = "white";
             colorChoice = "white";
+            darkerColor.style.backgroundColor = "rgb(172, 172, 172)";
+            brighterColor.style.backgroundColor = "rgb(218, 218, 218)";
             break;
           case blue:
             currentColor.style.backgroundColor = "blue";
             colorChoice = "blue";
+            darkerColor.style.backgroundColor = "rgb(0, 0, 155)";
+            brighterColor.style.backgroundColor = "rgb(61, 61, 255)";
             break;
           case green:
             currentColor.style.backgroundColor = "green";
             colorChoice = "green";
+            darkerColor.style.backgroundColor = "rgb(0, 77, 0)";
+            brighterColor.style.backgroundColor = "rgb(0, 192, 0)";
             break;
           case yellow:
             currentColor.style.backgroundColor = "yellow";
             colorChoice = "yellow";
+            darkerColor.style.backgroundColor = "rgb(185, 185, 0)";
+            brighterColor.style.backgroundColor = "rgb(255, 255, 109)";
             break;
           case orange:
             currentColor.style.backgroundColor = "orange";
             colorChoice = "orange";
+            darkerColor.style.backgroundColor = "rgb(172, 112, 0)";
+            brighterColor.style.backgroundColor = "rgb(255, 191, 72)";
             break;
           case red:
             currentColor.style.backgroundColor = "red";
             colorChoice = "red";
+            darkerColor.style.backgroundColor = "rgb(173, 0, 0)";
+            brighterColor.style.backgroundColor = "rgb(255, 64, 64)";
             break;
           case purple:
             currentColor.style.backgroundColor = "purple";
             colorChoice = "purple";
+            darkerColor.style.backgroundColor = "rgb(88, 0, 88)";
+            brighterColor.style.backgroundColor = "rgb(199, 0, 199)";
             break;
         }
         console.log(colorChoice);
+      }
+
+      // color brightness
+      darkerColor.addEventListener("click", function () {
+        brightnessFunction("dark");
+      })
+      brighterColor.addEventListener("click", function () {
+        brightnessFunction("bright");
+      })
+
+      function brightnessFunction(b) {
+        if (b == "dark") {
+          currentColor.style.backgroundColor = darkerColor.style.backgroundColor;
+          colorChoice = darkerColor.style.backgroundColor;
+        } else {
+          currentColor.style.backgroundColor = brighterColor.style.backgroundColor;
+          colorChoice = brighterColor.style.backgroundColor;
+        }
+        console.log(typeof (currentColor), currentColor);
       }
 
       // 'painting' and reset
@@ -646,7 +697,7 @@
       var x11 = document.getElementsByClassName("x11");
       var pixelArea = document.getElementsByClassName("pixelArea")[0];
 
-      xByX.addEventListener("click", function() {
+      xByX.addEventListener("click", function () {
         xByFunction();
       })
 
@@ -680,23 +731,23 @@
       var animateButton = document.getElementById("animateButton");
       var step = 0;
 
-      animateButton.addEventListener("click", function() {
+      animateButton.addEventListener("click", function () {
         pixelResetFunction(true);
         console.log(step);
         step = 0;
         if (xByX.innerHTML == "8x8") xByFunction();
         var timer = setInterval(timerFunc, 250);
-        
+
       })
 
       function timerFunc() {
-          switch(step) {
-            case 0:
+        switch (step) {
+          case 0:
             pixels[113].style.backgroundColor = "red";
             pixels[116].style.backgroundColor = "red";
             step++;
             break;
-            case 1:
+          case 1:
             pixels[102].style.backgroundColor = "red";
             pixels[105].style.backgroundColor = "red";
             pixels[112].style.backgroundColor = "red";
@@ -705,7 +756,7 @@
             pixels[117].style.backgroundColor = "red";
             step++;
             break;
-            case 2:
+          case 2:
             pixels[91].style.backgroundColor = "red";
             pixels[94].style.backgroundColor = "red";
             pixels[101].style.backgroundColor = "red";
@@ -714,7 +765,7 @@
             pixels[106].style.backgroundColor = "red";
             step++;
             break;
-            case 3:
+          case 3:
             pixels[80].style.backgroundColor = "red";
             pixels[83].style.backgroundColor = "red";
             pixels[90].style.backgroundColor = "red";
@@ -723,7 +774,7 @@
             pixels[95].style.backgroundColor = "red";
             step++;
             break;
-            case 4:
+          case 4:
             pixels[69].style.backgroundColor = "red";
             pixels[72].style.backgroundColor = "red";
             pixels[79].style.backgroundColor = "red";
@@ -734,7 +785,7 @@
             pixels[117].style.backgroundColor = "white";
             step++;
             break;
-            case 5:
+          case 5:
             pixels[69 - 11].style.backgroundColor = "red";
             pixels[72 - 11].style.backgroundColor = "red";
             pixels[79 - 11].style.backgroundColor = "red";
@@ -747,7 +798,7 @@
             pixels[116].style.backgroundColor = "white";
             step++;
             break;
-            case 6:
+          case 6:
             pixels[69 - 22].style.backgroundColor = "red";
             pixels[72 - 22].style.backgroundColor = "red";
             pixels[79 - 22].style.backgroundColor = "red";
@@ -762,11 +813,11 @@
             pixels[102].style.backgroundColor = "white";
             step++;
             break;
-          }
-          if (step == 12) {
-            clearInterval(timer);
-          }
         }
+        if (step == 12) {
+          clearInterval(timer);
+        }
+      }
 
 
       // SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME 

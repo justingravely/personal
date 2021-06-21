@@ -80,6 +80,7 @@ nav {
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+  border-bottom: 6px solid rgba(0, 0, 0, 0.884);
 }
 
   .heroInner {
@@ -122,21 +123,37 @@ nav {
 }
 
 .showcaseWrapper {
+  margin-top: 2rem;
+  margin-bottom : 2rem;
+  grid-area: showcase;
   display: flex;
   flex-direction: column;
+  background-color: red;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.63);
+  padding: 0.1rem;
+  border-radius: 15px;
 }
 
 #gameTitle {
   font-size: 1.5rem;
-  margin: 1rem auto 0.5rem auto;
+  margin: 0rem auto 0.5rem auto;
+  background-color: rgb(36, 36, 36);
+  padding: 0.3rem;
+  border-radius: 5px;
+  color: rgb(50, 255, 50);
+  width: 14rem;
+  text-align: center;
 }
 
 #gameSelection {
-  margin-top: 0;
+  margin-top: 0.77rem;
   display: flex;
+  flex-direction: column;
 }
 
 .gameButtons {
+  background-color: rgb(36, 36, 36);
+  border-radius: 5px;
   width: 3rem;
   height: 3rem;
   margin: 0.5rem 0.2rem auto 0.2rem;
@@ -145,10 +162,11 @@ nav {
 
 .gameButtons i {
   font-size: 2rem;
+  color: white;
 }
 
 .gameButtons i:nth-child(1) {
-  margin-left: -0.1rem;
+  margin-left: -0.13rem;
 }
 
 /* showcaseGame */
@@ -156,6 +174,11 @@ nav {
   width: 20rem;
   height: 20rem;
   background-color: black;
+}
+
+.gameScreenWrap {
+  border: 15px solid rgb(36, 36, 36);
+  border-radius: 15px;
 }
 
 /* seasaw */
@@ -300,8 +323,35 @@ nav {
   width: 30%;
 }
 
+.colorBrightness {
+  border: 1px solid black;
+  width:  90%;
+  height: 2rem;
+  display: flex;
+}
+
+.brightnessClass {
+  margin: auto;
+  border: 1px solid black;
+  width: 45%;
+  height: 90%;
+  cursor: pointer;
+}
+
+#darkerColor {
+  background-color: rgb(43, 43, 43);
+}
+
+#brighterColor {
+  background: rgb(117, 117, 117);
+  color: rgb(0, 192, 0)
+}
+
 #animateButton {
-  margin: 0.77rem;
+  margin-left: 0.45rem;
+  margin-top: 0.45rem;
+  height: 2rem;
+  width: 5rem;
 }
 
 .pixelArea {
@@ -398,14 +448,13 @@ nav {
   display: none;
   width: 100%;
   height: 100%;
-  background-color: green;
+  background-color: rgb(42, 114, 155);
 }
   #rpcInner {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
   }
 
   .rpcButtons {
@@ -457,7 +506,6 @@ nav {
   margin-top: 0;
   height: 60%;
   width: 100%;
-  border: 1px solid red;
   display: flex;
 }
 
@@ -518,6 +566,7 @@ nav {
   margin-right: 2rem;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+  grid-area: links;
 }
 
   .sectionPart {
@@ -596,6 +645,7 @@ nav {
   margin-bottom: 1rem;
   padding: 1rem;
   display: flex;
+  grid-area: news;
 }
 
   .newsLetterInnerWrapper {
@@ -668,6 +718,7 @@ footer {
     color: rgba(255, 255, 255, 0.781);
   }
 
+/* non-mobile */
 @media (min-width: 1050px) {
   .heroSection {
     background-size: cover;
@@ -678,12 +729,25 @@ footer {
 
   .sectionWrapper {
     padding: 2rem;
+    display: grid;
+    grid-template-areas: "links showcase news";
+  }
+
+  .showcaseWrapper {
+    height: 33rem;
+    margin-top: 0;
+    margin-bottom : 0;
+    padding: 1rem;
   }
 
   .sections {
-    /* placeholder */
-    display: block;
+    height: 28rem;
+    width: 24rem;
+    display: flex;
   }
+    .sectionsInnerWrapper {
+      margin: auto;
+    }
 
   .newsLetter {
     width: 63%;
