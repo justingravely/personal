@@ -11,291 +11,276 @@
 </head>
 
 <body>
-  <header>
-    <!-- navbar -->
-    <nav>
-      <div class="navLogo"></div>
-      <h1>Justin<br> Gravely</h1>
-      <div class="icons">
-        <div class="homeIconWrapper iconWrappers">
-          <i id="homeIcon" class="fas fa-caravan"></i>
-        </div>
-        <div class="portfolioIconWrapper iconWrappers">
-          <i id="portfolioIcon" class="fas fa-briefcase"></i>
-        </div>
-        <div class="blogIconWrapper iconWrappers">
-          <i id="blogIcon" class="fas fa-clipboard"></i>
-          <!-- Coding / Fitness / Christian / Games -->
-        </div>
-        <div class="contactIconWrapper iconWrappers">
-          <i id="contactIcon" class="fas fa-envelope"></i>
-        </div>
-      </div>
-    </nav>
 
-    <section class="heroSection">
-      <div class="heroInner">
-        <div class="logo"></div>
-        <h1>Justin Gravely</h1>
-        <p>Javascript Dev & Designer</p>
-      </div>
-    </section>
+  <div class="intro" id="intro">
+    <h1>Hi, I'm Justin</h1>
+    <h4>Web Dev & Designer</h4>
+    <!-- <div class="personality">
+      <p>My main interests are the Christian faith & it's theology, PC Games & Apps, and small critters. I would describe myself as a relaxed goofy minimalist.</p>
+    </div> -->
+  </div>
 
-    <!-- section wrapper -->
-    <div class="sectionWrapper">
+  <div class="nav" id="nav">
+      <a class="links" href="#" id="about">about</a>
+      <div class="stick"></div>
+      <a class="links" href="#" id="portfolio">portfolio</a>
+      <div class="stick"></div>
+      <a class="links" href="#" id="blog">blog</a>
+      <div class="stick"></div>
+      <a class="links" href="#" id="contact">contact</a>
+  </div>
 
-      <section class="showcaseWrapper">
 
-        <h1 id="gameTitle">Pixel Art Editor</h1>
+  <div class="bigBox boxes"></div>
 
-        <div class="gameScreenWrap">
-          <div class="showcaseGame">
-            <div id="rpcBody" class="rpcBody">
-              <div id="rpcInner">
-                <div class="rpcGameBox">
-                  <i id="playerCharacter" class="fas fa-question"></i>
-                  <i id="enemyCharacter" class="fas fa-question"></i>
-                </div>
-                <p id="instructions">Pick One</p>
-                <div id="rpcButtons" class="rpcButtons">
-                  <button id="rock"><i class="fas fa-hand-rock"></i></button>
-                  <button id="paper"><i class="fas fa-hand-paper"></i></button>
-                  <button id="scissors"><i class="fas fa-hand-scissors"></i></button>
-                </div>
-                <div id="rpcReset">
-                  <button id="rpcResetButton">
-                    <p>RESET</p>
-                  </button>
-                </div>
-              </div>
+  <div class="portfolioWrapper">
+    <section class="showcaseWrapper">
+      <div class="showcaseGame">
+        <div id="rpcBody" class="rpcBody">
+          <div id="rpcInner">
+            <div class="rpcGameBox">
+              <i id="playerCharacter" class="fas fa-question"></i>
+              <i id="enemyCharacter" class="fas fa-question"></i>
             </div>
-            <div id="seasawBody">
-              <div id="ssUpper">
-                <div class="ssScore">
-                  <p id="scoreLeft">0</p>
-                  <p id="scoreRight">0</p>
-                </div>
-                <div class="ssObject">
-                  <div id="ss"></div>
-                  <div id="ssStand"></div>
-                </div>
-              </div>
-              <div id="ssLower">
-                <div class="leftButtons">
-                  <button id="ssLeftAdd">Add</button>
-                  <button id="ssLeftRemove">Remove</button>
-                </div>
-                <div class="rightButtons">
-                  <button id="ssRightAdd">Add</button>
-                  <button id="ssRightRemove">Remove</button>
-                </div>
-                <div class="byButtons">
-                  <p>Count by:
-                  <p>
-                    <button id="byOnes">Ones</button>
-                    <button id="byFives">Fives</button>
-                </div>
-              </div>
+            <p id="instructions">Pick One</p>
+            <div id="rpcButtons" class="rpcButtons">
+              <button id="rock"><i class="fas fa-hand-rock"></i></button>
+              <button id="paper"><i class="fas fa-hand-paper"></i></button>
+              <button id="scissors"><i class="fas fa-hand-scissors"></i></button>
             </div>
-            <div id="pixelBody">
-              <div class="pixelLeftWrap">
-                <div id="pixelUiTop">
-                  <div class="backForwardsWrap">
-                    <button id="backwards"><i class="fas fa-reply"></i></button>
-                    <button id="forwards"><i class="fas fa-share"></i></button>
-                  </div>
-                  <div id="canvasSize">
-                    <button id="xByX">8x8</button>
-                  </div>
-                  <button class="pixelReset" id="pixelReset"><i class="fas fa-redo"></i></button>
-                  <div class="pixelReset" id="pixelResetConfirm">
-                    <button id="pixelResetConfirmYes">Yes</button>
-                    <button id="pixelResetConfirmNo">No</button>
-                  </div>
-                </div>
-                <div class="pixelArea">
-                  <!-- 64 -->
-                  <!-- 8 -->
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <!-- 8 -->
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <!-- 8 -->
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <!-- 8 -->
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <!-- 8 -->
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <!-- 8 -->
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <!-- 8 -->
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <!-- 8 -->
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <div class="pixel"></div>
-                  <!-- 64 -->
-                  <!-- 8 -->
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <!-- 8 -->
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <!-- 8 -->
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <!-- 8 -->
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <!-- 8 -->
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <!-- 8 -->
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <!-- 8 -->
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <div class="pixel x11" style="display: none"></div>
-                  <!-- 1 (removed 7) -->
-                  <div class="pixel x11" style="display: none"></div>
-
-                </div>
-                <div id="gridChoice">
-                  <div class="gridChoiceInnerWrap">
-                    <p class="gridChoiceInner" id="gridChoiceP">Show Line Grid</p>
-                    <input class="gridChoiceInner" id="gridChoiceCheck" type="checkbox" checked>
-                  </div>
-                </div>
-              </div>
-              <div class="pixelRightWrap">
-                <div class="pixelUiRight">
-                  <div class="currentColorWrapper">
-                    <p id="currentColorTitle">Current</p>
-                    <div id="currentVisual">
-                      <i class="colorChanger fas fa-caret-left" id="colorLeft"></i>
-                      <div id="currentColor"></div>
-                      <i class="colorChanger fas fa-caret-right" id="colorRight"></i>
-                    </div>
-                  </div>
-                  <div class="colorBrightness">
-                    <div class="brightnessClass" id="darkerColor"></div>
-                    <div class="brightnessClass" id="brighterColor"></div>
-                  </div>
-                  <div id="colorSelection">
-                    <div class="pixelColors" id="black"></div>
-                    <div class="pixelColors" id="white"></div>
-                    <div class="pixelColors" id="blue"></div>
-                    <div class="pixelColors" id="green"></div>
-                    <div class="pixelColors" id="yellow"></div>
-                    <div class="pixelColors" id="orange"></div>
-                    <div class="pixelColors" id="red"></div>
-                    <div class="pixelColors" id="purple"></div>
-                  </div>
-                </div>
-                <button id="animateButton">Animation</button>
-              </div>
+            <div id="rpcReset">
+              <button id="rpcResetButton">
+                <p>RESET</p>
+              </button>
             </div>
           </div>
         </div>
+        <div id="seasawBody">
+          <div id="ssUpper">
+            <div class="ssScore">
+              <p id="scoreLeft">0</p>
+              <p id="scoreRight">0</p>
+            </div>
+            <div class="ssObject">
+              <div id="ss"></div>
+              <div id="ssStand"></div>
+            </div>
+          </div>
+          <div id="ssLower">
+            <div class="leftButtons">
+              <button id="ssLeftAdd">Add</button>
+              <button id="ssLeftRemove">Remove</button>
+            </div>
+            <div class="rightButtons">
+              <button id="ssRightAdd">Add</button>
+              <button id="ssRightRemove">Remove</button>
+            </div>
+            <div class="byButtons">
+              <p>Count by:
+              <p>
+                <button id="byOnes">Ones</button>
+                <button id="byFives">Fives</button>
+            </div>
+          </div>
+        </div>
+        <div id="pixelBody">
+          <div class="pixelLeftWrap">
+            <div id="pixelUiTop">
+              <div class="backForwardsWrap">
+                <button id="backwards"><i class="fas fa-reply"></i></button>
+                <button id="forwards"><i class="fas fa-share"></i></button>
+              </div>
+              <div id="canvasSize">
+                <button id="xByX">8x8</button>
+              </div>
+              <button class="pixelReset" id="pixelReset"><i class="fas fa-redo"></i></button>
+              <div class="pixelReset" id="pixelResetConfirm">
+                <button id="pixelResetConfirmYes">Yes</button>
+                <button id="pixelResetConfirmNo">No</button>
+              </div>
+            </div>
+            <div class="pixelArea">
+              <!-- 64 -->
+              <!-- 8 -->
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <!-- 8 -->
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <!-- 8 -->
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <!-- 8 -->
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <!-- 8 -->
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <!-- 8 -->
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <!-- 8 -->
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <!-- 8 -->
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <!-- 64 -->
+              <!-- 8 -->
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <!-- 8 -->
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <!-- 8 -->
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <!-- 8 -->
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <!-- 8 -->
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <!-- 8 -->
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <!-- 8 -->
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <div class="pixel x11" style="display: none"></div>
+              <!-- 1 (removed 7) -->
+              <div class="pixel x11" style="display: none"></div>
 
-        <div id="gameSelection">
-          <h2>Game Selection</h2>
-          <div class="gameSelectionButtons">
+            </div>
+            <div id="gridChoice">
+              <div class="gridChoiceInnerWrap">
+                <p class="gridChoiceInner" id="gridChoiceP">Show Line Grid</p>
+                <input class="gridChoiceInner" id="gridChoiceCheck" type="checkbox" checked>
+              </div>
+            </div>
+          </div>
+          <div class="pixelRightWrap">
+            <div class="pixelUiRight">
+              <div class="currentColorWrapper">
+                <p id="currentColorTitle">Current</p>
+                <div id="currentVisual">
+                  <i class="colorChanger fas fa-caret-left" id="colorLeft"></i>
+                  <div id="currentColor"></div>
+                  <i class="colorChanger fas fa-caret-right" id="colorRight"></i>
+                </div>
+              </div>
+              <div class="colorBrightness">
+                <div class="brightnessClass" id="darkerColor"></div>
+                <div class="brightnessClass" id="brighterColor"></div>
+              </div>
+              <div id="colorSelection">
+                <div class="pixelColors" id="black"></div>
+                <div class="pixelColors" id="white"></div>
+                <div class="pixelColors" id="blue"></div>
+                <div class="pixelColors" id="green"></div>
+                <div class="pixelColors" id="yellow"></div>
+                <div class="pixelColors" id="orange"></div>
+                <div class="pixelColors" id="red"></div>
+                <div class="pixelColors" id="purple"></div>
+              </div>
+            </div>
+            <button id="animateButton">Animation</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="gameSelection">
+        <h2>Game Selection</h2>
+        <div class="gameSelectionButtons">
           <button class="gameButtons" id="pixelButton">
             <i class="fas fa-paint-brush"></i>
           </button>
@@ -306,761 +291,776 @@
             <i class="fas fa-balance-scale"></i>
           </button>
         </div>
-        </div>
-
-      </section>
-
-
-
-      <section class="sections" id="sections">
-        <div class="sectionsInnerWrapper">
-          <div class="mainPortfolio sectionPart">
-            <h1>Portfolio</h1>
-            <div class="greyed"></div>
-          </div>
-          <div class="mainBlog sectionPart">
-            <h1>Blog</h1>
-            <div class="greyed"></div>
-          </div>
-          <div class="mainContact sectionPart">
-            <h1>Contact</h1>
-            <div class="greyed"></div>
-          </div>
-        </div>
-      </section>
-
-      <form action="email" class="newsLetter">
-        <div class="newsLetterInnerWrapper">
-          <div class="container">
-            <h1>Subscribe to the Newsletter</h1>
-            <p>This does not actually work yet</p>
-          </div>
-
-          <div class="container">
-            <input type="text" placeholder="Name" name="name" required>
-            <input type="text" placeholder="Email address" name="mail" required>
-          </div>
-
-          <div class="container">
-            <input type="submit" value="Subscribe">
-          </div>
-        </div>
-        </section>
-
-    </div>
-
-    <footer>
-      <div class="footerWrapper">
-        <div class="footWrapOne">
-          <i class="fab fa-github-square"></i>
-          <i class="fab fa-youtube"></i>
-          <i class="fas fa-paper-plane"></i>
-        </div>
-        <div class="footWrapTwo">
-          <p>Terms of Use</p>
-          <p class="middleLine">|</p>
-          <p>Privacy Policy</p>
-        </div>
       </div>
-    </footer>
+    </section>
+    <div class="websitePortfolio">
+      <p>This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. This is where links to all of my websites will go. </p>
+    </div>
+  </div>
 
-    <script>
+  <!-- newScript -->
+  <script>
+    // The beginning of my script
+    var intro = document.getElementById("intro");
+    var nav = document.getElementById("nav");
+    // probably dont need these
+    // var about = document.getElementById("about");
+    // var portfolio = document.getElementById("portfolio");
+    // var blog = document.getElementById("blog");
+    // var contact = document.getElementById("contact");
+    var links = document.getElementsByClassName("links");
+    var sticks = document.getElementsByClassName("stick");
+    var boxes = document.getElementsByClassName("boxes");
+    var pFWrapper = document.getElementsByClassName("portfolioWrapper")[0];
 
-      // Main Controls
-      var rpcInner = document.getElementById("rpcInner");
-      var seasawBody = document.getElementById("seasawBody");
-      var gameTitle = document.getElementById("gameTitle");
 
-      var rpcBody = document.getElementById("rpcBody");
-      var seasawBody = document.getElementById("seasawBody");
-      var pixelBody = document.getElementById("pixelBody");
+    // adding event listeners to every nav link
+    for (let i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", function () {
+        transFunction(i);
+      })
+    }
 
-      var rpcButton = document.getElementById("rpcButton");
-      var seasawButton = document.getElementById("seasawButton");
-      var pixelButton = document.getElementById("pixelButton");
-      var buttonArr = [rpcButton, seasawButton, pixelButton]
-
-      pixelButton.style.opacity = "0.5";
-      pixelButton.style.pointerEvents = "none";
-
-      for (let i = 0; i < buttonArr.length; i++) {
-        buttonArr[i].addEventListener("click", function () {
-          buttonFunction(buttonArr[i]);
-        })
+    function transFunction(num) {
+      // transitions
+      for (let i = 0; i < sticks.length; i++) {
+        sticks[i].style.border = "1px solid white";
+        sticks[i].style.opacity = "1";
+        sticks[i].style.backgroundColor = "#ffffff00";
       }
+      console.log(num);
+      intro.style.marginTop = "-5.5rem";
+      for (let i = 0; i < links.length; i++) {
+        links[i].style.transform = "rotate(270deg)";
+        if (i == 1 | i == 3) {
+          links[i].style.paddingTop = "1.4rem";
+          links[i].style.paddingBottom = "1.4rem";
+        } else {
+          links[i].style.paddingTop = "0.7rem";
+          links[i].style.paddingBottom = "0.7rem";
+        } //link color
+        if (i !== num) {
+          links[i].style.color = "white";
+        } else {
+          links[i].style.color = "rgb(255, 195, 83)";
+        } // page change
+        if (num == 1) {
+          pFWrapper.style.opacity = "1";
+          pFWrapper.style.pointerEvents = "all";
+        } else {
+          pFWrapper.style.opacity = "0";
+          pFWrapper.style.pointerEvents = "none";
+        }
 
-      function buttonFunction(b) {
-        for (let i = 0; i < buttonArr.length; i++) {
-          if (b != buttonArr[i]) {
-            buttonArr[i].style.opacity = "1";
-            buttonArr[i].style.pointerEvents = "all";
+        // other
+        links[i].style.marginRight = "0.33rem";
+      }
+      nav.style.left = "5.4%";
+      nav.style.marginTop = "11rem";
+      setTimeout(function () {
+        for (let i = 0; i < boxes.length; i++) {
+          boxes[i].style.opacity = "1";
+        }
+      }, 250)
+    }
+
+    // intro dropdown
+    setTimeout(function () { intro.style.marginTop = "7rem"; }, 100)
+
+
+  </script>
+
+  <!-- oldScript -->
+  <script>
+
+    // Main Controls
+    var rpcInner = document.getElementById("rpcInner");
+    var seasawBody = document.getElementById("seasawBody");
+
+    var rpcBody = document.getElementById("rpcBody");
+    var seasawBody = document.getElementById("seasawBody");
+    var pixelBody = document.getElementById("pixelBody");
+
+    var rpcButton = document.getElementById("rpcButton");
+    var seasawButton = document.getElementById("seasawButton");
+    var pixelButton = document.getElementById("pixelButton");
+    var buttonArr = [rpcButton, seasawButton, pixelButton]
+
+    pixelButton.style.opacity = "0.5";
+    pixelButton.style.pointerEvents = "none";
+
+    for (let i = 0; i < buttonArr.length; i++) {
+      buttonArr[i].addEventListener("click", function () {
+        buttonFunction(buttonArr[i]);
+      })
+    }
+
+    function buttonFunction(b) {
+      for (let i = 0; i < buttonArr.length; i++) {
+        if (b != buttonArr[i]) {
+          buttonArr[i].style.opacity = "1";
+          buttonArr[i].style.pointerEvents = "all";
+        }
+      }
+      b.style.opacity = "0.5";
+      b.style.pointerEvents = "none";
+      switch (b) {
+        case rpcButton:
+          rpcBody.style.display = "flex";
+          seasawBody.style.display = "none";
+          pixelBody.style.display = "none";
+          break;
+        case seasawButton:
+          rpcBody.style.display = "none";
+          seasawBody.style.display = "flex";
+          pixelBody.style.display = "none";
+          break;
+        case pixelButton:
+          rpcBody.style.display = "none";
+          seasawBody.style.display = "none";
+          pixelBody.style.display = "flex";
+          break;
+      }
+    }
+    // PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR
+
+    var currentColor = document.getElementById("currentColor");
+    var black = document.getElementById("black");
+    var white = document.getElementById("white");
+    var blue = document.getElementById("blue");
+    var green = document.getElementById("green");
+    var yellow = document.getElementById("yellow");
+    var orange = document.getElementById("orange");
+    var red = document.getElementById("red");
+    var purple = document.getElementById("purple");
+    var colorList = [black, white, blue, green, yellow, orange, red, purple];
+    var colorChoice = "black";
+    var colorLeft = document.getElementById("colorLeft");
+    var colorRight = document.getElementById("colorRight");
+    var colorCode = document.getElementById("colorCode");
+
+    var darkerColor = document.getElementById("darkerColor");
+    var brighterColor = document.getElementById("brighterColor");
+    darkerColor.style.backgroundColor = "rgb(43, 43, 43)";
+    brighterColor.style.backgroundColor = "rgb(117, 117, 117)";
+
+    colorLeft.addEventListener("click", function () { colorSwapFunction("left") });
+    colorRight.addEventListener("click", function () { colorSwapFunction("right") });
+
+    function colorSwapFunction(dir) {
+      if (dir == "left") {
+        for (let i = 0; i < colorList.length; i++) {
+          if (colorList[i].id == colorChoice) {
+            console.log(colorChoice, i);
+            if (i == 0) {
+              i = (colorList.length);
+            }
+            currentColor.style.backgroundColor = colorList[i - 1].id;
+            colorChoice = colorList[i - 1].id;
           }
         }
-        b.style.opacity = "0.5";
-        b.style.pointerEvents = "none";
-        switch (b) {
-          case rpcButton:
-            gameTitle.innerHTML = "Rock Paper Scissors"
-            rpcBody.style.display = "flex";
-            seasawBody.style.display = "none";
-            pixelBody.style.display = "none";
-            break;
-          case seasawButton:
-            gameTitle.innerHTML = "Sea-Saw Balance"
-            rpcBody.style.display = "none";
-            seasawBody.style.display = "flex";
-            pixelBody.style.display = "none";
-            break;
-          case pixelButton:
-            gameTitle.innerHTML = "Pixel Art Editor";
-            rpcBody.style.display = "none";
-            seasawBody.style.display = "none";
-            pixelBody.style.display = "flex";
-            break;
-        }
       }
-      // PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR
-
-      var currentColor = document.getElementById("currentColor");
-      var black = document.getElementById("black");
-      var white = document.getElementById("white");
-      var blue = document.getElementById("blue");
-      var green = document.getElementById("green");
-      var yellow = document.getElementById("yellow");
-      var orange = document.getElementById("orange");
-      var red = document.getElementById("red");
-      var purple = document.getElementById("purple");
-      var colorList = [black, white, blue, green, yellow, orange, red, purple];
-      var colorChoice = "black";
-      var colorLeft = document.getElementById("colorLeft");
-      var colorRight = document.getElementById("colorRight");
-      var colorCode = document.getElementById("colorCode");
-
-      var darkerColor = document.getElementById("darkerColor");
-      var brighterColor = document.getElementById("brighterColor");
-      darkerColor.style.backgroundColor = "rgb(43, 43, 43)";
-      brighterColor.style.backgroundColor = "rgb(117, 117, 117)";
-
-      colorLeft.addEventListener("click", function () { colorSwapFunction("left") });
-      colorRight.addEventListener("click", function () { colorSwapFunction("right") });
-
-      function colorSwapFunction(dir) {
-        if (dir == "left") {
+      if (dir == "right") {
+        if (colorChoice == purple.id) {
+          currentColor.style.backgroundColor = colorList[0].id;
+          colorChoice = black.id;
+        } else {
           for (let i = 0; i < colorList.length; i++) {
             if (colorList[i].id == colorChoice) {
               console.log(colorChoice, i);
-              if (i == 0) {
-                i = (colorList.length);
+              if (i == colorList.length) {
+                i = 0;
               }
-              currentColor.style.backgroundColor = colorList[i - 1].id;
-              colorChoice = colorList[i - 1].id;
-            }
-          }
-        }
-        if (dir == "right") {
-          if (colorChoice == purple.id) {
-            currentColor.style.backgroundColor = colorList[0].id;
-            colorChoice = black.id;
-          } else {
-            for (let i = 0; i < colorList.length; i++) {
-              if (colorList[i].id == colorChoice) {
-                console.log(colorChoice, i);
-                if (i == colorList.length) {
-                  i = 0;
-                }
-                currentColor.style.backgroundColor = colorList[i + 1].id;
-                colorChoice = colorList[i + 1].id;
-                break;
-              }
+              currentColor.style.backgroundColor = colorList[i + 1].id;
+              colorChoice = colorList[i + 1].id;
+              break;
             }
           }
         }
       }
+    }
 
-      for (let i = 0; i < colorList.length; i++) {
-        colorList[i].addEventListener("click", function () {
-          colorPickerFunction(colorList[i]);
-        })
-      }
-
-      function colorPickerFunction(color) {
-        switch (color) {
-          case black:
-            currentColor.style.backgroundColor = "black";
-            colorChoice = "black";
-            darkerColor.style.backgroundColor = "rgb(43, 43, 43)";
-            brighterColor.style.backgroundColor = "rgb(117, 117, 117)";
-            break;
-          case white:
-            currentColor.style.backgroundColor = "white";
-            colorChoice = "white";
-            darkerColor.style.backgroundColor = "rgb(172, 172, 172)";
-            brighterColor.style.backgroundColor = "rgb(218, 218, 218)";
-            break;
-          case blue:
-            currentColor.style.backgroundColor = "blue";
-            colorChoice = "blue";
-            darkerColor.style.backgroundColor = "rgb(0, 0, 155)";
-            brighterColor.style.backgroundColor = "rgb(61, 61, 255)";
-            break;
-          case green:
-            currentColor.style.backgroundColor = "green";
-            colorChoice = "green";
-            darkerColor.style.backgroundColor = "rgb(0, 77, 0)";
-            brighterColor.style.backgroundColor = "rgb(0, 192, 0)";
-            break;
-          case yellow:
-            currentColor.style.backgroundColor = "yellow";
-            colorChoice = "yellow";
-            darkerColor.style.backgroundColor = "rgb(185, 185, 0)";
-            brighterColor.style.backgroundColor = "rgb(255, 255, 109)";
-            break;
-          case orange:
-            currentColor.style.backgroundColor = "orange";
-            colorChoice = "orange";
-            darkerColor.style.backgroundColor = "rgb(172, 112, 0)";
-            brighterColor.style.backgroundColor = "rgb(255, 191, 72)";
-            break;
-          case red:
-            currentColor.style.backgroundColor = "red";
-            colorChoice = "red";
-            darkerColor.style.backgroundColor = "rgb(173, 0, 0)";
-            brighterColor.style.backgroundColor = "rgb(255, 64, 64)";
-            break;
-          case purple:
-            currentColor.style.backgroundColor = "purple";
-            colorChoice = "purple";
-            darkerColor.style.backgroundColor = "rgb(88, 0, 88)";
-            brighterColor.style.backgroundColor = "rgb(199, 0, 199)";
-            break;
-        }
-        console.log(colorChoice);
-      }
-
-      // color brightness
-      darkerColor.addEventListener("click", function () {
-        brightnessFunction("dark");
+    for (let i = 0; i < colorList.length; i++) {
+      colorList[i].addEventListener("click", function () {
+        colorPickerFunction(colorList[i]);
       })
-      brighterColor.addEventListener("click", function () {
-        brightnessFunction("bright");
-      })
+    }
 
-      function brightnessFunction(b) {
-        if (b == "dark") {
-          currentColor.style.backgroundColor = darkerColor.style.backgroundColor;
-          colorChoice = darkerColor.style.backgroundColor;
-        } else {
-          currentColor.style.backgroundColor = brighterColor.style.backgroundColor;
-          colorChoice = brighterColor.style.backgroundColor;
-        }
-        console.log(typeof (currentColor), currentColor);
+    function colorPickerFunction(color) {
+      switch (color) {
+        case black:
+          currentColor.style.backgroundColor = "black";
+          colorChoice = "black";
+          darkerColor.style.backgroundColor = "rgb(43, 43, 43)";
+          brighterColor.style.backgroundColor = "rgb(117, 117, 117)";
+          break;
+        case white:
+          currentColor.style.backgroundColor = "white";
+          colorChoice = "white";
+          darkerColor.style.backgroundColor = "rgb(172, 172, 172)";
+          brighterColor.style.backgroundColor = "rgb(218, 218, 218)";
+          break;
+        case blue:
+          currentColor.style.backgroundColor = "blue";
+          colorChoice = "blue";
+          darkerColor.style.backgroundColor = "rgb(0, 0, 155)";
+          brighterColor.style.backgroundColor = "rgb(61, 61, 255)";
+          break;
+        case green:
+          currentColor.style.backgroundColor = "green";
+          colorChoice = "green";
+          darkerColor.style.backgroundColor = "rgb(0, 77, 0)";
+          brighterColor.style.backgroundColor = "rgb(0, 192, 0)";
+          break;
+        case yellow:
+          currentColor.style.backgroundColor = "yellow";
+          colorChoice = "yellow";
+          darkerColor.style.backgroundColor = "rgb(185, 185, 0)";
+          brighterColor.style.backgroundColor = "rgb(255, 255, 109)";
+          break;
+        case orange:
+          currentColor.style.backgroundColor = "orange";
+          colorChoice = "orange";
+          darkerColor.style.backgroundColor = "rgb(172, 112, 0)";
+          brighterColor.style.backgroundColor = "rgb(255, 191, 72)";
+          break;
+        case red:
+          currentColor.style.backgroundColor = "red";
+          colorChoice = "red";
+          darkerColor.style.backgroundColor = "rgb(173, 0, 0)";
+          brighterColor.style.backgroundColor = "rgb(255, 64, 64)";
+          break;
+        case purple:
+          currentColor.style.backgroundColor = "purple";
+          colorChoice = "purple";
+          darkerColor.style.backgroundColor = "rgb(88, 0, 88)";
+          brighterColor.style.backgroundColor = "rgb(199, 0, 199)";
+          break;
       }
+      console.log(colorChoice);
+    }
 
-      // 'painting' and reset
-      var pixels = document.getElementsByClassName("pixel");
-      var pixelReset = document.getElementById("pixelReset");
-      var pixelResetConfirm = document.getElementById("pixelResetConfirm");
-      var pixelResetConfirmYes = document.getElementById("pixelResetConfirmYes");
-      var pixelResetConfirmNo = document.getElementById("pixelResetConfirmNo");
-      var canvasSize = document.getElementById("canvasSize");
-      pixelReset.addEventListener("click", function () {
-        pixelResetConfirmFunction()
-      });
+    // color brightness
+    darkerColor.addEventListener("click", function () {
+      brightnessFunction("dark");
+    })
+    brighterColor.addEventListener("click", function () {
+      brightnessFunction("bright");
+    })
 
-      pixelResetConfirmYes.addEventListener("click", function () {
-        pixelResetFunction(true);
-      });
-
-      pixelResetConfirmNo.addEventListener("click", function () {
-        pixelResetFunction(false);
-      });
-
-      function pixelResetConfirmFunction() {
-        pixelResetConfirm.style.display = "flex";
-        pixelReset.style.display = "none";
-        canvasSize.style.display = "none";
+    function brightnessFunction(b) {
+      if (b == "dark") {
+        currentColor.style.backgroundColor = darkerColor.style.backgroundColor;
+        colorChoice = darkerColor.style.backgroundColor;
+      } else {
+        currentColor.style.backgroundColor = brighterColor.style.backgroundColor;
+        colorChoice = brighterColor.style.backgroundColor;
       }
+      console.log(typeof (currentColor), currentColor);
+    }
 
-      // adding id's to every pixel
-      for (let i = 0; i < pixels.length; i++) {
-        pixels[i].id = "pixel " + i;
-        pixels[i].style.backgroundColor = "white";
-      }
-      console.log(pixels[0].id);
+    // 'painting' and reset
+    var pixels = document.getElementsByClassName("pixel");
+    var pixelReset = document.getElementById("pixelReset");
+    var pixelResetConfirm = document.getElementById("pixelResetConfirm");
+    var pixelResetConfirmYes = document.getElementById("pixelResetConfirmYes");
+    var pixelResetConfirmNo = document.getElementById("pixelResetConfirmNo");
+    var canvasSize = document.getElementById("canvasSize");
+    pixelReset.addEventListener("click", function () {
+      pixelResetConfirmFunction()
+    });
 
-      function pixelResetFunction(bool) {
-        if (bool == true) {
-          for (let i = 0; i < pixels.length; i++) {
-            pixels[i].style.backgroundColor = "white";
-          }
-          memory = [];
-          mP = 0;
-        }
-        pixelResetConfirm.style.display = "none";
-        pixelReset.style.display = "block";
-        canvasSize.style.display = "block";
-      }
+    pixelResetConfirmYes.addEventListener("click", function () {
+      pixelResetFunction(true);
+    });
 
-      // memory bank 
-      var hasStarted = false;
-      var memory = [];
-      var mP = 0;
-      var backwards = document.getElementById("backwards");
-      var forwards = document.getElementById("forwards");
+    pixelResetConfirmNo.addEventListener("click", function () {
+      pixelResetFunction(false);
+    });
 
-      for (let i = 0; i < pixels.length; i++) {
-        pixels[i].addEventListener("click", function () {
-          if (mP > 0) {
-            while (mP > 0) {
-              mP--;
-              memory[mP] = [pixels[i].id, pixels[i].style.backgroundColor, colorChoice];
-            }
-          } else {
-            memory.unshift([pixels[i].id, pixels[i].style.backgroundColor, colorChoice]);
-          }
-          pixelColorFunction(pixels[i]);
+    function pixelResetConfirmFunction() {
+      pixelResetConfirm.style.display = "flex";
+      pixelReset.style.display = "none";
+      canvasSize.style.display = "none";
+    }
 
-          // scary stuff i learned off the internet to filter array of arrays
-          let temp = memory.map(JSON.stringify);
-          let uniqueTemp = new Set(temp);
-          console.log(uniqueTemp);
-          memory = Array.from(uniqueTemp, JSON.parse);
+    // adding id's to every pixel
+    for (let i = 0; i < pixels.length; i++) {
+      pixels[i].id = "pixel " + i;
+      pixels[i].style.backgroundColor = "white";
+    }
+    console.log(pixels[0].id);
 
-          console.log(mP, memory);
-        })
-      }
-
-      function pixelColorFunction(pixelC) {
-        pixelC.style.backgroundColor = colorChoice;
-      }
-
-
-      backwards.addEventListener("click", function () {
-        backwardsFunction()
-      })
-      function backwardsFunction() {
-        forwards.style.opacity = "1";
-        forwards.style.pointerEvents = "all";
+    function pixelResetFunction(bool) {
+      if (bool == true) {
         for (let i = 0; i < pixels.length; i++) {
-          if (memory[mP][0] == pixels[i].id) {
-            pixels[i].style.backgroundColor = memory[mP][1];
-            mP++;
-            break;
-          }
+          pixels[i].style.backgroundColor = "white";
         }
-        if (memory[mP][0] == memory[mP + 1][0] && memory[mP][2] == memory[mP + 1][2]) {
-          backwardsFunction()
-        }
+        memory = [];
+        mP = 0;
       }
+      pixelResetConfirm.style.display = "none";
+      pixelReset.style.display = "block";
+      canvasSize.style.display = "block";
+    }
 
-      // --------------------------------------------------
+    // memory bank 
+    var hasStarted = false;
+    var memory = [];
+    var mP = 0;
+    var backwards = document.getElementById("backwards");
+    var forwards = document.getElementById("forwards");
 
-      forwards.addEventListener("click", function () {
-        forwardsFunction()
-      })
-      function forwardsFunction() {
+    for (let i = 0; i < pixels.length; i++) {
+      pixels[i].addEventListener("click", function () {
         if (mP > 0) {
-          mP--;
+          while (mP > 0) {
+            mP--;
+            memory[mP] = [pixels[i].id, pixels[i].style.backgroundColor, colorChoice];
+          }
+        } else {
+          memory.unshift([pixels[i].id, pixels[i].style.backgroundColor, colorChoice]);
         }
+        pixelColorFunction(pixels[i]);
+
+        // scary stuff i learned off the internet to filter array of arrays
+        let temp = memory.map(JSON.stringify);
+        let uniqueTemp = new Set(temp);
+        console.log(uniqueTemp);
+        memory = Array.from(uniqueTemp, JSON.parse);
+
+        console.log(mP, memory);
+      })
+    }
+
+    function pixelColorFunction(pixelC) {
+      pixelC.style.backgroundColor = colorChoice;
+    }
+
+
+    backwards.addEventListener("click", function () {
+      backwardsFunction()
+    })
+    function backwardsFunction() {
+      forwards.style.opacity = "1";
+      forwards.style.pointerEvents = "all";
+      for (let i = 0; i < pixels.length; i++) {
+        if (memory[mP][0] == pixels[i].id) {
+          pixels[i].style.backgroundColor = memory[mP][1];
+          mP++;
+          break;
+        }
+      }
+      if (memory[mP][0] == memory[mP + 1][0] && memory[mP][2] == memory[mP + 1][2]) {
+        backwardsFunction()
+      }
+    }
+
+    // --------------------------------------------------
+
+    forwards.addEventListener("click", function () {
+      forwardsFunction()
+    })
+    function forwardsFunction() {
+      if (mP > 0) {
+        mP--;
+      }
+      for (let i = 0; i < pixels.length; i++) {
+        if (memory[mP][0] == pixels[i].id) {
+          pixels[i].style.backgroundColor = memory[mP][2];
+        }
+      }
+      if (memory[mP][0] == memory[mP - 1][0] && memory[mP][2] == memory[mP - 1][2]) {
+        forwardsFunction()
+      }
+    }
+
+
+    // line grid button
+    var gridCheckButton = document.getElementById("gridChoiceCheck")
+    gridCheckButton.addEventListener("click", function () {
+      gridCheckFunction();
+    })
+
+    function gridCheckFunction() {
+      if (gridCheckButton.checked) {
         for (let i = 0; i < pixels.length; i++) {
-          if (memory[mP][0] == pixels[i].id) {
-            pixels[i].style.backgroundColor = memory[mP][2];
-          }
+          pixels[i].style.border = "1px solid black";
         }
-        if (memory[mP][0] == memory[mP - 1][0] && memory[mP][2] == memory[mP - 1][2]) {
-          forwardsFunction()
-        }
-      }
-
-
-      // line grid button
-      var gridCheckButton = document.getElementById("gridChoiceCheck")
-      gridCheckButton.addEventListener("click", function () {
-        gridCheckFunction();
-      })
-
-      function gridCheckFunction() {
-        if (gridCheckButton.checked) {
-          for (let i = 0; i < pixels.length; i++) {
-            pixels[i].style.border = "1px solid black";
-          }
-        } else {
-          for (let i = 0; i < pixels.length; i++) {
-            pixels[i].style.border = "none";
-          }
+      } else {
+        for (let i = 0; i < pixels.length; i++) {
+          pixels[i].style.border = "none";
         }
       }
+    }
 
-      // 8x8 or 11x11
-      var xByX = document.getElementById("xByX");
-      var currentXBy = "8x8";
-      var x11 = document.getElementsByClassName("x11");
-      var pixelArea = document.getElementsByClassName("pixelArea")[0];
+    // 8x8 or 11x11
+    var xByX = document.getElementById("xByX");
+    var currentXBy = "8x8";
+    var x11 = document.getElementsByClassName("x11");
+    var pixelArea = document.getElementsByClassName("pixelArea")[0];
 
-      xByX.addEventListener("click", function () {
-        xByFunction();
-      })
+    xByX.addEventListener("click", function () {
+      xByFunction();
+    })
 
-      function xByFunction() {
-        for (let i = 0; i < x11.length; i++) {
-          if (xByX.innerHTML == "8x8") {
-            x11[i].style.display = "block";
-          }
-          if (xByX.innerHTML == "11x11") {
-            x11[i].style.display = "none";
-          }
-        }
+    function xByFunction() {
+      for (let i = 0; i < x11.length; i++) {
         if (xByX.innerHTML == "8x8") {
-          for (let i = 0; i < pixels.length; i++) {
-            pixels[i].style.width = "1.26rem";
-            pixels[i].style.height = "1.26rem";
-          }
-          xByX.innerHTML = "11x11"
-          pixelArea.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
-        } else {
-          for (let i = 0; i < pixels.length; i++) {
-            pixels[i].style.width = "1.73rem";
-            pixels[i].style.height = "1.73rem";
-          }
-          xByX.innerHTML = "8x8"
-          pixelArea.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+          x11[i].style.display = "block";
+        }
+        if (xByX.innerHTML == "11x11") {
+          x11[i].style.display = "none";
         }
       }
+      if (xByX.innerHTML == "8x8") {
+        for (let i = 0; i < pixels.length; i++) {
+          pixels[i].style.width = "1.26rem";
+          pixels[i].style.height = "1.26rem";
+        }
+        xByX.innerHTML = "11x11"
+        pixelArea.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+      } else {
+        for (let i = 0; i < pixels.length; i++) {
+          pixels[i].style.width = "1.73rem";
+          pixels[i].style.height = "1.73rem";
+        }
+        xByX.innerHTML = "8x8"
+        pixelArea.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+      }
+    }
 
-      // animation
-      var animateButton = document.getElementById("animateButton");
-      var step = 0;
+    // animation
+    var animateButton = document.getElementById("animateButton");
+    var step = 0;
 
-      animateButton.addEventListener("click", function () {
-        pixelResetFunction(true);
-        console.log(step);
-        step = 0;
-        if (xByX.innerHTML == "8x8") xByFunction();
-        var timer = setInterval(timerFunc, 250);
+    animateButton.addEventListener("click", function () {
+      pixelResetFunction(true);
+      console.log(step);
+      step = 0;
+      if (xByX.innerHTML == "8x8") xByFunction();
+      var timer = setInterval(timerFunc, 250);
 
+    })
+
+    function timerFunc() {
+      switch (step) {
+        case 0:
+          pixels[113].style.backgroundColor = "red";
+          pixels[116].style.backgroundColor = "red";
+          step++;
+          break;
+        case 1:
+          pixels[102].style.backgroundColor = "red";
+          pixels[105].style.backgroundColor = "red";
+          pixels[112].style.backgroundColor = "red";
+          pixels[114].style.backgroundColor = "red";
+          pixels[115].style.backgroundColor = "red";
+          pixels[117].style.backgroundColor = "red";
+          step++;
+          break;
+        case 2:
+          pixels[91].style.backgroundColor = "red";
+          pixels[94].style.backgroundColor = "red";
+          pixels[101].style.backgroundColor = "red";
+          pixels[103].style.backgroundColor = "red";
+          pixels[104].style.backgroundColor = "red";
+          pixels[106].style.backgroundColor = "red";
+          step++;
+          break;
+        case 3:
+          pixels[80].style.backgroundColor = "red";
+          pixels[83].style.backgroundColor = "red";
+          pixels[90].style.backgroundColor = "red";
+          pixels[92].style.backgroundColor = "red";
+          pixels[93].style.backgroundColor = "red";
+          pixels[95].style.backgroundColor = "red";
+          step++;
+          break;
+        case 4:
+          pixels[69].style.backgroundColor = "red";
+          pixels[72].style.backgroundColor = "red";
+          pixels[79].style.backgroundColor = "red";
+          pixels[81].style.backgroundColor = "red";
+          pixels[82].style.backgroundColor = "red";
+          pixels[84].style.backgroundColor = "red";
+          pixels[112].style.backgroundColor = "white";
+          pixels[117].style.backgroundColor = "white";
+          step++;
+          break;
+        case 5:
+          pixels[69 - 11].style.backgroundColor = "red";
+          pixels[72 - 11].style.backgroundColor = "red";
+          pixels[79 - 11].style.backgroundColor = "red";
+          pixels[81 - 11].style.backgroundColor = "red";
+          pixels[82 - 11].style.backgroundColor = "red";
+          pixels[84 - 11].style.backgroundColor = "red";
+          pixels[112 - 11].style.backgroundColor = "white";
+          pixels[117 - 11].style.backgroundColor = "white";
+          pixels[113].style.backgroundColor = "white";
+          pixels[116].style.backgroundColor = "white";
+          step++;
+          break;
+        case 6:
+          pixels[69 - 22].style.backgroundColor = "red";
+          pixels[72 - 22].style.backgroundColor = "red";
+          pixels[79 - 22].style.backgroundColor = "red";
+          pixels[81 - 22].style.backgroundColor = "red";
+          pixels[82 - 22].style.backgroundColor = "red";
+          pixels[84 - 22].style.backgroundColor = "red";
+          pixels[112 - 22].style.backgroundColor = "white";
+          pixels[117 - 22].style.backgroundColor = "white";
+          pixels[114].style.backgroundColor = "white";
+          pixels[115].style.backgroundColor = "white";
+          pixels[105].style.backgroundColor = "white";
+          pixels[102].style.backgroundColor = "white";
+          step++;
+          break;
+      }
+      if (step == 12) {
+        clearInterval(timer);
+      }
+    }
+
+
+    // SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME 
+
+    var scoreLeft = document.getElementById("scoreLeft");
+    var scoreRight = document.getElementById("scoreRight");
+    var ss = document.getElementById("ss");
+    var ssLeftAdd = document.getElementById("ssLeftAdd");
+    var ssLeftRem = document.getElementById("ssLeftRemove");
+    var ssRightAdd = document.getElementById("ssRightAdd");
+    var ssRightRem = document.getElementById("ssRightRemove");
+    var ssList = [ssLeftAdd, ssLeftRem, ssRightAdd, ssRightRem];
+    var leftNum = 0;
+    var rightNum = 0;
+
+    // ones or fives
+    var byOnes = document.getElementById("byOnes");
+    var byFives = document.getElementById("byFives");
+    var byType = 1;
+
+    byOnes.style.opacity = "0.5";
+    byOnes.style.pointerEvents = "none";
+    byOnes.addEventListener("click", function () {
+      byDigitsFunction(byOnes);
+    })
+    byFives.addEventListener("click", function () {
+      byDigitsFunction(byFives);
+    })
+
+    function byDigitsFunction(by) {
+      leftNum = 0;
+      rightNum = 0;
+      seasawFunction();
+      if (by != byOnes) {
+        byOnes.style.opacity = "1";
+        byOnes.style.pointerEvents = "all";
+        byFives.style.opacity = "0.5";
+        byFives.style.pointerEvents = "none";
+        byType = 5;
+      } else {
+        byOnes.style.opacity = "0.5";
+        byOnes.style.pointerEvents = "none";
+        byFives.style.opacity = "1";
+        byFives.style.pointerEvents = "all";
+        byType = 1;
+      }
+    }
+
+    // add listeners
+    for (let i = 0; i < ssList.length; i++) {
+      ssList[i].addEventListener("click", function () {
+        seasawFunction(ssList[i]);
       })
+    }
 
-      function timerFunc() {
-        switch (step) {
-          case 0:
-            pixels[113].style.backgroundColor = "red";
-            pixels[116].style.backgroundColor = "red";
-            step++;
-            break;
-          case 1:
-            pixels[102].style.backgroundColor = "red";
-            pixels[105].style.backgroundColor = "red";
-            pixels[112].style.backgroundColor = "red";
-            pixels[114].style.backgroundColor = "red";
-            pixels[115].style.backgroundColor = "red";
-            pixels[117].style.backgroundColor = "red";
-            step++;
-            break;
-          case 2:
-            pixels[91].style.backgroundColor = "red";
-            pixels[94].style.backgroundColor = "red";
-            pixels[101].style.backgroundColor = "red";
-            pixels[103].style.backgroundColor = "red";
-            pixels[104].style.backgroundColor = "red";
-            pixels[106].style.backgroundColor = "red";
-            step++;
-            break;
-          case 3:
-            pixels[80].style.backgroundColor = "red";
-            pixels[83].style.backgroundColor = "red";
-            pixels[90].style.backgroundColor = "red";
-            pixels[92].style.backgroundColor = "red";
-            pixels[93].style.backgroundColor = "red";
-            pixels[95].style.backgroundColor = "red";
-            step++;
-            break;
-          case 4:
-            pixels[69].style.backgroundColor = "red";
-            pixels[72].style.backgroundColor = "red";
-            pixels[79].style.backgroundColor = "red";
-            pixels[81].style.backgroundColor = "red";
-            pixels[82].style.backgroundColor = "red";
-            pixels[84].style.backgroundColor = "red";
-            pixels[112].style.backgroundColor = "white";
-            pixels[117].style.backgroundColor = "white";
-            step++;
-            break;
-          case 5:
-            pixels[69 - 11].style.backgroundColor = "red";
-            pixels[72 - 11].style.backgroundColor = "red";
-            pixels[79 - 11].style.backgroundColor = "red";
-            pixels[81 - 11].style.backgroundColor = "red";
-            pixels[82 - 11].style.backgroundColor = "red";
-            pixels[84 - 11].style.backgroundColor = "red";
-            pixels[112 - 11].style.backgroundColor = "white";
-            pixels[117 - 11].style.backgroundColor = "white";
-            pixels[113].style.backgroundColor = "white";
-            pixels[116].style.backgroundColor = "white";
-            step++;
-            break;
-          case 6:
-            pixels[69 - 22].style.backgroundColor = "red";
-            pixels[72 - 22].style.backgroundColor = "red";
-            pixels[79 - 22].style.backgroundColor = "red";
-            pixels[81 - 22].style.backgroundColor = "red";
-            pixels[82 - 22].style.backgroundColor = "red";
-            pixels[84 - 22].style.backgroundColor = "red";
-            pixels[112 - 22].style.backgroundColor = "white";
-            pixels[117 - 22].style.backgroundColor = "white";
-            pixels[114].style.backgroundColor = "white";
-            pixels[115].style.backgroundColor = "white";
-            pixels[105].style.backgroundColor = "white";
-            pixels[102].style.backgroundColor = "white";
-            step++;
-            break;
-        }
-        if (step == 12) {
-          clearInterval(timer);
-        }
+    // game itself
+    function seasawFunction(click) {
+      console.log(click);
+      switch (click) {
+        case ssLeftAdd:
+          if (leftNum < 15) leftNum += byType;
+          break;
+        case ssLeftRem:
+          if (leftNum != 0) leftNum -= byType;
+          break;
+        case ssRightAdd:
+          if (rightNum < 15) rightNum += byType;
+          break;
+        case ssRightRem:
+          if (rightNum != 0) rightNum -= byType;
+          break;
       }
+      ss.style.transform = "rotate(" + ((0 - leftNum) + (0 + rightNum)) + "deg)";
 
-
-      // SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME SEASAW GAME 
-
-      var scoreLeft = document.getElementById("scoreLeft");
-      var scoreRight = document.getElementById("scoreRight");
-      var ss = document.getElementById("ss");
-      var ssLeftAdd = document.getElementById("ssLeftAdd");
-      var ssLeftRem = document.getElementById("ssLeftRemove");
-      var ssRightAdd = document.getElementById("ssRightAdd");
-      var ssRightRem = document.getElementById("ssRightRemove");
-      var ssList = [ssLeftAdd, ssLeftRem, ssRightAdd, ssRightRem];
-      var leftNum = 0;
-      var rightNum = 0;
-
-      // ones or fives
-      var byOnes = document.getElementById("byOnes");
-      var byFives = document.getElementById("byFives");
-      var byType = 1;
-
-      byOnes.style.opacity = "0.5";
-      byOnes.style.pointerEvents = "none";
-      byOnes.addEventListener("click", function () {
-        byDigitsFunction(byOnes);
-      })
-      byFives.addEventListener("click", function () {
-        byDigitsFunction(byFives);
-      })
-
-      function byDigitsFunction(by) {
-        leftNum = 0;
-        rightNum = 0;
-        seasawFunction();
-        if (by != byOnes) {
-          byOnes.style.opacity = "1";
-          byOnes.style.pointerEvents = "all";
-          byFives.style.opacity = "0.5";
-          byFives.style.pointerEvents = "none";
-          byType = 5;
-        } else {
-          byOnes.style.opacity = "0.5";
-          byOnes.style.pointerEvents = "none";
-          byFives.style.opacity = "1";
-          byFives.style.pointerEvents = "all";
-          byType = 1;
-        }
-      }
-
-      // add listeners
-      for (let i = 0; i < ssList.length; i++) {
-        ssList[i].addEventListener("click", function () {
-          seasawFunction(ssList[i]);
-        })
-      }
-
-      // game itself
-      function seasawFunction(click) {
-        console.log(click);
-        switch (click) {
-          case ssLeftAdd:
-            if (leftNum < 15) leftNum += byType;
-            break;
-          case ssLeftRem:
-            if (leftNum != 0) leftNum -= byType;
-            break;
-          case ssRightAdd:
-            if (rightNum < 15) rightNum += byType;
-            break;
-          case ssRightRem:
-            if (rightNum != 0) rightNum -= byType;
-            break;
-        }
-        ss.style.transform = "rotate(" + ((0 - leftNum) + (0 + rightNum)) + "deg)";
-
-        scoreLeft.innerHTML = leftNum.toString();
-        scoreRight.innerHTML = rightNum.toString();
-      }
+      scoreLeft.innerHTML = leftNum.toString();
+      scoreRight.innerHTML = rightNum.toString();
+    }
 
 
 
-      // ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME
-      var rock = document.getElementById("rock");
-      var paper = document.getElementById("paper");
-      var scissors = document.getElementById("scissors");
-      var instruct = document.getElementById("instructions");
-      var playerC = document.getElementById("playerCharacter");
-      var enemyC = document.getElementById("enemyCharacter");
-      var rpcButtons = document.getElementById("rpcButtons");
-      var rpcReset = document.getElementById("rpcReset");
-      var rpcResetButton = document.getElementById("rpcResetButton");
+    // ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME ROCK PAPER SCISSORS GAME
+    var rock = document.getElementById("rock");
+    var paper = document.getElementById("paper");
+    var scissors = document.getElementById("scissors");
+    var instruct = document.getElementById("instructions");
+    var playerC = document.getElementById("playerCharacter");
+    var enemyC = document.getElementById("enemyCharacter");
+    var rpcButtons = document.getElementById("rpcButtons");
+    var rpcReset = document.getElementById("rpcReset");
+    var rpcResetButton = document.getElementById("rpcResetButton");
 
-      var rpcClassList = ["fa-hand-rock", "fa-hand-paper", "fa-hand-scissors", "fa-question"];
+    var rpcClassList = ["fa-hand-rock", "fa-hand-paper", "fa-hand-scissors", "fa-question"];
 
-      // selection caller
-      var rpcSelection = [rock, paper, scissors];
+    // selection caller
+    var rpcSelection = [rock, paper, scissors];
+    for (let i = 0; i < rpcSelection.length; i++) {
+      rpcSelection[i].addEventListener("click", function () {
+        rpcStart(rpcSelection[i]);
+      });
+    }
+
+    function rpcStart(input) {
       for (let i = 0; i < rpcSelection.length; i++) {
-        rpcSelection[i].addEventListener("click", function () {
-          rpcStart(rpcSelection[i]);
-        });
+        rpcSelection[i].style.opacity = "0.5";
+        rpcSelection[i].style.pointerEvents = "none"
       }
-
-      function rpcStart(input) {
-        for (let i = 0; i < rpcSelection.length; i++) {
-          rpcSelection[i].style.opacity = "0.5";
-          rpcSelection[i].style.pointerEvents = "none"
-        }
-        const enemyCdisco = setInterval(function () {
-          let eCDmem = null;
-          for (let i = 0; i < rpcClassList.length; i++) {
-            if (enemyC.classList.contains(rpcClassList[i])) {
-              enemyC.classList.remove(rpcClassList[i]);
-              enemyC.classList.add(rpcClassList[Math.floor(Math.random() * 3)])
-            }
-          }
-        }, 100)
-
-        function stopEnemyCDisco() {
-          clearInterval(enemyCdisco);
-        }
-
-        function removeCClasses() {
-          for (let i = 0; i < rpcClassList.length; i++) {
-            if (enemyC.classList.contains(rpcClassList[i])) {
-              enemyC.classList.remove(rpcClassList[i]);
-            }
-          }
-        }
-
-        playerC.style.animationPlayState = "running"
-        enemyC.style.animationPlayState = "running"
-        var cChoice = Math.floor(Math.random() * 3);
-        var pChoice = 0;
-        var rpcText = "";
-        switch (input) {
-          case rock:
-            pChoice = 0;
-            playerC.classList.remove("fa-question")
-            playerC.classList.add("fa-hand-rock")
-            break;
-          case paper:
-            pChoice = 1;
-            playerC.classList.remove("fa-question")
-            playerC.classList.add("fa-hand-paper")
-            break;
-          case scissors:
-            pChoice = 2;
-            playerC.classList.remove("fa-question")
-            playerC.classList.add("fa-hand-scissors")
-            break;
-        }
-
-        setTimeout(function () {
-          stopEnemyCDisco();
-          if (pChoice == 0) {
-            if (cChoice == 0) rpcText = "It's a draw.";
-            if (cChoice == 1) rpcText = "You Lose!";
-            if (cChoice == 2) rpcText = "You Win!";
-          } else if (pChoice == 1) {
-            if (cChoice == 0) rpcText = "You Win!";
-            if (cChoice == 1) rpcText = "draw";
-            if (cChoice == 2) rpcText = "You Lose!";
-          } else if (pChoice == 2) {
-            if (cChoice == 0) rpcText = "You Lose!";
-            if (cChoice == 1) rpcText = "You Win!";
-            if (cChoice == 2) rpcText = "It's a draw.";
-          }
-
-          // removes all classes from enemy computer (icons)
-          removeCClasses();
-
-          if (cChoice == 0) {
-            enemyC.classList.add("fa-hand-rock");
-          }
-          if (cChoice == 1) {
-            enemyC.classList.add("fa-hand-paper");
-          }
-          if (cChoice == 2) {
-            enemyC.classList.add("fa-hand-scissors");
-          }
-
-          instruct.innerHTML = rpcText;
-          playerC.style.animationPlayState = "paused";
-          enemyC.style.animationPlayState = "paused";
-
-          // rpc reset rpc reset rpc reset rpc reset rpc reset rpc reset rpc reset rpc reset 
-          rpcButtons.style.display = "none";
-          rpcReset.style.display = "flex";
-
-        }, 2500)
-
-        console.log("pChoice is " + pChoice);
-        console.log("cChoice is " + cChoice);
-      }
-
-      rpcResetButton.addEventListener("click", function () {
-        rpcResetFunction();
-      })
-
-      function rpcResetFunction() {
-        setTimeout(function () {
-          playerC.style.animationPlayState = "paused";
-          enemyC.style.animationPlayState = "paused";
-          rpcButtons.style.display = "flex";
-          rpcReset.style.display = "none";
-          instruct.innerHTML = "Pick One";
-          for (let i = 0; i < rpcSelection.length; i++) {
-            rpcSelection[i].style.opacity = "1";
-            rpcSelection[i].style.pointerEvents = "all"
-          }
-        }, 480)
+      const enemyCdisco = setInterval(function () {
+        let eCDmem = null;
         for (let i = 0; i < rpcClassList.length; i++) {
-          if (playerC.classList.contains(rpcClassList[i])) {
-            playerC.classList.remove(rpcClassList[i]);
+          if (enemyC.classList.contains(rpcClassList[i])) {
+            enemyC.classList.remove(rpcClassList[i]);
+            enemyC.classList.add(rpcClassList[Math.floor(Math.random() * 3)])
           }
+        }
+      }, 100)
+
+      function stopEnemyCDisco() {
+        clearInterval(enemyCdisco);
+      }
+
+      function removeCClasses() {
+        for (let i = 0; i < rpcClassList.length; i++) {
           if (enemyC.classList.contains(rpcClassList[i])) {
             enemyC.classList.remove(rpcClassList[i]);
           }
         }
-        playerC.classList.add("fa-question");
-        enemyC.classList.add("fa-question");
-        playerC.style.animationPlayState = "running";
-        enemyC.style.animationPlayState = "running";
       }
 
-
-      // GREYED SECTION BAR
-      var sectionPart = document.querySelectorAll(".sectionPart");
-      var greyed = document.querySelectorAll(".greyed")
-      // function
-      for (let i = 0; i < sectionPart.length; i++) {
-        sectionPart[i].addEventListener("mouseenter", function () {
-          greyed[i].style.width = "100%";
-        });
-        sectionPart[i].addEventListener("mouseleave", function () {
-          greyed[i].style.width = "0%";
-        });
+      playerC.style.animationPlayState = "running"
+      enemyC.style.animationPlayState = "running"
+      var cChoice = Math.floor(Math.random() * 3);
+      var pChoice = 0;
+      var rpcText = "";
+      switch (input) {
+        case rock:
+          pChoice = 0;
+          playerC.classList.remove("fa-question")
+          playerC.classList.add("fa-hand-rock")
+          break;
+        case paper:
+          pChoice = 1;
+          playerC.classList.remove("fa-question")
+          playerC.classList.add("fa-hand-paper")
+          break;
+        case scissors:
+          pChoice = 2;
+          playerC.classList.remove("fa-question")
+          playerC.classList.add("fa-hand-scissors")
+          break;
       }
 
+      setTimeout(function () {
+        stopEnemyCDisco();
+        if (pChoice == 0) {
+          if (cChoice == 0) rpcText = "It's a draw.";
+          if (cChoice == 1) rpcText = "You Lose!";
+          if (cChoice == 2) rpcText = "You Win!";
+        } else if (pChoice == 1) {
+          if (cChoice == 0) rpcText = "You Win!";
+          if (cChoice == 1) rpcText = "draw";
+          if (cChoice == 2) rpcText = "You Lose!";
+        } else if (pChoice == 2) {
+          if (cChoice == 0) rpcText = "You Lose!";
+          if (cChoice == 1) rpcText = "You Win!";
+          if (cChoice == 2) rpcText = "It's a draw.";
+        }
 
-    </script>
+        // removes all classes from enemy computer (icons)
+        removeCClasses();
+
+        if (cChoice == 0) {
+          enemyC.classList.add("fa-hand-rock");
+        }
+        if (cChoice == 1) {
+          enemyC.classList.add("fa-hand-paper");
+        }
+        if (cChoice == 2) {
+          enemyC.classList.add("fa-hand-scissors");
+        }
+
+        instruct.innerHTML = rpcText;
+        playerC.style.animationPlayState = "paused";
+        enemyC.style.animationPlayState = "paused";
+
+        // rpc reset rpc reset rpc reset rpc reset rpc reset rpc reset rpc reset rpc reset 
+        rpcButtons.style.display = "none";
+        rpcReset.style.display = "flex";
+
+      }, 2500)
+
+      console.log("pChoice is " + pChoice);
+      console.log("cChoice is " + cChoice);
+    }
+
+    rpcResetButton.addEventListener("click", function () {
+      rpcResetFunction();
+    })
+
+    function rpcResetFunction() {
+      setTimeout(function () {
+        playerC.style.animationPlayState = "paused";
+        enemyC.style.animationPlayState = "paused";
+        rpcButtons.style.display = "flex";
+        rpcReset.style.display = "none";
+        instruct.innerHTML = "Pick One";
+        for (let i = 0; i < rpcSelection.length; i++) {
+          rpcSelection[i].style.opacity = "1";
+          rpcSelection[i].style.pointerEvents = "all"
+        }
+      }, 480)
+      for (let i = 0; i < rpcClassList.length; i++) {
+        if (playerC.classList.contains(rpcClassList[i])) {
+          playerC.classList.remove(rpcClassList[i]);
+        }
+        if (enemyC.classList.contains(rpcClassList[i])) {
+          enemyC.classList.remove(rpcClassList[i]);
+        }
+      }
+      playerC.classList.add("fa-question");
+      enemyC.classList.add("fa-question");
+      playerC.style.animationPlayState = "running";
+      enemyC.style.animationPlayState = "running";
+    }
 
 
-  </header>
+    // GREYED SECTION BAR
+    var sectionPart = document.querySelectorAll(".sectionPart");
+    var greyed = document.querySelectorAll(".greyed")
+    // function
+    for (let i = 0; i < sectionPart.length; i++) {
+      sectionPart[i].addEventListener("mouseenter", function () {
+        greyed[i].style.width = "100%";
+      });
+      sectionPart[i].addEventListener("mouseleave", function () {
+        greyed[i].style.width = "0%";
+      });
+    }
+
+
+  </script>
 </body>
 
 </html>
