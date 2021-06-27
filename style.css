@@ -30,6 +30,7 @@ a {
   .intro h1 {
     text-align: center;
     margin: auto;
+    width: 12rem;
   }
   .intro h4 {
     text-align: center;
