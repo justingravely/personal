@@ -15,9 +15,6 @@
   <div class="intro" id="intro">
     <h1>Hi, I'm Justin</h1>
     <h4>Web Dev & Designer</h4>
-    <!-- <div class="personality">
-      <p>My main interests are the Christian faith & it's theology, PC Games & Apps, and small critters. I would describe myself as a relaxed goofy minimalist.</p>
-    </div> -->
   </div>
 
   <div class="nav" id="nav">
@@ -33,7 +30,21 @@
 
   <div class="bigBox boxes"></div>
 
-  <div class="portfolioWrapper">
+  <div id="aboutWrapper">
+    <div class="selfie"></div>
+    <div class="personality">
+      <p>25, Fella, NC</p>
+      <p>My main interests are: <br>
+        The Christian faith & it's theology<br>
+        <span style="color: grey">Mere Christianity, Bible Project, the Bible</span><br>
+        PC Games & Apps<br>
+        <span style="color: grey">Overwatch, WoW, Guild Wars 2</span><br>
+        and all kinds of critters.<br><br> 
+        I would describe myself as a relaxed goofy minimalist.</p>
+    </div>
+  </div>
+
+  <div id="portfolioWrapper">
     <section class="showcaseWrapper">
       <div class="showcaseGame">
         <div id="rpcBody" class="rpcBody">
@@ -329,6 +340,7 @@
     </div>
   </div>
 
+
   <!-- newScript -->
   <script>
     // The beginning of my script
@@ -342,7 +354,8 @@
     var links = document.getElementsByClassName("links");
     var sticks = document.getElementsByClassName("stick");
     var boxes = document.getElementsByClassName("boxes");
-    var pFWrapper = document.getElementsByClassName("portfolioWrapper")[0];
+    var pFWrapper = document.getElementById("portfolioWrapper");
+    var aboutWrapper = document.getElementById("aboutWrapper");
 
 
     // adding event listeners to every nav link
@@ -378,9 +391,21 @@
         if (num == 1) {
           pFWrapper.style.opacity = "1";
           pFWrapper.style.pointerEvents = "all";
+          aboutWrapper.style.opacity = "0";
+          aboutWrapper.style.pointerEvents = "none";
+          setTimeout(function(){
+            pFWrapper.style.display = "flex";
+            aboutWrapper.style.display = "none";
+          }, 1000)
         } else {
           pFWrapper.style.opacity = "0";
           pFWrapper.style.pointerEvents = "none";
+          aboutWrapper.style.opacity = "1";
+          aboutWrapper.style.pointerEvents = "all";
+          setTimeout(function(){
+            pFWrapper.style.display = "none";
+            aboutWrapper.style.display = "flex";
+          }, 1000)
         }
 
         // other
