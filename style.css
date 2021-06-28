@@ -23,14 +23,14 @@ a {
   position: absolute;
   left: 50%;
   margin-top: -10rem;
-  margin-left: -6rem;
-  width: 12rem;
+  margin-left: -8rem;
+  width: 16rem;
   color: white;
 }
   .intro h1 {
     text-align: center;
     margin: auto;
-    width: 12rem;
+    width: 15rem;
   }
   .intro h4 {
     text-align: center;
