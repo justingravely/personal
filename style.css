@@ -166,6 +166,8 @@ a {
   .websitePortfolio {
     width: 90%;
     margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
 .showcaseWrapper {
@@ -341,10 +343,15 @@ a {
     margin-right: 0;
   }
   #pixelResetConfirm {
+    margin-left: 5rem;
     display: none;
   }
   #pixelResetConfirmNo {
+    width: 1.7rem;
     margin-left: 0.35rem;
+  }
+  #pixelResetConfirmYes {
+    width: 1.7rem;
   }
   #forwards {
     opacity: 0.5;
@@ -490,9 +497,10 @@ a {
 
     /* sites */
 .portfolioSite {
-  height: 15rem;
-  width: 15rem;
+  height: 11rem;
+  width: 9rem;
   margin: auto;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -501,32 +509,32 @@ a {
     height: 100%;
   }
   .portfolioImgOne{
-    height: 80%;
-    width: 80%;
+    height: 8.5rem;
+    width: 8.5rem;
     background-image: url("https://cdn.discordapp.com/attachments/736393082831896590/858686592187891712/unknown.png");
     background-size: contain;
     margin: auto;
     border-radius: 10%;
   }
     .portfolioImgTwo {
-      height: 80%;
-      width: 80%;
+      height: 8.5rem;
+      width: 8.5rem;
       background-image: url("https://cdn.discordapp.com/attachments/736393082831896590/752330125332185198/unknown.png");
       background-size: contain;
       margin: auto;
       border-radius: 10%;
     }
       .portfolioImgThree {
-        height: 80%;
-        width: 80%;
+        height: 8.5rem;
+        width: 8.5rem;
         background-image: url("https://cdn.discordapp.com/attachments/736393082831896590/762050870506291220/unknown.png");
         background-size: contain;
         margin: auto;
         border-radius: 10%;
       }
         .portfolioImgFour {
-          height: 80%;
-          width: 80%;
+          height: 8.5rem;
+          width: 8.5rem;
           background-image: url("https://cdn.discordapp.com/attachments/736393082831896590/858688977925308416/unknown.png");
           background-size: contain;
           margin: auto;
@@ -534,7 +542,8 @@ a {
         }
   .portfolioTitle {
     margin: auto;
-    margin-top: -2.5rem;
+    margin-top: -1.5rem;
+    text-align: center;
   }
   .portfolioTitle a:hover {
     color: rgb(255, 195, 83);
