@@ -14,7 +14,6 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: white;
 }
 
@@ -56,13 +55,17 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.5);
     margin: 0.3rem auto;
     transition: 0.1s;
-    color: rgb(255, 195, 83)
   }
   .nav a {
     transition: 0.66s;
+    text-decoration: none;
   }
-  .nav a:hover {
-    color:rgb(255, 195, 83);
+  #nav .links:hover {
+    color: rgb(255, 195, 83);
+  }
+  .links {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
 .boxes {
@@ -88,10 +91,12 @@ a {
   margin: auto;
   margin-top: 7.5rem;
   width: 15rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
   transition: 1s;
+  position: absolute;
+  margin-left: -7.5rem;
+  left: 50%;
 }
 
 .selfie {
@@ -103,6 +108,16 @@ a {
   background-size: cover;
   margin: auto;
   margin-bottom: 1rem;
+}
+
+#aboutWrapper a {
+  text-decoration: underline;
+  color: rgb(200, 200, 200);
+  font-size: 0.8rem;
+}
+
+#aboutWrapper a:hover {
+  color: rgb(255, 195, 83);
 }
 
 .personality p:first-child {
@@ -125,6 +140,10 @@ a {
   width: 86vw;
   height: 93vh;
   overflow-y: scroll;
+
+  position: absolute;
+  left: 50%;
+  margin-left: -41vw;
 }
 
 /* website portfolio */

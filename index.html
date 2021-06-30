@@ -18,9 +18,9 @@
   </div>
 
   <div class="nav" id="nav">
-    <a class="links" href="#" id="about">about</a>
-    <div class="stick"></div>
     <a class="links" href="#" id="portfolio">portfolio</a>
+    <div class="stick"></div>
+    <a class="links" href="#" id="about">about</a>
     <div class="stick"></div>
     <a class="links" href="#" id="blog">blog</a>
     <div class="stick"></div>
@@ -33,14 +33,20 @@
   <div id="aboutWrapper">
     <div class="selfie"></div>
     <div class="personality">
-      <p>25, Fella, NC</p>
-      <p>My main interests are: <br>
-        The Christian faith & it's theology<br>
-        <span style="color: grey">Mere Christianity, Bible Project, the Bible</span><br>
-        PC Games & Apps<br>
-        <span style="color: grey">Overwatch, WoW, Guild Wars 2</span><br>
-        and all kinds of critters.<br><br> 
-        I would describe myself as a relaxed goofy minimalist.</p>
+      <p style="text-align: center">25, Fella, NC <br> Relaxed Goofy Minimalist </p>
+      <p>
+        <br>
+        Outside of Web Development my main interests are:<br><br>
+        Christianity<br>
+        <a href="https://en.wikipedia.org/wiki/Mere_Christianity" target=" ">&nbsp;- Mere Christianity</a> <br>
+        <a href="https://bibleproject.com/" target=" ">&nbsp;- Bible Project</a><br>
+        <a href="https://en.wikipedia.org/wiki/Bible" target=" ">&nbsp;- the Bible</a><br>
+        PC Games<br>
+        <a href="https://www.youtube.com/watch?v=QxTK8zzGiHM" target=" ">&nbsp;- Overwatch</a><br> <a href="https://www.youtube.com/watch?v=Tvco6ISqvEw" target=" ">&nbsp;- WoW/GW2 </a><br>
+        <a href="https://screenrant.com/roguelike-roguelite-difference-permadeath-hades-rogue-slay-spire/"target = " ">&nbsp;-
+        Roguelites</a><br>
+        and all kinds of critters.<br><br>
+      </p>
     </div>
   </div>
 
@@ -311,7 +317,8 @@
             <div class="portfolioImgOne"></div>
           </a>
         </div>
-        <p class="portfolioTitle"><a href="https://www.freecodecamp.org/justingravely" target=" ">Free Code Camp Certifications</a></p>
+        <p class="portfolioTitle"><a href="https://www.freecodecamp.org/justingravely" target=" ">Free Code Camp
+            Certifications</a></p>
       </div>
       <div class="portfolioSite">
         <div class="imgWrapper">
@@ -327,7 +334,8 @@
             <div class="portfolioImgThree"></div>
           </a>
         </div>
-        <p class="portfolioTitle"><a href="https://justingravely.github.io/FeM-Pricing-Component/" target=" ">FeM Pricing Component</a></p>
+        <p class="portfolioTitle"><a href="https://justingravely.github.io/FeM-Pricing-Component/" target=" ">FeM
+            Pricing Component</a></p>
       </div>
       <div class="portfolioSite">
         <div class="imgWrapper">
@@ -335,7 +343,8 @@
             <div class="portfolioImgFour"></div>
           </a>
         </div>
-        <p class="portfolioTitle"><a href="https://justingravely.github.io/JGPortfolio/" target=" ">Old Portfolio</a></p>
+        <p class="portfolioTitle"><a href="https://justingravely.github.io/JGPortfolio/" target=" ">Old Portfolio</a>
+        </p>
       </div>
     </div>
   </div>
@@ -376,36 +385,24 @@
       intro.style.marginTop = "-8rem";
       for (let i = 0; i < links.length; i++) {
         links[i].style.transform = "rotate(270deg)";
-        if (i == 1 | i == 3) {
-          links[i].style.paddingTop = "1.4rem";
-          links[i].style.paddingBottom = "1.4rem";
-        } else {
-          links[i].style.paddingTop = "0.7rem";
-          links[i].style.paddingBottom = "0.7rem";
-        } //link color
+        links[i].style.paddingTop = "2rem";
+        links[i].style.paddingBottom = "2rem";
+        //link color
         if (i !== num) {
           links[i].style.color = "white";
         } else {
           links[i].style.color = "rgb(255, 195, 83)";
         } // page change
-        if (num == 1) {
+        if (num == 0) {
           pFWrapper.style.opacity = "1";
           pFWrapper.style.pointerEvents = "all";
           aboutWrapper.style.opacity = "0";
           aboutWrapper.style.pointerEvents = "none";
-          setTimeout(function(){
-            pFWrapper.style.display = "flex";
-            aboutWrapper.style.display = "none";
-          }, 1000)
         } else {
           pFWrapper.style.opacity = "0";
           pFWrapper.style.pointerEvents = "none";
           aboutWrapper.style.opacity = "1";
           aboutWrapper.style.pointerEvents = "all";
-          setTimeout(function(){
-            pFWrapper.style.display = "none";
-            aboutWrapper.style.display = "flex";
-          }, 1000)
         }
 
         // other
