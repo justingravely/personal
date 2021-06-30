@@ -42,9 +42,11 @@
         <a href="https://bibleproject.com/" target=" ">&nbsp;- Bible Project</a><br>
         <a href="https://en.wikipedia.org/wiki/Bible" target=" ">&nbsp;- the Bible</a><br>
         PC Games<br>
-        <a href="https://www.youtube.com/watch?v=QxTK8zzGiHM" target=" ">&nbsp;- Overwatch</a><br> <a href="https://www.youtube.com/watch?v=Tvco6ISqvEw" target=" ">&nbsp;- WoW/GW2 </a><br>
-        <a href="https://screenrant.com/roguelike-roguelite-difference-permadeath-hades-rogue-slay-spire/"target = " ">&nbsp;-
-        Roguelites</a><br>
+        <a href="https://www.youtube.com/watch?v=QxTK8zzGiHM" target=" ">&nbsp;- Overwatch</a><br> <a
+          href="https://www.youtube.com/watch?v=Tvco6ISqvEw" target=" ">&nbsp;- WoW/GW2 </a><br>
+        <a href="https://screenrant.com/roguelike-roguelite-difference-permadeath-hades-rogue-slay-spire/"
+          target=" ">&nbsp;-
+          Roguelites</a><br>
         and all kinds of critters.<br><br>
       </p>
     </div>
@@ -349,6 +351,12 @@
     </div>
   </div>
 
+  <div id="blogWrapper">
+    <p>hello zygotian</p>
+  </div>
+
+  <div id="contactWrapper"></div>
+
 
   <!-- newScript -->
   <script>
@@ -365,6 +373,11 @@
     var boxes = document.getElementsByClassName("boxes");
     var pFWrapper = document.getElementById("portfolioWrapper");
     var aboutWrapper = document.getElementById("aboutWrapper");
+    var blogWrapper = document.getElementById("blogWrapper");
+    var contactWrapper = document.getElementById("contactWrapper");
+
+    var start = false;
+    var sectionArr = [pFWrapper, aboutWrapper, blogWrapper, contactWrapper];
 
 
     // adding event listeners to every nav link
@@ -375,6 +388,11 @@
     }
 
     function transFunction(num) {
+      if (start == true) {
+        for (let i = 0; i < sectionArr.length; i++) {
+          sectionArr[i].style.transition = "1s";
+        }
+      }
       // transitions
       for (let i = 0; i < sticks.length; i++) {
         sticks[i].style.border = "1px solid white";
@@ -393,18 +411,13 @@
         } else {
           links[i].style.color = "rgb(255, 195, 83)";
         } // page change
-        if (num == 0) {
-          pFWrapper.style.opacity = "1";
-          pFWrapper.style.pointerEvents = "all";
-          aboutWrapper.style.opacity = "0";
-          aboutWrapper.style.pointerEvents = "none";
+        if (start == false) {
+          setTimeout(function () {
+            pageChange(num);
+          }, 700)
         } else {
-          pFWrapper.style.opacity = "0";
-          pFWrapper.style.pointerEvents = "none";
-          aboutWrapper.style.opacity = "1";
-          aboutWrapper.style.pointerEvents = "all";
+            pageChange(num);
         }
-
         // other
         links[i].style.marginRight = "0.33rem";
       }
@@ -415,6 +428,48 @@
           boxes[i].style.opacity = "1";
         }
       }, 250)
+      start = true;
+    }
+
+    // page change function
+    function pageChange(num) {
+      if (num == 0) {
+        pFWrapper.style.opacity = "1";
+        pFWrapper.style.pointerEvents = "all";
+        aboutWrapper.style.opacity = "0";
+        aboutWrapper.style.pointerEvents = "none";
+        blogWrapper.style.opacity = "0";
+        blogWrapper.style.pointerEvents = "none";
+        contactWrapper.style.opacity = "0";
+        contactWrapper.style.pointerEvents = "none"
+      } else if (num == 1) {
+        pFWrapper.style.opacity = "0";
+        pFWrapper.style.pointerEvents = "none";
+        aboutWrapper.style.opacity = "1";
+        aboutWrapper.style.pointerEvents = "all";
+        blogWrapper.style.opacity = "0";
+        blogWrapper.style.pointerEvents = "none";
+        contactWrapper.style.opacity = "0";
+        contactWrapper.style.pointerEvents = "none"
+      } else if (num == 2) {
+        pFWrapper.style.opacity = "0";
+        pFWrapper.style.pointerEvents = "none";
+        aboutWrapper.style.opacity = "0";
+        aboutWrapper.style.pointerEvents = "none";
+        blogWrapper.style.opacity = "1";
+        blogWrapper.style.pointerEvents = "all";
+        contactWrapper.style.opacity = "0";
+        contactWrapper.style.pointerEvents = "none"
+      } else if (num == 3) {
+        pFWrapper.style.opacity = "0";
+        pFWrapper.style.pointerEvents = "none";
+        aboutWrapper.style.opacity = "0";
+        aboutWrapper.style.pointerEvents = "none";
+        blogWrapper.style.opacity = "0";
+        blogWrapper.style.pointerEvents = "none";
+        contactWrapper.style.opacity = "1";
+        contactWrapper.style.pointerEvents = "all"
+      }
     }
 
     // intro dropdown

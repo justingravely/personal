@@ -124,6 +124,21 @@ a {
   margin-bottom: 0.5rem;
 }
 
+/* blog */
+#blogWrapper {
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: 1s;
+  position: absolute;
+  width: 86vw;
+  height: 93vh;
+  left: 50%;
+  margin-left: -41vw;
+  border: 1px solid red;
+  margin-top: 1.4rem;
+}
+
 /* AHHHHHHHHHHHHHH */
 
 #portfolioWrapper {
