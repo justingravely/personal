@@ -21,7 +21,6 @@ a {
   transition: 1s;
   position: absolute;
   left: 50%;
-  margin-top: -10rem;
   margin-left: -8rem;
   width: 16rem;
   color: white;
@@ -45,9 +44,15 @@ a {
   flex-direction: column;
   text-align: center;
   transition: 1s;
-  height: 20rem;
-  margin-top: 16rem;
+  height: 28.5rem;
+  top: 50%;
+  margin-top: -14.25rem;
 }
+  #navInner {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
   .stick {
     height: 2rem;
     width: 1px;
@@ -67,6 +72,26 @@ a {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  #logoBackButton {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    color: white;
+    display: flex;
+    right: 3%;
+    /* top: 1.5%; */
+    top: -10%;
+    z-index: 5;
+    transition: 1s;
+    cursor: pointer;
+  }
+    #logoBackButton p {
+      margin: auto;
+      font-size: 1.7rem;
+      font-weight: bold;
+      text-decoration: underline;
+    }
 
 .boxes {
   transition: 1.5s;
@@ -132,12 +157,42 @@ a {
   transition: 1s;
   position: absolute;
   width: 86vw;
-  height: 93vh;
+  height: 90vh;
   left: 50%;
   margin-left: -41vw;
-  border: 1px solid red;
-  margin-top: 1.4rem;
-}
+  margin-top: 3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  overflow-y: scroll;
+} 
+  .blogSelection {
+    height: 3rem;
+    display: flex;
+  }
+    .blogSelection button {
+      width: 6rem;
+      height: 2rem;
+      margin: auto;
+      cursor: pointer;
+    }
+  .blogBody {
+    margin-top: 0.5rem;
+    border: 1px solid rgb(95, 94, 94);
+  }
+    .blogBody h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .blogBody p {
+      padding: 1rem;
+      padding-top: 0;
+    }
+    .blogDate {
+      text-align: center;
+      margin-bottom: 0rem;
+      padding: 0;
+    }
 
 /* AHHHHHHHHHHHHHH */
 
@@ -446,23 +501,17 @@ a {
 }
 
 #colorLeft {
-  margin: auto;
+  margin: 1.7rem auto auto auto;
   margin-left: 0.7rem;
 }
 
 #colorRight {
-  margin: auto;
+  margin: 1.7rem auto auto auto;
   margin-right: 0.7rem;
 }
 
 #currentVisual {
   display: flex;
-}
-
-#currentColorTitle {
-  color: black;
-  margin-bottom: 0.4rem;
-  text-align: center;
 }
 
 #currentColor {
@@ -471,7 +520,7 @@ a {
   background-color: black;
   border-radius: 50%;
   border: 1px solid rgb(255, 255, 255);
-  margin: auto;
+  margin: 1.5rem auto auto auto;
 }
 
 #colorSelection {

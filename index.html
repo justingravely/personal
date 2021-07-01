@@ -18,15 +18,20 @@
   </div>
 
   <div class="nav" id="nav">
-    <a class="links" href="#" id="portfolio">portfolio</a>
-    <div class="stick"></div>
-    <a class="links" href="#" id="about">about</a>
-    <div class="stick"></div>
-    <a class="links" href="#" id="blog">blog</a>
-    <div class="stick"></div>
-    <a class="links" href="#" id="contact">contact</a>
+    <div id="navInner">
+      <a class="links" href="#" id="portfolio">portfolio</a>
+      <div class="stick"></div>
+      <a class="links" href="#" id="about">about</a>
+      <div class="stick"></div>
+      <a class="links" href="#" id="blog">blog</a>
+      <div class="stick"></div>
+      <a class="links" href="#" id="contact">contact</a>
+    </div>
   </div>
 
+  <div id="logoBackButton">
+    <p>JG</p>
+  </div>
 
   <div class="bigBox boxes"></div>
 
@@ -270,7 +275,6 @@
           <div class="pixelRightWrap">
             <div class="pixelUiRight">
               <div class="currentColorWrapper">
-                <p id="currentColorTitle">Current</p>
                 <div id="currentVisual">
                   <i class="colorChanger fas fa-caret-left" id="colorLeft"></i>
                   <div id="currentColor"></div>
@@ -353,9 +357,55 @@
 
   <div id="blogWrapper">
     <div class="blogSelection">
-
+      <button id="faithBlogButton">Faith</button>
+      <button id="lifeBlogButton">Life</button>
+      <button id="codeBlogButton">Code</button>
     </div>
-    <p>hello zygotian</p>
+    <div class="blogBodyWrapper">
+      <div id="faithBlog">
+        <div class="blogBody">
+          <h1>Faith Blog One</h1>
+          <p class="blogDate">7/1/2021</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quos molestias quia libero dolorum ullam
+            nisi saepe sit provident, quod, eaque ratione, est sequi praesentium nihil cupiditate harum eos magnam omnis
+            perspiciatis ipsum! Molestias officia beatae sint! Commodi soluta officiis ipsum rerum veniam est esse
+            officia optio autem? Sapiente, reiciendis.</p>
+        </div>
+        <div class="blogBody">
+          <h1>Faith Blog One</h1>
+          <p class="blogDate">7/1/2021</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quos molestias quia libero dolorum ullam
+            nisi saepe sit provident, quod, eaque ratione, est sequi praesentium nihil cupiditate harum eos magnam omnis
+            perspiciatis ipsum! Molestias officia beatae sint! Commodi soluta officiis ipsum rerum veniam est esse
+            officia optio autem? Sapiente, reiciendis.</p>
+        </div>
+        <div class="blogBody">
+          <h1>Faith Blog One</h1>
+          <p class="blogDate">7/1/2021</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quos molestias quia libero dolorum ullam
+            nisi saepe sit provident, quod, eaque ratione, est sequi praesentium nihil cupiditate harum eos magnam omnis
+            perspiciatis ipsum! Molestias officia beatae sint! Commodi soluta officiis ipsum rerum veniam est esse
+            officia optio autem? Sapiente, reiciendis.</p>
+        </div>
+      </div>
+      <div id="lifeBlog">
+        <div class="blogBody">
+          <h1>Life Blog One</h1>
+          <p class="blogDate">7/1/2021</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quos molestias quia libero dolorum ullam
+            nisi saepe sit provident, quod, eaque ratione, est sequi praesentium nihil cupiditate harum eos magnam omnis
+            perspiciatis ipsum! Molestias officia beatae sint! Commodi soluta officiis ipsum rerum veniam est esse
+            officia optio autem? Sapiente, reiciendis.</p>
+        </div>
+      </div>
+      <div id="codeBlog">
+        <div class="blogBody">
+          <h1>Code Blog One</h1>
+          <p class="blogDate">7/1/2021</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A illum earum, consequuntur amet reiciendis dolor mollitia ad deleniti repellendus excepturi quisquam harum molestias soluta facilis id porro dolores blanditiis quos assumenda recusandae? Beatae porro, sit earum eius omnis esse unde itaque consequatur tenetur perferendis sapiente ut quia quibusdam eligendi cupiditate enim. Odit temporibus illo quo pariatur repudiandae inventore nesciunt beatae odio. Quia, quas a eum porro facilis autem aspernatur corrupti sit sint, excepturi blanditiis velit? Omnis accusamus dolore inventore incidunt illum fugiat ullam qui tenetur dignissimos excepturi. Rerum officia explicabo, recusandae enim quod repellendus nemo, iure sapiente itaque facere ea commodi accusamus laborum unde in doloremque praesentium neque, suscipit aut vel sed voluptatem tempore. Asperiores nisi soluta, earum reiciendis quasi ducimus aliquid, eum exercitationem facilis mollitia consequuntur aspernatur excepturi ratione laudantium est. Doloribus molestias quae atque, aperiam corrupti deleniti quibusdam sed exercitationem distinctio possimus esse temporibus eos dolorum harum eius minima tempora neque quasi excepturi minus consequatur quia cumque reiciendis. Provident inventore laboriosam commodi! Labore quia et ipsa, cumque libero eveniet iure consequuntur quos, maxime hic id dolorum nemo? Eligendi quod ab temporibus! Dignissimos nulla in reiciendis, corrupti unde eligendi eveniet distinctio assumenda aliquam a dolore veniam et expedita quasi.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="contactWrapper"></div>
@@ -381,6 +431,8 @@
 
     var start = false;
     var sectionArr = [pFWrapper, aboutWrapper, blogWrapper, contactWrapper];
+
+    var logoBB = document.getElementById("logoBackButton");
 
 
     // adding event listeners to every nav link
@@ -419,19 +471,31 @@
             pageChange(num);
           }, 700)
         } else {
-            pageChange(num);
+          pageChange(num);
         }
         // other
         links[i].style.marginRight = "0.33rem";
       }
       nav.style.left = "5.4%";
-      nav.style.marginTop = "11rem";
       setTimeout(function () {
         for (let i = 0; i < boxes.length; i++) {
           boxes[i].style.opacity = "1";
         }
       }, 250)
       start = true;
+      // logo back
+      logoBB.style.top = "1.5%";
+      logoBB.addEventListener("click", function () {
+        logoBBFunc()
+      })
+      function logoBBFunc() {
+        if (logoBB.style.top == "-10%") {
+          logoBB.style.top = "1.5%";
+        } if (logoBB.style.top == "1.5%") {
+          logoBB.style.top = "-10%";
+        }
+        pageChange(4);
+      }
     }
 
     // page change function
@@ -472,11 +536,77 @@
         blogWrapper.style.pointerEvents = "none";
         contactWrapper.style.opacity = "1";
         contactWrapper.style.pointerEvents = "all"
+      } else if (num == 4) {
+        pFWrapper.style.opacity = "0";
+        pFWrapper.style.pointerEvents = "none";
+        aboutWrapper.style.opacity = "0";
+        aboutWrapper.style.pointerEvents = "none";
+        blogWrapper.style.opacity = "0";
+        blogWrapper.style.pointerEvents = "none";
+        contactWrapper.style.opacity = "0";
+        contactWrapper.style.pointerEvents = "none"
+
+        intro.style.marginTop = "7rem";
+
+        for (let i = 0; i < links.length; i++) {
+          links[i].style.transform = "rotate(0deg)";
+          links[i].style.paddingTop = "0";
+          links[i].style.paddingBottom = "0";
+          //link color
+          if (i !== num) {
+            links[i].style.color = "white";
+          } else {
+            links[i].style.color = "rgb(255, 195, 83)";
+          }
+        }
+
+        for (let i = 0; i < boxes.length; i++) {
+          boxes[i].style.opacity = "0";
+        }
+
+        nav.style.left = "50%";
       }
     }
 
     // intro dropdown
     setTimeout(function () { intro.style.marginTop = "7rem"; }, 100)
+
+    // blogCode     // blogCode     // blogCode     // blogCode     // blogCode     // blogCode 
+    var faithBlog = document.getElementById("faithBlog");
+    var lifeBlog = document.getElementById("lifeBlog");
+    var codeBlog = document.getElementById("codeBlog");
+    var faithBlogButton = document.getElementById("faithBlogButton");
+    var lifeBlogButton = document.getElementById("lifeBlogButton");
+    var codeBlogButton = document.getElementById("codeBlogButton");
+    var blogArr = [faithBlogButton, lifeBlogButton, codeBlogButton];
+
+    // default 
+    faithBlog.style.display = "block";
+    lifeBlog.style.display = "none";
+    codeBlog.style.display = "none";
+
+    // add event liteners to each buutton 
+    for (let i = 0; i < blogArr.length; i++) {
+      blogArr[i].addEventListener("click", function () {
+        blogFunc(i);
+      })
+    }
+    function blogFunc(blog) {
+      if (blog == 0) {
+        faithBlog.style.display = "block";
+        lifeBlog.style.display = "none";
+        codeBlog.style.display = "none";
+      } else if (blog == 1) {
+        faithBlog.style.display = "none";
+        lifeBlog.style.display = "block";
+        codeBlog.style.display = "none";
+      } else if (blog == 2) {
+        faithBlog.style.display = "none";
+        lifeBlog.style.display = "none";
+        codeBlog.style.display = "block";
+      }
+    }
+
 
 
   </script>
