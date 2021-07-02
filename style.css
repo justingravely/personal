@@ -163,7 +163,6 @@ a {
   margin-top: 3rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  overflow-y: scroll;
 } 
   .blogSelection {
     height: 3rem;
@@ -193,6 +192,70 @@ a {
       margin-bottom: 0rem;
       padding: 0;
     }
+    .blogBodyWrapper {
+      overflow-y: scroll;
+      height: 34rem;
+    }
+
+/* contact */
+#contactWrapper {
+  height: 95vh;
+  width: 80vw;
+  margin: auto;
+  margin-left: 2.5rem;
+  margin-top: 1.1rem;
+  display: flex;
+}
+  .contactWrapperInner {
+    width: 10rem;
+    height: 20rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .iconWrapper {
+    color: white;
+    margin: auto;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    border: 3px solid rgb(255, 195, 83);
+    border-style: inset;
+    animation: iconRotate;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
+    .iconWrapper i {
+      margin: auto;
+      font-size: 2.5rem;
+      animation: iconRotateForward;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+
+  @keyframes iconRotate {
+    0% {
+      transform: rotate(0deg);
+    } 50% {
+      transform: rotate(180deg);
+    } 100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes iconRotateForward {
+    0% {
+      transform: rotate(0deg);
+    } 50% {
+      transform: rotate(-180deg);
+    } 100% {
+      transform: rotate(-360deg);
+    }
+  }
 
 /* AHHHHHHHHHHHHHH */
 
