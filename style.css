@@ -205,6 +205,8 @@ a {
   margin-left: 2.5rem;
   margin-top: 1.1rem;
   display: flex;
+  opacity: 0;
+  pointer-events: none;
 }
   .contactWrapperInner {
     width: 10rem;
@@ -227,6 +229,7 @@ a {
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
+    transition: 0.33s;
   }
     .iconWrapper i {
       margin: auto;
@@ -236,6 +239,30 @@ a {
       animation-iteration-count: infinite;
       animation-fill-mode: forwards;
       animation-timing-function: linear;
+    }
+    .iconWrapper a {
+      border-radius: 50%;
+      width: 7.5rem;
+      height: 7.5rem;
+      margin: auto;
+      display: flex;
+      text-decoration: none;
+      position: absolute;
+      left: 50%;
+      margin-left: -3.6rem;
+      animation: iconRotateForward;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .iconWrapper a span {
+      margin: auto;
+    }
+    .iconWrapper a span:first-child {
+      text-decoration: underline;
     }
 
   @keyframes iconRotate {

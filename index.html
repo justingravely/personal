@@ -411,13 +411,16 @@
   <div id="contactWrapper">
     <div class="contactWrapperInner">
       <div class="iconWrapper" id="gitHubWrapper">
-        <i class="fab fa-github"></i>
+        <i id="gitHubIcon" class="fab fa-github"></i>
+        <a href="https://github.com/justingravely" target=" " id="gitHubLink"><span>github</span></a>
       </div>
       <div class="iconWrapper" id="discordWrapper">
-        <i class="fab fa-discord"></i>
+        <i id="discordIcon" class="fab fa-discord"></i>
+        <a id="discordLink"><span>#Doggy6517</span></a>
       </div>
       <div class="iconWrapper" id="phoneWrapper">
-        <i class="fas fa-mobile-alt"></i>
+        <i id="phoneIcon" class="fas fa-mobile-alt"></i>
+        <a id="phoneLink"><span>919-753-3942</span></a>
       </div>
     </div>
   </div>
@@ -618,6 +621,83 @@
         codeBlog.style.display = "block";
       }
     }
+
+    // contact 
+    var gitHubWrapper = document.getElementById("gitHubWrapper");
+    var discordWrapper = document.getElementById("discordWrapper");
+    var phoneWrapper = document.getElementById("phoneWrapper");
+    var contactArr = [gitHubWrapper, discordWrapper, phoneWrapper]
+    var gitHubLink = document.getElementById("gitHubLink");
+    var discordLink = document.getElementById("discordLink");
+    var phoneLink = document.getElementById("phoneLink");
+    var gitHubIcon = document.getElementById("gitHubIcon");
+    var discordIcon = document.getElementById("discordIcon");
+    var phoneIcon = document.getElementById("phoneIcon");
+
+    for (let i = 0; i < contactArr.length; i++) {
+      contactArr[i].addEventListener("mouseenter", function(){
+        contactFunction(i)
+      })
+    }
+    function contactFunction(num) {
+      if (num == 0) {
+        gitHubIcon.style.opacity = "0";
+        gitHubIcon.style.pointerEvents = "none";
+        gitHubLink.style.opacity = "1";
+        gitHubLink.style.pointerEvents = "all";
+        gitHubWrapper.style.width = "7.5rem";
+        gitHubWrapper.style.height = "7.5rem";
+      }
+      if (num == 1) {
+        discordIcon.style.opacity = "0";
+        discordIcon.style.pointerEvents = "none";
+        discordLink.style.opacity = "1";
+        discordLink.style.pointerEvents = "all";
+        discordWrapper.style.width = "7.5rem";
+        discordWrapper.style.height = "7.5rem";
+      }
+      if (num == 2) {
+        phoneIcon.style.opacity = "0";
+        phoneIcon.style.pointerEvents = "none";
+        phoneLink.style.opacity = "1";
+        phoneLink.style.pointerEvents = "all";
+        phoneWrapper.style.width = "7.5rem";
+        phoneWrapper.style.height = "7.5rem";
+      }
+    }
+    for (let i = 0; i < contactArr.length; i++) {
+      contactArr[i].addEventListener("mouseleave", function(){
+        contactFunctionOut(i)
+      })
+    }
+    function contactFunctionOut(num) {
+      if (num == 0) {
+        gitHubIcon.style.opacity = "1";
+        gitHubIcon.style.pointerEvents = "all";
+        gitHubLink.style.opacity = "0";
+        gitHubLink.style.pointerEvents = "none";
+        gitHubWrapper.style.width = "5rem";
+        gitHubWrapper.style.height = "5rem";
+      }
+      if (num == 1) {
+        discordIcon.style.opacity = "1";
+        discordIcon.style.pointerEvents = "all";
+        discordLink.style.opacity = "0";
+        discordLink.style.pointerEvents = "none";
+        discordWrapper.style.width = "5rem";
+        discordWrapper.style.height = "5rem";
+      }
+      if (num == 2) {
+        phoneIcon.style.opacity = "1";
+        phoneIcon.style.pointerEvents = "all";
+        phoneLink.style.opacity = "0";
+        phoneLink.style.pointerEvents = "none";
+        phoneWrapper.style.width = "5rem";
+        phoneWrapper.style.height = "5rem";
+      }
+    }
+    
+
 
 
 
