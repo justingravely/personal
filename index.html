@@ -412,15 +412,15 @@
     <div class="contactWrapperInner">
       <div class="iconWrapper" id="gitHubWrapper">
         <i id="gitHubIcon" class="fab fa-github"></i>
-        <a href="https://github.com/justingravely" target=" " id="gitHubLink"><span>github</span></a>
+        <div class="contactDivs" id="gitHubLink"><a id="gitHubSpecial" href="https://github.com/justingravely" target=" ">github</a></div>
       </div>
       <div class="iconWrapper" id="discordWrapper">
         <i id="discordIcon" class="fab fa-discord"></i>
-        <a id="discordLink"><span>#Doggy6517</span></a>
+        <div class="contactDivs"  id="discordLink"><a>#Doggy6517</a></div>
       </div>
       <div class="iconWrapper" id="phoneWrapper">
         <i id="phoneIcon" class="fas fa-mobile-alt"></i>
-        <a id="phoneLink"><span>919-753-3942</span></a>
+        <div class="contactDivs"  id="phoneLink"><a>919-753-3942</a></div>
       </div>
     </div>
   </div>
@@ -633,6 +633,8 @@
     var gitHubIcon = document.getElementById("gitHubIcon");
     var discordIcon = document.getElementById("discordIcon");
     var phoneIcon = document.getElementById("phoneIcon");
+
+    var gitHubSpecial = document.getElementById("gitHubSpecial");
 
     for (let i = 0; i < contactArr.length; i++) {
       contactArr[i].addEventListener("mouseenter", function(){

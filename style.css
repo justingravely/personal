@@ -240,7 +240,7 @@ a {
       animation-fill-mode: forwards;
       animation-timing-function: linear;
     }
-    .iconWrapper a {
+    .iconWrapper .contactDivs {
       border-radius: 50%;
       width: 7.5rem;
       height: 7.5rem;
@@ -258,7 +258,7 @@ a {
       opacity: 0;
       pointer-events: none;
     }
-    .iconWrapper a span {
+    .iconWrapper a {
       margin: auto;
     }
     .iconWrapper a span:first-child {
