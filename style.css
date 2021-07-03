@@ -11,6 +11,7 @@ body {
   flex-direction: column;
   height: 100vh;
   overflow-y: hidden;
+  width: 50%;
 }
 
 a {
@@ -45,7 +46,7 @@ a {
   text-align: center;
   transition: 1s;
   height: 28.5rem;
-  top: 50%;
+  top: 55%;
   margin-top: -14.25rem;
 }
   #navInner {
@@ -194,19 +195,21 @@ a {
     }
     .blogBodyWrapper {
       overflow-y: scroll;
-      height: 34rem;
+      height: 90%;
     }
 
 /* contact */
 #contactWrapper {
   height: 95vh;
-  width: 80vw;
+  width: 10rem;
   margin: auto;
-  margin-left: 2.5rem;
   margin-top: 1.1rem;
   display: flex;
   opacity: 0;
   pointer-events: none;
+  position: absolute;
+  margin-left: -5rem;
+  left: 50%;
 }
   .contactWrapperInner {
     width: 10rem;
@@ -240,7 +243,7 @@ a {
       animation-fill-mode: forwards;
       animation-timing-function: linear;
     }
-    .iconWrapper .contactDivs {
+    .contactDivs {
       border-radius: 50%;
       width: 7.5rem;
       height: 7.5rem;
@@ -297,8 +300,8 @@ a {
   margin: auto;
   margin-top: 1.4rem;
   margin-right: 1rem;
-  width: 86vw;
-  height: 93vh;
+  width: 88vw;
+  height: 94.79vh;
   overflow-y: scroll;
 
   position: absolute;
@@ -309,10 +312,13 @@ a {
 /* website portfolio */
 
   .websitePortfolio {
-    width: 90%;
     margin: 1rem auto;
+    margin-top: 2rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 9rem 9rem;
+    row-gap: 10px;
+    column-gap: 10px;
+    width: 19rem;
   }
 
 .showcaseWrapper {
@@ -366,6 +372,7 @@ a {
 .showcaseGame {
   width: 20rem;
   height: 20rem;
+  margin: auto;
 }
 
 /* seasaw */
@@ -453,6 +460,7 @@ a {
   width: 100%;
   height: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.199);
+  margin: auto;
 }
 
 .pixelLeftWrap {
@@ -469,9 +477,11 @@ a {
 }
   .gridChoiceInnerWrap {
     display: flex;
+    width: 10rem;
   }
   .gridChoiceInner {
     padding: 0.33rem;
+    margin-right: 0.33rem;
   }
 
 #pixelUiTop {
@@ -516,6 +526,7 @@ a {
 .pixelRightWrap {
   height: 100%;
   width: 30%;
+  padding-bottom: 0.15rem;
 }
 
 .colorBrightness {
@@ -788,6 +799,27 @@ a {
     animation-play-state: paused;
   }
 
+  /* scrollbar */
+
+  *::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);        /* color of the tracking area */
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: rgba(0, 0, 0, 0);  /* creates padding around scroll thumb */
+  }
+
+  * {
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);   /* scroll thumb and track */
+  }
+
   @keyframes player {
     0% {
       margin-left: 2%;
@@ -804,5 +836,40 @@ a {
       margin-right: 28%;
     } 100% {
       margin-right: 2%;
+    }
+  }
+
+
+  @media (min-width: 550px) {
+    #aboutWrapper {
+      margin-top: 10rem;
+    }
+    .bigBox {
+      width: 40rem;
+      left: 50%;
+      margin-left: -20rem;
+    }
+    #portfolioWrapper {
+      margin-right: 1rem;
+      width: 35rem;
+      left: 50%;
+      margin-left: -17rem;
+    }
+    #blogWrapper {
+      width: 35rem;
+      margin-left: -17rem;
+    } 
+  }
+
+  @media (min-width: 1200px) {
+    body {
+      background-image: url("https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow-y: hidden;
+      width: 50%;
+      background-position-y: -10rem;
     }
   }

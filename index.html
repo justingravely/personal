@@ -449,6 +449,50 @@
 
     var logoBB = document.getElementById("logoBackButton");
 
+    var x0 = window.matchMedia("(max-width: 729px)")
+    var x = window.matchMedia("(min-width: 730px)");
+    var xx = window.matchMedia("(min-width: 830px)");
+    var xxx = window.matchMedia("(min-width: 930px)");
+    var xxxx = window.matchMedia("(min-width: 1030px)");
+    var xxxxx = window.matchMedia("(min-width: 1130px)");
+    var xxxxxx = window.matchMedia("(min-width: 1230px)");
+    var xxxxxxx = window.matchMedia("(min-width: 1330px)");
+    var xxxxxxxx = window.matchMedia("(min-width: 1430px)");
+    var xxxxxxxxx = window.matchMedia("(min-width: 1530px)");
+    var xxxxxxxxxx = window.matchMedia("(min-width: 1630px)");
+    function monkeyTown(){
+      if (x0.matches) {
+        nav.style.left = "5.4%";
+      }
+      if (x.matches) {
+        nav.style.left = "10%";
+      }
+      if(xx.matches) {
+        nav.style.left = "15%";
+      }
+      if (xxx.matches) {
+        nav.style.left = "18.5%";
+      }
+      if(xxxx.matches) {
+        nav.style.left = "21%";
+      }
+      if (xxxxx.matches) {
+        nav.style.left = "24%";
+      }
+      if(xxxxxx.matches) {
+        nav.style.left = "26%";
+      }
+      if (xxxxxxx.matches) {
+        nav.style.left = "28%";
+      }
+      if(xxxxxxxxx.matches) {
+        nav.style.left = "30%";
+      }
+      if(xxxxxxxxxx.matches) {
+        nav.style.left = "32%";
+      }
+    }
+
 
     // adding event listeners to every nav link
     for (let i = 0; i < links.length; i++) {
@@ -491,7 +535,10 @@
         // other
         links[i].style.marginRight = "0.33rem";
       }
-      nav.style.left = "5.4%";
+
+      monkeyTown();
+
+      nav.style.top = "50%";
       setTimeout(function () {
         for (let i = 0; i < boxes.length; i++) {
           boxes[i].style.opacity = "1";
@@ -634,8 +681,6 @@
     var discordIcon = document.getElementById("discordIcon");
     var phoneIcon = document.getElementById("phoneIcon");
 
-    var gitHubSpecial = document.getElementById("gitHubSpecial");
-
     for (let i = 0; i < contactArr.length; i++) {
       contactArr[i].addEventListener("mouseenter", function(){
         contactFunction(i)
@@ -675,7 +720,7 @@
     function contactFunctionOut(num) {
       if (num == 0) {
         gitHubIcon.style.opacity = "1";
-        gitHubIcon.style.pointerEvents = "all";
+        gitHubIcon.style.pointerEvents = "none";
         gitHubLink.style.opacity = "0";
         gitHubLink.style.pointerEvents = "none";
         gitHubWrapper.style.width = "5rem";
@@ -683,7 +728,7 @@
       }
       if (num == 1) {
         discordIcon.style.opacity = "1";
-        discordIcon.style.pointerEvents = "all";
+        discordIcon.style.pointerEvents = "none";
         discordLink.style.opacity = "0";
         discordLink.style.pointerEvents = "none";
         discordWrapper.style.width = "5rem";
@@ -691,7 +736,7 @@
       }
       if (num == 2) {
         phoneIcon.style.opacity = "1";
-        phoneIcon.style.pointerEvents = "all";
+        phoneIcon.style.pointerEvents = "none";
         phoneLink.style.opacity = "0";
         phoneLink.style.pointerEvents = "none";
         phoneWrapper.style.width = "5rem";
