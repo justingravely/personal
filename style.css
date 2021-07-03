@@ -178,6 +178,7 @@ a {
   .blogBody {
     margin-top: 0.5rem;
     border: 1px solid rgb(95, 94, 94);
+    background-color: rgba(0, 0, 0, 0.459);
   }
     .blogBody h1 {
       font-size: 1.5rem;
