@@ -320,15 +320,9 @@
                   <p>Flicking</p>
                 </div>
               </button>
-              <button id="aimBoth">
-                <div>
-                  <i class="fas fa-graduation-cap"></i>
-                  <p>Both</p>
-                </div>
-              </button>
             </div>
           </div>
-          <div id="trackingBody">
+          <div id="aimBody">
             <button id="aimStart">Start</button>
             <div id="aimMenu">
               <button id="aimSelect">Menu</button>
@@ -336,16 +330,39 @@
             </div>
             <div id="aimInfoUi">
               <p>Score: <span id="aimScore">0</span></p>
-              <p>Time: <span id="aimTimer">3</span></p>
+              <p>Time: <span id="aimTimer">10</span></p>
             </div>
             <p id="aimCountdown">3</p>
-            <div id="aimScreen">
+            <div id="trackingScreen">
               <div id="aimRotator">
                 <div id="trackingBall"></div>
               </div>
-              <p id="aimInstruction">Keep your cursor on the ball &nbsp;&nbsp;&nbsp;&nbsp; High Score: <span
-                  id="highScore">0</span></p>
             </div>
+            <div id="flickingScreen">
+              <div id="gridWrap">
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+                <div class="gridTarget"></div>
+              </div>
+            </div>
+            <p id="aimInstruction"><span id="specificAimInstruction">Keep your cursor on the ball</span> &nbsp;&nbsp;&nbsp;&nbsp; High Score: <span
+                id="highScore">0</span></p>
           </div>
         </div>
       </div>
@@ -950,9 +967,8 @@
     var aimIntro = document.getElementById("aimIntro");
     var tracking = document.getElementById("tracking");
     var flicking = document.getElementById("flicking");
-    var aimBoth = document.getElementById("aimBoth");
-    var trackingButtonArr = [tracking, flicking, aimBoth];
-    var trackingBody = document.getElementById("trackingBody");
+    var trackingButtonArr = [tracking, flicking];
+    var aimBody = document.getElementById("aimBody");
     var aimSelect = document.getElementById("aimSelect");
     var aimReset = document.getElementById("aimReset");
     var aimStart = document.getElementById("aimStart");
@@ -962,10 +978,26 @@
     var aimScore = document.getElementById("aimScore");
     var aimCountdown = document.getElementById("aimCountdown");
     var trackingBall = document.getElementById("trackingBall");
-    var aimScreen = document.getElementById("aimScreen");
+    var trackingScreen = document.getElementById("trackingScreen");
     var aimRotator = document.getElementById("aimRotator");
     var highScore = document.getElementById("highScore");
 
+    var flickingScreen = document.getElementById("flickingScreen");
+    var gridTarget = document.getElementsByClassName("gridTarget");
+    var gridWrap = document.getElementById("gridWrap");
+    var specificAimInstruction = document.getElementById("specificAimInstruction");
+
+    var currentAimGame = "";
+
+    // function for menu on/off
+    function menuToggle(x) {
+      for (let i = 0; i < aimMenuArr.length; i++) {
+        if (x == 0) aimMenuArr[i].style.pointerEvents = "none";
+        if (x == 1) aimMenuArr[i].style.pointerEvents = "all";
+      }
+    }
+
+    // selection of tracking or flicking
     for (let i = 0; i < trackingButtonArr.length; i++) {
       trackingButtonArr[i].addEventListener("click", function () {
         trackingButtonFunc(i);
@@ -974,10 +1006,25 @@
     function trackingButtonFunc(num) {
       switch (num) {
         case 0:
-          trackingBody.style.display = "flex";
+          aimBody.style.display = "flex";
           aimIntro.style.display = "none";
+          trackingScreen.style.display = "flex";
+          flickingScreen.style.display = "none";
+          currentAimGame = "tracking";
+          specificAimInstruction.innerHTML = "Keep your cursor on the ball";
+          break;
+        case 1:
+          aimBody.style.display = "flex";
+          aimIntro.style.display = "none";
+          flickingScreen.style.display = "flex";
+          trackingScreen.style.display = "none";
+          currentAimGame = "flicking";
+          specificAimInstruction.innerHTML = "Quickly click accurately";
+          break;
       }
     }
+
+    // game menu
     for (let i = 0; i < aimMenuArr.length; i++) {
       aimMenuArr[i].addEventListener("click", function () {
         aimMenuFunction(i);
@@ -986,27 +1033,32 @@
     function aimMenuFunction(num) {
       switch (num) {
         case 0:
-          trackingBody.style.display = "none";
+          aimBody.style.display = "none";
           aimIntro.style.display = "flex";
+          aimReset.style.backgroundColor = "rgb(36, 36, 36)";
+          aimReset.style.color = "white";
           break;
         case 1:
           aimScoreInt = 0;
           aimScore.innerHTML = "0";
-          aimTimer.innerHTML = "3";
+          aimTimer.innerHTML = "10";
           aimStart.style.display = "block";
           trackingBall.style.display = "none";
           aimReset.style.backgroundColor = "rgb(36, 36, 36)";
           aimReset.style.color = "white";
           break;
         case 2:
-          trackingGame();
+          if (currentAimGame == "tracking") trackingGame(); 
+          if (currentAimGame == "flicking") flickingGame();
           break;
       }
     }
 
+    // global aim ui elements
     var aimScoreInt = 0;
     var highScoreInt = 0;
-    var aimTimerInt = 3;
+    var aimTimerInt = 10;
+    // TRACKING GAME ++++++++++++++++++++++++++++++++
     trackingBall.addEventListener("mouseenter", function () {
       aimScoreInterval = setInterval(function () {
         aimScoreInt += 1;
@@ -1016,11 +1068,12 @@
     trackingBall.addEventListener("mouseleave", function () {
       clearInterval(aimScoreInterval);
     })
-    trackingBall.addEventListener("click", function() {
+    trackingBall.addEventListener("click", function () {
       aimScoreInt += 1;
       aimScore.innerHTML = aimScoreInt.toString();
     })
     function trackingGame() {
+      menuToggle(0);
       aimScore.innerHTML = "0";
       aimStart.style.display = "none";
       aimCountdown.style.display = "flex";
@@ -1032,6 +1085,7 @@
         aimCountdown.innerHTML = countNum.toString();
         countNum -= 1;
       }, 1000);
+      // running game
       setTimeout(function () {
         clearInterval(jack);
         // game timer
@@ -1060,12 +1114,129 @@
           }
           countNum = 0;
           aimTimer.innerHTML = aimTimerInt.toString();
-          aimTimerInt = 3;
+          aimTimerInt = 10;
           clearInterval(gameTimerInterval);
-        }, 3000)
+          menuToggle(1);
+        }, 10000)
       }, 3000)
     }
 
+    // FLICKING GAME ++++++++++++++++++++++++++++++++
+    // array of each grid target
+    var gridArr = []
+    for (let i = 0; i < gridTarget.length; i++) {
+      gridArr.push(i);
+    }
+    // flicking function
+    function flickingGame() {
+      menuToggle(0);
+      gridWrap.style.display = "grid";
+      let startingFour = [];
+      // flicking start function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      let countNum = 3;
+      function flickingStart() {
+        aimCountdown.style.display = "flex";
+        aimCountdown.innerHTML = countNum.toString();
+        countNum -= 1;
+        // timer interval
+        let jack = setInterval(function () {
+          aimCountdown.innerHTML = countNum.toString();
+          countNum -= 1;
+        }, 1000);
+        aimStart.style.display = "none";
+        setTimeout(function () {
+          clearInterval(jack);
+          // game timer
+          aimTimer.innerHTML = aimTimerInt.toString();
+          aimTimerInt -= 1;
+          let gameTimerInterval = setInterval(() => {
+            aimTimer.innerHTML = aimTimerInt.toString();
+            aimTimerInt -= 1;
+          }, 1000);
+          aimCountdown.style.display = "none";
+          let lastNum = "when your";
+          let currentNum = "pizza rolls are done";
+          // initializes the four random starters
+          for (let i = 0; i < 4; i++) {
+            currentNum = Math.floor(Math.random() * 16);
+            if (!startingFour.includes(gridTarget[gridArr[currentNum]])) {
+              startingFour.push(gridTarget[gridArr[currentNum]]);
+              console.log(startingFour);
+            } else {
+              i--
+            }
+          }
+          // color the four random starters
+          for (let i = 0; i < startingFour.length; i++) {
+            startingFour[i].style.opacity = "1";
+          }
+          // ending
+          setTimeout(function () {
+            gridWrap.style.display = "none";
+            aimReset.style.backgroundColor = "greenyellow";
+            aimReset.style.color = "black";
+            if (aimScoreInt > highScoreInt) {
+              highScore.innerHTML = aimScoreInt.toString();
+              highScoreInt = aimScoreInt;
+            }
+            countNum = 0;
+            aimTimer.innerHTML = aimTimerInt.toString();
+            aimTimerInt = 10;
+            clearInterval(gameTimerInterval);
+            menuToggle(1);
+          }, 10000)
+        }, 3000)
+      }
+      // flicking reset button ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      aimReset.addEventListener("click", function () {
+        flickingReset();
+      })
+      function flickingReset() {
+        for (let i = 0; i < gridTarget.length; i++) {
+          gridTarget[i].style.opacity = "0";
+        }
+        aimStart.style.display = "block";
+      }
+      // flicking game ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      // random number function 
+      function randomNumberGrid() {
+        return Math.floor(Math.random() * 16);
+      }
+      // adding all the event listeners to the targets
+      for (let i = 0; i < gridTarget.length; i++) {
+        gridTarget[i].addEventListener("click", function () {
+          gridGameplay(i);
+        })
+      }
+      let tempGridArr = [null];
+      function gridGameplay(num) {
+        // incorrect click checker
+        if (gridTarget[num].style.opacity != "1") {
+          return null;
+        } else {
+          aimScoreInt += 1;
+          aimScore.innerHTML = aimScoreInt.toString();
+          gridTarget[num].style.opacity = "0";
+          let randomGrid = randomNumberGrid();
+          let x = 0;
+          let lastNum = null;
+          while (x != 1) {
+            if (gridTarget[randomGrid].style.opacity != "1" && randomGrid != tempGridArr[0]) {
+              gridTarget[randomGrid].style.opacity = "1"
+              tempGridArr[0] = randomGrid;
+              x = 1;
+            }
+            lastNum = randomGrid;
+            randomGrid = randomNumberGrid();
+          }
+          console.log(num, tempGridArr);
+        }
+      }
+
+
+      flickingStart();
+      console.log(gridArr);
+    }
 
     // PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR PIXEL ART EDITOR
 

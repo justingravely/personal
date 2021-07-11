@@ -138,9 +138,6 @@ a {
     display: flex;
     justify-content: space-evenly;
   }
-  .aboutInner p {
-
-  }
 
 .selfie {
   width: 10rem;
@@ -522,6 +519,9 @@ a {
   #aimButtons {
     display: flex;
     z-index: 6;
+    width: 10rem;
+    margin: auto;
+    margin-top: 10rem;
   }
     #aimButtons button {
       width: 4rem;
@@ -537,16 +537,16 @@ a {
       #aimButtons button div {
         margin: auto;
       }
-  #trackingBody {
+  #aimBody {
     display: none;
     width: 33rem;
   }
-      #aimScreen {
+      #trackingScreen {
         width: 20rem;
         height: 17.5rem;
         margin-top: 2.5rem;
         position: absolute;
-        display: flex;
+        display: none;
         cursor: crosshair;
       }
       #trackingBall {
@@ -582,9 +582,11 @@ a {
       }
   #aimInstruction {
     position: absolute;
-    bottom: 0.5rem;
+    top: 18.75rem;
     font-size: 0.77rem;
-    left: 2rem;
+    width: 15rem;
+    left: 50%;
+    margin-left: -7.5rem;
   }
   #aimInfoUi {
     position: absolute;
@@ -607,6 +609,7 @@ a {
     }
       #aimMenu button:last-child {
         width: 5rem;
+        z-index: 10;
       }
       #aimStart {
         position: absolute;
@@ -626,6 +629,32 @@ a {
     left: 58%;
     font-size: 3rem;
     display: none;
+  }
+#flickingScreen {
+  width: 20rem;
+  height: 17.5rem;
+  margin-top: 2.5rem;
+  position: absolute;
+  cursor: crosshair;
+  display: none;
+}
+  #gridWrap {
+    height: 85%;
+    width: 85%;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: auto;
+    margin-top: 0.79rem;
+  }
+  .gridTarget {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(0, 209, 209);
+    opacity: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: auto;
+    padding: auto;
+    border-radius: 50%;
   }
 
 /* pixel art editor */
