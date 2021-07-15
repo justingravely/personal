@@ -361,8 +361,8 @@
                 <div class="gridTarget"></div>
               </div>
             </div>
-            <p id="aimInstruction"><span id="specificAimInstruction">Keep your cursor on the ball</span> &nbsp;&nbsp;&nbsp;&nbsp; High Score: <span
-                id="highScore">0</span></p>
+            <p id="aimInstruction"><span id="specificAimInstruction">Keep your cursor on the ball</span>
+              &nbsp;&nbsp;&nbsp;&nbsp; High Score: <span id="highScore">0</span></p>
           </div>
         </div>
       </div>
@@ -427,11 +427,18 @@
 
   <div id="blogWrapper">
     <div class="blogSelection">
+      <button id="codeBlogButton">Code</button>
       <button id="faithBlogButton">Faith</button>
       <button id="lifeBlogButton">Life</button>
-      <button id="codeBlogButton">Code</button>
     </div>
     <div class="blogBodyWrapper">
+      <div id="codeBlog">
+        <div class="blogBody">
+          <h1>Guild Wars 2 Idea</h1>
+          <p class="blogDate">7/14/2021</p>
+          <p>A browser game was made for World of Warcraft that is a 2D translation of the game's second to newest raid. Today I'm going to start making this for Guild Wars 2's Raids.</p>
+        </div>
+      </div>
       <div id="faithBlog">
         <div class="blogBody">
           <h1>Perfect In Our Suffering</h1>
@@ -467,27 +474,6 @@
             work on this site, at least for 30 minutes and it wound up being 90 minutes this evening. Even amidst
             feeling glued into Classic World of Warcraft with goals and fun aspirations on my new character. This is
             rare and a good sign things are overall moving up.</p>
-        </div>
-      </div>
-      <div id="codeBlog">
-        <div class="blogBody">
-          <h1>Code Blog One</h1>
-          <p class="blogDate">7/1/2021</p>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A illum earum, consequuntur amet reiciendis dolor
-            mollitia ad deleniti repellendus excepturi quisquam harum molestias soluta facilis id porro dolores
-            blanditiis quos assumenda recusandae? Beatae porro, sit earum eius omnis esse unde itaque consequatur
-            tenetur perferendis sapiente ut quia quibusdam eligendi cupiditate enim. Odit temporibus illo quo pariatur
-            repudiandae inventore nesciunt beatae odio. Quia, quas a eum porro facilis autem aspernatur corrupti sit
-            sint, excepturi blanditiis velit? Omnis accusamus dolore inventore incidunt illum fugiat ullam qui tenetur
-            dignissimos excepturi. Rerum officia explicabo, recusandae enim quod repellendus nemo, iure sapiente itaque
-            facere ea commodi accusamus laborum unde in doloremque praesentium neque, suscipit aut vel sed voluptatem
-            tempore. Asperiores nisi soluta, earum reiciendis quasi ducimus aliquid, eum exercitationem facilis mollitia
-            consequuntur aspernatur excepturi ratione laudantium est. Doloribus molestias quae atque, aperiam corrupti
-            deleniti quibusdam sed exercitationem distinctio possimus esse temporibus eos dolorum harum eius minima
-            tempora neque quasi excepturi minus consequatur quia cumque reiciendis. Provident inventore laboriosam
-            commodi! Labore quia et ipsa, cumque libero eveniet iure consequuntur quos, maxime hic id dolorum nemo?
-            Eligendi quod ab temporibus! Dignissimos nulla in reiciendis, corrupti unde eligendi eveniet distinctio
-            assumenda aliquam a dolore veniam et expedita quasi.</p>
         </div>
       </div>
     </div>
@@ -558,11 +544,16 @@
         iconWappers[i].style.animationPlayState = "running, running";
       }
     }
+    for (let i = 0; i < iconWappers.length; i++) {
+      iconWappers[i].style.animationPlayState = "running, running";
+    }
 
     var start = false;
     var sectionArr = [pFWrapper, aboutWrapper, blogWrapper, contactWrapper];
 
     var logoBB = document.getElementById("logoBackButton");
+
+
 
     var x0 = window.matchMedia("(max-width: 729px)")
     var x1 = window.matchMedia("(min-width: 730px)");
@@ -575,6 +566,16 @@
     var x8 = window.matchMedia("(min-width: 1430px)");
     var x9 = window.matchMedia("(min-width: 1530px)");
     var x10 = window.matchMedia("(min-width: 1630px)");
+
+    // intro dropdown
+    if (x5.matches) {
+      setTimeout(function () { intro.style.marginTop = "10rem"; }, 100)
+    } if (x10.matches) {
+      setTimeout(function () { intro.style.marginTop = "15rem"; }, 100)
+    } if (x0.matches) {
+      setTimeout(function () { intro.style.marginTop = "7rem"; }, 100)
+    }
+
     function monkeyTown() {
       if (x0.matches) {
         nav.style.left = "6%";
@@ -610,21 +611,6 @@
         nav.style.left = "32.5%";
       }
     }
-
-    var contactToggle = document.getElementById("contactToggle");
-    contactToggle.addEventListener("click", function () {
-      contactButtonFunc()
-    })
-    function contactButtonFunc() {
-      if (iconWappers[0].style.animationPlayState == "running, running") {
-        iWFuncIn();
-        contactToggle.innerHTML = "Start"
-      } else if (iconWappers[0].style.animationPlayState == "running, paused") {
-        iWFuncOut();
-        contactToggle.innerHTML = "Stop"
-      }
-    }
-
 
     // adding event listeners to every nav link
     for (let i = 0; i < links.length; i++) {
@@ -762,9 +748,6 @@
       }
     }
 
-    // intro dropdown
-    setTimeout(function () { intro.style.marginTop = "7rem"; }, 100)
-
     // blogCode     // blogCode     // blogCode     // blogCode     // blogCode     // blogCode 
     var faithBlog = document.getElementById("faithBlog");
     var lifeBlog = document.getElementById("lifeBlog");
@@ -775,9 +758,9 @@
     var blogArr = [faithBlogButton, lifeBlogButton, codeBlogButton];
 
     // default 
-    faithBlog.style.display = "block";
+    faithBlog.style.display = "none";
     lifeBlog.style.display = "none";
-    codeBlog.style.display = "none";
+    codeBlog.style.display = "block";
 
     // add event liteners to each buutton 
     for (let i = 0; i < blogArr.length; i++) {
@@ -892,6 +875,21 @@
         yahooLink.style.pointerEvents = "none";
         yahooWrapper.style.width = "5rem";
         yahooWrapper.style.height = "5rem";
+      }
+    }
+
+    // contact button toggle
+    var contactToggle = document.getElementById("contactToggle");
+    contactToggle.addEventListener("click", function () {
+      contactButtonFunc()
+    })
+    function contactButtonFunc() {
+      if (iconWappers[0].style.animationPlayState == "running, running") {
+        iWFuncIn();
+        contactToggle.innerHTML = "Start"
+      } else if (iconWappers[0].style.animationPlayState == "running, paused") {
+        iWFuncOut();
+        contactToggle.innerHTML = "Stop"
       }
     }
 
@@ -1048,7 +1046,7 @@
           aimReset.style.color = "white";
           break;
         case 2:
-          if (currentAimGame == "tracking") trackingGame(); 
+          if (currentAimGame == "tracking") trackingGame();
           if (currentAimGame == "flicking") flickingGame();
           break;
       }
