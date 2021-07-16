@@ -436,14 +436,32 @@
         <div class="blogBody">
           <h1>Guild Wars 2 Idea</h1>
           <p class="blogDate">7/14/2021</p>
-          <p>A browser game was made for World of Warcraft that is a 2D translation of the game's second to newest raid. Today I'm going to start making this for Guild Wars 2's Raids.</p>
+          <p>A <a target=" " style="color: rgb(196, 196, 196)" href="https://tacticalairhorse.itch.io/castle-pineapplia">browser game</a> was made for World of Warcraft that is a 2D translation of the game's second to newest raid.
+            Today I'm going to start making this for Guild Wars 2's Raids. </p>
         </div>
       </div>
       <div id="faithBlog">
         <div class="blogBody">
+          <h1>Personal Lord's Prayer</h1>
+          <p class="blogDate">7/16/2021</p>
+          <p>
+            These are the words I've used to personally translate the prayer that Jesus tuaght his disciples, bringing
+            out meaninings using modern day language: <br><br>
+          <p style="margin-left: 0.5rem;">Our Father in heaven<br><br>
+            Your name is Hallowed, there is none like it and none like you<br><br>
+            Bring your kingdom and your will to earth just like it is in heaven <br><br>
+            Give us what we need for today, our daily bread, and help us not worry about tomorrow<br><br>
+            And forgive us for our sins as we forgive those who've sinned against us <br><br>
+            And keep us from sinfully tempting situations, rescueing us from evil<br><br>
+            For this is your Kingdom, your power, and your glory, forever <br><br>
+            In Jesus name, Amen </p>
+          </p>
+        </div>
+        <div class="blogBody">
           <h1>Perfect In Our Suffering</h1>
           <p class="blogDate">7/5/2021 12:00PM</p>
-          <p>Last night I couldn't sleep as I was laying awake in bed at about 5am. I had all the reasons in the world
+          <p>
+            Last night I couldn't sleep as I was laying awake in bed at about 5am. I had all the reasons in the world
             to feel bad and be upset, which I did physically feel. I said a prayer something like this, "Despite what
             I'm feeling and no matter how bad anything ever gets I know that you are always good and this suffering I'm
             currently experiencing is just the price of free will and for true love to be able to exist", and I felt
@@ -454,14 +472,6 @@
             believed in and mentally chewed over the past 3 years or so now. Regardless of whatever scientific skeptic
             explanation could suggest I choose to believe it was God who put it all in motion and it's His love that I'm
             feeling.</p>
-        </div>
-        <div class="blogBody">
-          <h1>Faith Blog One</h1>
-          <p class="blogDate">7/1/2021</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quos molestias quia libero dolorum ullam
-            nisi saepe sit provident, quod, eaque ratione, est sequi praesentium nihil cupiditate harum eos magnam omnis
-            perspiciatis ipsum! Molestias officia beatae sint! Commodi soluta officiis ipsum rerum veniam est esse
-            officia optio autem? Sapiente, reiciendis.</p>
         </div>
       </div>
       <div id="lifeBlog">
@@ -566,15 +576,22 @@
     var x8 = window.matchMedia("(min-width: 1430px)");
     var x9 = window.matchMedia("(min-width: 1530px)");
     var x10 = window.matchMedia("(min-width: 1630px)");
+    var mediaWidthArr = [x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10];
+
+    for (let i = 0; i < mediaWidthArr.length; i++) {
+      if (i == 0 && mediaWidthArr[i].matches) {
+        setTimeout(function () { intro.style.marginTop = "7rem"; }, 100)
+      } if (i > 0 && i < 5 && mediaWidthArr[i].matches) {
+        setTimeout(function () { intro.style.marginTop = "12.5rem"; }, 100)
+      } if (i >= 5 && i < 10 && mediaWidthArr[i].matches) {
+        setTimeout(function () { intro.style.marginTop = "15rem"; }, 100)
+      } if (i == 9 && mediaWidthArr[i].matches) {
+        setTimeout(function () { intro.style.marginTop = "15em"; }, 100)
+      }
+    }
 
     // intro dropdown
-    if (x5.matches) {
-      setTimeout(function () { intro.style.marginTop = "10rem"; }, 100)
-    } if (x10.matches) {
-      setTimeout(function () { intro.style.marginTop = "15rem"; }, 100)
-    } if (x0.matches) {
-      setTimeout(function () { intro.style.marginTop = "7rem"; }, 100)
-    }
+
 
     function monkeyTown() {
       if (x0.matches) {
